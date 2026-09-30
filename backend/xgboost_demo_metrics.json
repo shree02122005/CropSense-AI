@@ -1,0 +1,13 @@
+{
+  "accuracy": 0.908695652173913,
+  "precision_macro": 0.9121212121212122,
+  "recall_macro": 0.9086956521739131,
+  "f1_macro": 0.9076287556836757,
+  "f1_weighted": 0.9076287556836756,
+  "training_time_sec": 1.3986349000188056,
+  "inference_time_sec": 0.008573499973863363,
+  "n_test_samples": 230,
+  "n_classes": 23,
+  "n_estimators": 100,
+  "n_features": 8
+}

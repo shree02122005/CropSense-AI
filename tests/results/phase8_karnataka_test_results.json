@@ -1,0 +1,1180 @@
+[
+  {
+    "index": 1,
+    "location": "Bengaluru",
+    "agro_climatic_zone": "Eastern Dry Zone",
+    "resolved_location": "Bengaluru",
+    "latitude": 12.9716,
+    "longitude": 77.5946,
+    "N": 249.7,
+    "P": 46.8,
+    "K": 180.4,
+    "npk_source_district": "Bengaluru Urban",
+    "npk_reference_place": "Bengaluru",
+    "npk_source_type": "published_measured",
+    "npk_distance_km": 0.0,
+    "npk_source_note": "GKVK Bengaluru 2024",
+    "temperature_c": 28.5,
+    "humidity_pct": 64.0,
+    "rainfall_mm": 0.7,
+    "ph": 5.8,
+    "ph_is_fallback": true,
+    "ph_source": "Agro-climatic regional fallback (SoilGrids returned null values for depth layer (urban/sealed or unmapped coordinate))",
+    "organic_carbon_pct": 2.5,
+    "soil_type_detected": "Sandy",
+    "soil_type_encoded": 4,
+    "soil_cnn_confidence": 0.344,
+    "feature_vector": [
+      249.7,
+      46.8,
+      180.4,
+      28.5,
+      64.0,
+      5.8,
+      0.7,
+      4
+    ],
+    "npk_out_of_training_range": true,
+    "npk_ood_features": [
+      "N"
+    ],
+    "all_ood_features": [
+      "N",
+      "rainfall"
+    ],
+    "ood_warning": "Input features ['N'] exceed the empirical training dataset bounds (Training ranges: N=[5.5-153.8], P=[3.3-177.9], K=[3.5-236.8] kg/ha). The Random Forest model is extrapolating outside its observed training distribution; predictions represent algorithmic extrapolation and should be interpreted with caution.",
+    "top_3_crops": [
+      "Grapes (30.5%)",
+      "Muskmelon (22.0%)",
+      "Maize (17.5%)"
+    ],
+    "crops_detailed": [
+      {
+        "name": "Grapes",
+        "confidence": 0.305,
+        "profit": "Very High",
+        "yield": "10\u201315 tons/ha",
+        "price": "\u20b940\u2013100/kg",
+        "season": "Annual",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Muskmelon",
+        "confidence": 0.22,
+        "profit": "High",
+        "yield": "15\u201320 tons/ha",
+        "price": "\u20b910\u201318/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Maize",
+        "confidence": 0.175,
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      }
+    ],
+    "training_ranges": {
+      "N": {
+        "min": 5.53,
+        "max": 153.79,
+        "unit": "kg/ha"
+      },
+      "P": {
+        "min": 3.3,
+        "max": 177.91,
+        "unit": "kg/ha"
+      },
+      "K": {
+        "min": 3.54,
+        "max": 236.77,
+        "unit": "kg/ha"
+      },
+      "temperature": {
+        "min": 11.54,
+        "max": 40.5,
+        "unit": "\u00b0C"
+      },
+      "humidity": {
+        "min": 1.76,
+        "max": 100.0,
+        "unit": "%"
+      },
+      "ph": {
+        "min": 4.9,
+        "max": 7.76,
+        "unit": "scale (0-14)"
+      },
+      "rainfall": {
+        "min": 7.39,
+        "max": 315.58,
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "index": 2,
+    "location": "Mysuru",
+    "agro_climatic_zone": "Southern Dry Zone",
+    "resolved_location": "Mysore",
+    "latitude": 12.2958,
+    "longitude": 76.6394,
+    "N": 369.7,
+    "P": 9.2,
+    "K": 265.6,
+    "npk_source_district": "Mysuru",
+    "npk_reference_place": "Mysuru",
+    "npk_source_type": "regional_proxy",
+    "npk_distance_km": 0.0,
+    "npk_source_note": "South Karnataka proxy: Hassan published profile",
+    "temperature_c": 30.2,
+    "humidity_pct": 56.0,
+    "rainfall_mm": 0.0,
+    "ph": 5.8,
+    "ph_is_fallback": true,
+    "ph_source": "Agro-climatic regional fallback (SoilGrids returned null values for depth layer (urban/sealed or unmapped coordinate))",
+    "organic_carbon_pct": 2.5,
+    "soil_type_detected": "Loamy",
+    "soil_type_encoded": 2,
+    "soil_cnn_confidence": 0.558,
+    "feature_vector": [
+      369.7,
+      9.2,
+      265.6,
+      30.2,
+      56.0,
+      5.8,
+      0.0,
+      2
+    ],
+    "npk_out_of_training_range": true,
+    "npk_ood_features": [
+      "N",
+      "K"
+    ],
+    "all_ood_features": [
+      "N",
+      "K",
+      "rainfall"
+    ],
+    "ood_warning": "Input features ['N', 'K'] exceed the empirical training dataset bounds (Training ranges: N=[5.5-153.8], P=[3.3-177.9], K=[3.5-236.8] kg/ha). The Random Forest model is extrapolating outside its observed training distribution; predictions represent algorithmic extrapolation and should be interpreted with caution.",
+    "top_3_crops": [
+      "Muskmelon (28.5%)",
+      "Grapes (27.0%)",
+      "Watermelon (12.5%)"
+    ],
+    "crops_detailed": [
+      {
+        "name": "Muskmelon",
+        "confidence": 0.285,
+        "profit": "High",
+        "yield": "15\u201320 tons/ha",
+        "price": "\u20b910\u201318/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Grapes",
+        "confidence": 0.27,
+        "profit": "Very High",
+        "yield": "10\u201315 tons/ha",
+        "price": "\u20b940\u2013100/kg",
+        "season": "Annual",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Watermelon",
+        "confidence": 0.125,
+        "profit": "High",
+        "yield": "20\u201330 tons/ha",
+        "price": "\u20b98\u201315/kg",
+        "season": "Summer",
+        "water_need": "High"
+      }
+    ],
+    "training_ranges": {
+      "N": {
+        "min": 5.53,
+        "max": 153.79,
+        "unit": "kg/ha"
+      },
+      "P": {
+        "min": 3.3,
+        "max": 177.91,
+        "unit": "kg/ha"
+      },
+      "K": {
+        "min": 3.54,
+        "max": 236.77,
+        "unit": "kg/ha"
+      },
+      "temperature": {
+        "min": 11.54,
+        "max": 40.5,
+        "unit": "\u00b0C"
+      },
+      "humidity": {
+        "min": 1.76,
+        "max": 100.0,
+        "unit": "%"
+      },
+      "ph": {
+        "min": 4.9,
+        "max": 7.76,
+        "unit": "scale (0-14)"
+      },
+      "rainfall": {
+        "min": 7.39,
+        "max": 315.58,
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "index": 3,
+    "location": "Hassan",
+    "agro_climatic_zone": "Southern Transition Zone",
+    "resolved_location": "Hassan",
+    "latitude": 13.0068,
+    "longitude": 76.1004,
+    "N": 369.7,
+    "P": 9.2,
+    "K": 265.6,
+    "npk_source_district": "Hassan",
+    "npk_reference_place": "Hassan",
+    "npk_source_type": "published_measured",
+    "npk_distance_km": 0.0,
+    "npk_source_note": "Hosahalli tank command area mean",
+    "temperature_c": 28.4,
+    "humidity_pct": 56.0,
+    "rainfall_mm": 0.2,
+    "ph": 5.8,
+    "ph_is_fallback": true,
+    "ph_source": "Agro-climatic regional fallback (SoilGrids returned null values for depth layer (urban/sealed or unmapped coordinate))",
+    "organic_carbon_pct": 2.5,
+    "soil_type_detected": "Sandy",
+    "soil_type_encoded": 4,
+    "soil_cnn_confidence": 0.568,
+    "feature_vector": [
+      369.7,
+      9.2,
+      265.6,
+      28.4,
+      56.0,
+      5.8,
+      0.2,
+      4
+    ],
+    "npk_out_of_training_range": true,
+    "npk_ood_features": [
+      "N",
+      "K"
+    ],
+    "all_ood_features": [
+      "N",
+      "K",
+      "rainfall"
+    ],
+    "ood_warning": "Input features ['N', 'K'] exceed the empirical training dataset bounds (Training ranges: N=[5.5-153.8], P=[3.3-177.9], K=[3.5-236.8] kg/ha). The Random Forest model is extrapolating outside its observed training distribution; predictions represent algorithmic extrapolation and should be interpreted with caution.",
+    "top_3_crops": [
+      "Muskmelon (41.0%)",
+      "Grapes (27.0%)",
+      "Watermelon (12.0%)"
+    ],
+    "crops_detailed": [
+      {
+        "name": "Muskmelon",
+        "confidence": 0.41,
+        "profit": "High",
+        "yield": "15\u201320 tons/ha",
+        "price": "\u20b910\u201318/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Grapes",
+        "confidence": 0.27,
+        "profit": "Very High",
+        "yield": "10\u201315 tons/ha",
+        "price": "\u20b940\u2013100/kg",
+        "season": "Annual",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Watermelon",
+        "confidence": 0.12,
+        "profit": "High",
+        "yield": "20\u201330 tons/ha",
+        "price": "\u20b98\u201315/kg",
+        "season": "Summer",
+        "water_need": "High"
+      }
+    ],
+    "training_ranges": {
+      "N": {
+        "min": 5.53,
+        "max": 153.79,
+        "unit": "kg/ha"
+      },
+      "P": {
+        "min": 3.3,
+        "max": 177.91,
+        "unit": "kg/ha"
+      },
+      "K": {
+        "min": 3.54,
+        "max": 236.77,
+        "unit": "kg/ha"
+      },
+      "temperature": {
+        "min": 11.54,
+        "max": 40.5,
+        "unit": "\u00b0C"
+      },
+      "humidity": {
+        "min": 1.76,
+        "max": 100.0,
+        "unit": "%"
+      },
+      "ph": {
+        "min": 4.9,
+        "max": 7.76,
+        "unit": "scale (0-14)"
+      },
+      "rainfall": {
+        "min": 7.39,
+        "max": 315.58,
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "index": 4,
+    "location": "Kodagu / Madikeri",
+    "agro_climatic_zone": "Hilly / Plantation Zone",
+    "resolved_location": "Madikeri",
+    "latitude": 12.4244,
+    "longitude": 75.7382,
+    "N": 369.7,
+    "P": 9.2,
+    "K": 265.6,
+    "npk_source_district": "Kodagu",
+    "npk_reference_place": "Madikeri",
+    "npk_source_type": "regional_proxy",
+    "npk_distance_km": 0.0,
+    "npk_source_note": "South Karnataka proxy: Hassan published profile",
+    "temperature_c": 27.4,
+    "humidity_pct": 49.0,
+    "rainfall_mm": 0.0,
+    "ph": 5.8,
+    "ph_is_fallback": true,
+    "ph_source": "Agro-climatic regional fallback (SoilGrids request failed/timeout: ReadTimeout)",
+    "organic_carbon_pct": 2.5,
+    "soil_type_detected": "Loamy",
+    "soil_type_encoded": 2,
+    "soil_cnn_confidence": 0.779,
+    "feature_vector": [
+      369.7,
+      9.2,
+      265.6,
+      27.4,
+      49.0,
+      5.8,
+      0.0,
+      2
+    ],
+    "npk_out_of_training_range": true,
+    "npk_ood_features": [
+      "N",
+      "K"
+    ],
+    "all_ood_features": [
+      "N",
+      "K",
+      "rainfall"
+    ],
+    "ood_warning": "Input features ['N', 'K'] exceed the empirical training dataset bounds (Training ranges: N=[5.5-153.8], P=[3.3-177.9], K=[3.5-236.8] kg/ha). The Random Forest model is extrapolating outside its observed training distribution; predictions represent algorithmic extrapolation and should be interpreted with caution.",
+    "top_3_crops": [
+      "Grapes (28.0%)",
+      "Muskmelon (27.5%)",
+      "Watermelon (14.0%)"
+    ],
+    "crops_detailed": [
+      {
+        "name": "Grapes",
+        "confidence": 0.28,
+        "profit": "Very High",
+        "yield": "10\u201315 tons/ha",
+        "price": "\u20b940\u2013100/kg",
+        "season": "Annual",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Muskmelon",
+        "confidence": 0.275,
+        "profit": "High",
+        "yield": "15\u201320 tons/ha",
+        "price": "\u20b910\u201318/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Watermelon",
+        "confidence": 0.14,
+        "profit": "High",
+        "yield": "20\u201330 tons/ha",
+        "price": "\u20b98\u201315/kg",
+        "season": "Summer",
+        "water_need": "High"
+      }
+    ],
+    "training_ranges": {
+      "N": {
+        "min": 5.53,
+        "max": 153.79,
+        "unit": "kg/ha"
+      },
+      "P": {
+        "min": 3.3,
+        "max": 177.91,
+        "unit": "kg/ha"
+      },
+      "K": {
+        "min": 3.54,
+        "max": 236.77,
+        "unit": "kg/ha"
+      },
+      "temperature": {
+        "min": 11.54,
+        "max": 40.5,
+        "unit": "\u00b0C"
+      },
+      "humidity": {
+        "min": 1.76,
+        "max": 100.0,
+        "unit": "%"
+      },
+      "ph": {
+        "min": 4.9,
+        "max": 7.76,
+        "unit": "scale (0-14)"
+      },
+      "rainfall": {
+        "min": 7.39,
+        "max": 315.58,
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "index": 5,
+    "location": "Shivamogga",
+    "agro_climatic_zone": "Southern Transition Zone",
+    "resolved_location": "Shimoga",
+    "latitude": 13.9299,
+    "longitude": 75.5681,
+    "N": 369.7,
+    "P": 9.2,
+    "K": 265.6,
+    "npk_source_district": "Shivamogga",
+    "npk_reference_place": "Shivamogga",
+    "npk_source_type": "regional_proxy",
+    "npk_distance_km": 0.0,
+    "npk_source_note": "South Karnataka proxy: South Karnataka anchor",
+    "temperature_c": 29.8,
+    "humidity_pct": 57.0,
+    "rainfall_mm": 0.4,
+    "ph": 5.8,
+    "ph_is_fallback": true,
+    "ph_source": "Agro-climatic regional fallback (SoilGrids returned null values for depth layer (urban/sealed or unmapped coordinate))",
+    "organic_carbon_pct": 2.5,
+    "soil_type_detected": "Loamy",
+    "soil_type_encoded": 2,
+    "soil_cnn_confidence": 0.866,
+    "feature_vector": [
+      369.7,
+      9.2,
+      265.6,
+      29.8,
+      57.0,
+      5.8,
+      0.4,
+      2
+    ],
+    "npk_out_of_training_range": true,
+    "npk_ood_features": [
+      "N",
+      "K"
+    ],
+    "all_ood_features": [
+      "N",
+      "K",
+      "rainfall"
+    ],
+    "ood_warning": "Input features ['N', 'K'] exceed the empirical training dataset bounds (Training ranges: N=[5.5-153.8], P=[3.3-177.9], K=[3.5-236.8] kg/ha). The Random Forest model is extrapolating outside its observed training distribution; predictions represent algorithmic extrapolation and should be interpreted with caution.",
+    "top_3_crops": [
+      "Muskmelon (28.5%)",
+      "Grapes (27.0%)",
+      "Watermelon (12.5%)"
+    ],
+    "crops_detailed": [
+      {
+        "name": "Muskmelon",
+        "confidence": 0.285,
+        "profit": "High",
+        "yield": "15\u201320 tons/ha",
+        "price": "\u20b910\u201318/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Grapes",
+        "confidence": 0.27,
+        "profit": "Very High",
+        "yield": "10\u201315 tons/ha",
+        "price": "\u20b940\u2013100/kg",
+        "season": "Annual",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Watermelon",
+        "confidence": 0.125,
+        "profit": "High",
+        "yield": "20\u201330 tons/ha",
+        "price": "\u20b98\u201315/kg",
+        "season": "Summer",
+        "water_need": "High"
+      }
+    ],
+    "training_ranges": {
+      "N": {
+        "min": 5.53,
+        "max": 153.79,
+        "unit": "kg/ha"
+      },
+      "P": {
+        "min": 3.3,
+        "max": 177.91,
+        "unit": "kg/ha"
+      },
+      "K": {
+        "min": 3.54,
+        "max": 236.77,
+        "unit": "kg/ha"
+      },
+      "temperature": {
+        "min": 11.54,
+        "max": 40.5,
+        "unit": "\u00b0C"
+      },
+      "humidity": {
+        "min": 1.76,
+        "max": 100.0,
+        "unit": "%"
+      },
+      "ph": {
+        "min": 4.9,
+        "max": 7.76,
+        "unit": "scale (0-14)"
+      },
+      "rainfall": {
+        "min": 7.39,
+        "max": 315.58,
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "index": 6,
+    "location": "Mangaluru",
+    "agro_climatic_zone": "Coastal Zone",
+    "resolved_location": "Mangalore",
+    "latitude": 12.9141,
+    "longitude": 74.856,
+    "N": 369.7,
+    "P": 9.2,
+    "K": 265.6,
+    "npk_source_district": "Dakshina Kannada",
+    "npk_reference_place": "Mangaluru",
+    "npk_source_type": "regional_proxy",
+    "npk_distance_km": 0.0,
+    "npk_source_note": "South Karnataka proxy: South Karnataka anchor",
+    "temperature_c": 28.8,
+    "humidity_pct": 61.0,
+    "rainfall_mm": 0.0,
+    "ph": 5.8,
+    "ph_is_fallback": true,
+    "ph_source": "Agro-climatic regional fallback (SoilGrids returned null values for depth layer (urban/sealed or unmapped coordinate))",
+    "organic_carbon_pct": 2.5,
+    "soil_type_detected": "Sandy",
+    "soil_type_encoded": 4,
+    "soil_cnn_confidence": 0.891,
+    "feature_vector": [
+      369.7,
+      9.2,
+      265.6,
+      28.8,
+      61.0,
+      5.8,
+      0.0,
+      4
+    ],
+    "npk_out_of_training_range": true,
+    "npk_ood_features": [
+      "N",
+      "K"
+    ],
+    "all_ood_features": [
+      "N",
+      "K",
+      "rainfall"
+    ],
+    "ood_warning": "Input features ['N', 'K'] exceed the empirical training dataset bounds (Training ranges: N=[5.5-153.8], P=[3.3-177.9], K=[3.5-236.8] kg/ha). The Random Forest model is extrapolating outside its observed training distribution; predictions represent algorithmic extrapolation and should be interpreted with caution.",
+    "top_3_crops": [
+      "Muskmelon (41.0%)",
+      "Grapes (27.0%)",
+      "Watermelon (12.0%)"
+    ],
+    "crops_detailed": [
+      {
+        "name": "Muskmelon",
+        "confidence": 0.41,
+        "profit": "High",
+        "yield": "15\u201320 tons/ha",
+        "price": "\u20b910\u201318/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Grapes",
+        "confidence": 0.27,
+        "profit": "Very High",
+        "yield": "10\u201315 tons/ha",
+        "price": "\u20b940\u2013100/kg",
+        "season": "Annual",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Watermelon",
+        "confidence": 0.12,
+        "profit": "High",
+        "yield": "20\u201330 tons/ha",
+        "price": "\u20b98\u201315/kg",
+        "season": "Summer",
+        "water_need": "High"
+      }
+    ],
+    "training_ranges": {
+      "N": {
+        "min": 5.53,
+        "max": 153.79,
+        "unit": "kg/ha"
+      },
+      "P": {
+        "min": 3.3,
+        "max": 177.91,
+        "unit": "kg/ha"
+      },
+      "K": {
+        "min": 3.54,
+        "max": 236.77,
+        "unit": "kg/ha"
+      },
+      "temperature": {
+        "min": 11.54,
+        "max": 40.5,
+        "unit": "\u00b0C"
+      },
+      "humidity": {
+        "min": 1.76,
+        "max": 100.0,
+        "unit": "%"
+      },
+      "ph": {
+        "min": 4.9,
+        "max": 7.76,
+        "unit": "scale (0-14)"
+      },
+      "rainfall": {
+        "min": 7.39,
+        "max": 315.58,
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "index": 7,
+    "location": "Belagavi",
+    "agro_climatic_zone": "Northern Transition Zone",
+    "resolved_location": "Belgaum",
+    "latitude": 15.8497,
+    "longitude": 74.4977,
+    "N": 202.0,
+    "P": 18.9,
+    "K": 347.0,
+    "npk_source_district": "Belagavi",
+    "npk_reference_place": "Belagavi",
+    "npk_source_type": "published_measured",
+    "npk_distance_km": 0.0,
+    "npk_source_note": "Dharwad/Karnataka northern agricultural soil profile used as nearest published numeric anchor",
+    "temperature_c": 27.1,
+    "humidity_pct": 69.0,
+    "rainfall_mm": 1.5,
+    "ph": 6.2,
+    "ph_is_fallback": false,
+    "ph_source": "ISRIC SoilGrids 2.0 REST API (0-5cm depth mean)",
+    "organic_carbon_pct": 2.4,
+    "soil_type_detected": "Black",
+    "soil_type_encoded": 0,
+    "soil_cnn_confidence": 0.76,
+    "feature_vector": [
+      202.0,
+      18.9,
+      347.0,
+      27.1,
+      69.0,
+      6.2,
+      1.5,
+      0
+    ],
+    "npk_out_of_training_range": true,
+    "npk_ood_features": [
+      "N",
+      "K"
+    ],
+    "all_ood_features": [
+      "N",
+      "K",
+      "rainfall"
+    ],
+    "ood_warning": "Input features ['N', 'K'] exceed the empirical training dataset bounds (Training ranges: N=[5.5-153.8], P=[3.3-177.9], K=[3.5-236.8] kg/ha). The Random Forest model is extrapolating outside its observed training distribution; predictions represent algorithmic extrapolation and should be interpreted with caution.",
+    "top_3_crops": [
+      "Grapes (28.5%)",
+      "Muskmelon (23.5%)",
+      "Watermelon (13.0%)"
+    ],
+    "crops_detailed": [
+      {
+        "name": "Grapes",
+        "confidence": 0.285,
+        "profit": "Very High",
+        "yield": "10\u201315 tons/ha",
+        "price": "\u20b940\u2013100/kg",
+        "season": "Annual",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Muskmelon",
+        "confidence": 0.235,
+        "profit": "High",
+        "yield": "15\u201320 tons/ha",
+        "price": "\u20b910\u201318/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Watermelon",
+        "confidence": 0.13,
+        "profit": "High",
+        "yield": "20\u201330 tons/ha",
+        "price": "\u20b98\u201315/kg",
+        "season": "Summer",
+        "water_need": "High"
+      }
+    ],
+    "training_ranges": {
+      "N": {
+        "min": 5.53,
+        "max": 153.79,
+        "unit": "kg/ha"
+      },
+      "P": {
+        "min": 3.3,
+        "max": 177.91,
+        "unit": "kg/ha"
+      },
+      "K": {
+        "min": 3.54,
+        "max": 236.77,
+        "unit": "kg/ha"
+      },
+      "temperature": {
+        "min": 11.54,
+        "max": 40.5,
+        "unit": "\u00b0C"
+      },
+      "humidity": {
+        "min": 1.76,
+        "max": 100.0,
+        "unit": "%"
+      },
+      "ph": {
+        "min": 4.9,
+        "max": 7.76,
+        "unit": "scale (0-14)"
+      },
+      "rainfall": {
+        "min": 7.39,
+        "max": 315.58,
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "index": 8,
+    "location": "Dharwad",
+    "agro_climatic_zone": "Northern Transition Zone",
+    "resolved_location": "Dharwad",
+    "latitude": 15.4589,
+    "longitude": 75.0078,
+    "N": 202.0,
+    "P": 18.9,
+    "K": 347.0,
+    "npk_source_district": "Dharwad",
+    "npk_reference_place": "Dharwad",
+    "npk_source_type": "published_measured",
+    "npk_distance_km": 0.0,
+    "npk_source_note": "Agricultural Research Station, Annigeri/Dharwad profile",
+    "temperature_c": 27.8,
+    "humidity_pct": 72.0,
+    "rainfall_mm": 1.2,
+    "ph": 5.8,
+    "ph_is_fallback": true,
+    "ph_source": "Agro-climatic regional fallback (SoilGrids request failed/timeout: ReadTimeout)",
+    "organic_carbon_pct": 2.5,
+    "soil_type_detected": "Black",
+    "soil_type_encoded": 0,
+    "soil_cnn_confidence": 0.706,
+    "feature_vector": [
+      202.0,
+      18.9,
+      347.0,
+      27.8,
+      72.0,
+      5.8,
+      1.2,
+      0
+    ],
+    "npk_out_of_training_range": true,
+    "npk_ood_features": [
+      "N",
+      "K"
+    ],
+    "all_ood_features": [
+      "N",
+      "K",
+      "rainfall"
+    ],
+    "ood_warning": "Input features ['N', 'K'] exceed the empirical training dataset bounds (Training ranges: N=[5.5-153.8], P=[3.3-177.9], K=[3.5-236.8] kg/ha). The Random Forest model is extrapolating outside its observed training distribution; predictions represent algorithmic extrapolation and should be interpreted with caution.",
+    "top_3_crops": [
+      "Grapes (28.0%)",
+      "Muskmelon (27.5%)",
+      "Watermelon (19.5%)"
+    ],
+    "crops_detailed": [
+      {
+        "name": "Grapes",
+        "confidence": 0.28,
+        "profit": "Very High",
+        "yield": "10\u201315 tons/ha",
+        "price": "\u20b940\u2013100/kg",
+        "season": "Annual",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Muskmelon",
+        "confidence": 0.275,
+        "profit": "High",
+        "yield": "15\u201320 tons/ha",
+        "price": "\u20b910\u201318/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Watermelon",
+        "confidence": 0.195,
+        "profit": "High",
+        "yield": "20\u201330 tons/ha",
+        "price": "\u20b98\u201315/kg",
+        "season": "Summer",
+        "water_need": "High"
+      }
+    ],
+    "training_ranges": {
+      "N": {
+        "min": 5.53,
+        "max": 153.79,
+        "unit": "kg/ha"
+      },
+      "P": {
+        "min": 3.3,
+        "max": 177.91,
+        "unit": "kg/ha"
+      },
+      "K": {
+        "min": 3.54,
+        "max": 236.77,
+        "unit": "kg/ha"
+      },
+      "temperature": {
+        "min": 11.54,
+        "max": 40.5,
+        "unit": "\u00b0C"
+      },
+      "humidity": {
+        "min": 1.76,
+        "max": 100.0,
+        "unit": "%"
+      },
+      "ph": {
+        "min": 4.9,
+        "max": 7.76,
+        "unit": "scale (0-14)"
+      },
+      "rainfall": {
+        "min": 7.39,
+        "max": 315.58,
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "index": 9,
+    "location": "Raichur",
+    "agro_climatic_zone": "North Eastern Dry Zone",
+    "resolved_location": "R\u0101ich\u016br",
+    "latitude": 16.212,
+    "longitude": 77.3439,
+    "N": 203.6,
+    "P": 30.9,
+    "K": 346.4,
+    "npk_source_district": "Raichur",
+    "npk_reference_place": "Raichur",
+    "npk_source_type": "published_measured",
+    "npk_distance_km": 0.0,
+    "npk_source_note": "Pannur North-3 microwatershed surface-soil mean",
+    "temperature_c": 32.9,
+    "humidity_pct": 42.0,
+    "rainfall_mm": 0.0,
+    "ph": 5.8,
+    "ph_is_fallback": true,
+    "ph_source": "Agro-climatic regional fallback (SoilGrids returned null values for depth layer (urban/sealed or unmapped coordinate))",
+    "organic_carbon_pct": 2.5,
+    "soil_type_detected": "Black",
+    "soil_type_encoded": 0,
+    "soil_cnn_confidence": 0.384,
+    "feature_vector": [
+      203.6,
+      30.9,
+      346.4,
+      32.9,
+      42.0,
+      5.8,
+      0.0,
+      0
+    ],
+    "npk_out_of_training_range": true,
+    "npk_ood_features": [
+      "N",
+      "K"
+    ],
+    "all_ood_features": [
+      "N",
+      "K",
+      "rainfall"
+    ],
+    "ood_warning": "Input features ['N', 'K'] exceed the empirical training dataset bounds (Training ranges: N=[5.5-153.8], P=[3.3-177.9], K=[3.5-236.8] kg/ha). The Random Forest model is extrapolating outside its observed training distribution; predictions represent algorithmic extrapolation and should be interpreted with caution.",
+    "top_3_crops": [
+      "Grapes (26.0%)",
+      "Muskmelon (18.0%)",
+      "Maize (10.0%)"
+    ],
+    "crops_detailed": [
+      {
+        "name": "Grapes",
+        "confidence": 0.26,
+        "profit": "Very High",
+        "yield": "10\u201315 tons/ha",
+        "price": "\u20b940\u2013100/kg",
+        "season": "Annual",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Muskmelon",
+        "confidence": 0.18,
+        "profit": "High",
+        "yield": "15\u201320 tons/ha",
+        "price": "\u20b910\u201318/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Maize",
+        "confidence": 0.1,
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      }
+    ],
+    "training_ranges": {
+      "N": {
+        "min": 5.53,
+        "max": 153.79,
+        "unit": "kg/ha"
+      },
+      "P": {
+        "min": 3.3,
+        "max": 177.91,
+        "unit": "kg/ha"
+      },
+      "K": {
+        "min": 3.54,
+        "max": 236.77,
+        "unit": "kg/ha"
+      },
+      "temperature": {
+        "min": 11.54,
+        "max": 40.5,
+        "unit": "\u00b0C"
+      },
+      "humidity": {
+        "min": 1.76,
+        "max": 100.0,
+        "unit": "%"
+      },
+      "ph": {
+        "min": 4.9,
+        "max": 7.76,
+        "unit": "scale (0-14)"
+      },
+      "rainfall": {
+        "min": 7.39,
+        "max": 315.58,
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "index": 10,
+    "location": "Kalaburagi",
+    "agro_climatic_zone": "North Eastern Transition Zone",
+    "resolved_location": "Gulbarga",
+    "latitude": 17.3297,
+    "longitude": 76.8343,
+    "N": 250.0,
+    "P": 75.0,
+    "K": 390.0,
+    "npk_source_district": "Kalaburagi",
+    "npk_reference_place": "Kalaburagi",
+    "npk_source_type": "published_measured",
+    "npk_distance_km": 0.0,
+    "npk_source_note": "Published Kalaburagi farmer-field study reports N/P/K values; N text has a typographical range, so 250/75/390 retained as reported representative values",
+    "temperature_c": 32.2,
+    "humidity_pct": 37.0,
+    "rainfall_mm": 0.0,
+    "ph": 5.8,
+    "ph_is_fallback": true,
+    "ph_source": "Agro-climatic regional fallback (SoilGrids returned null values for depth layer (urban/sealed or unmapped coordinate))",
+    "organic_carbon_pct": 2.5,
+    "soil_type_detected": "Black",
+    "soil_type_encoded": 0,
+    "soil_cnn_confidence": 0.794,
+    "feature_vector": [
+      250.0,
+      75.0,
+      390.0,
+      32.2,
+      37.0,
+      5.8,
+      0.0,
+      0
+    ],
+    "npk_out_of_training_range": true,
+    "npk_ood_features": [
+      "N",
+      "K"
+    ],
+    "all_ood_features": [
+      "N",
+      "K",
+      "rainfall"
+    ],
+    "ood_warning": "Input features ['N', 'K'] exceed the empirical training dataset bounds (Training ranges: N=[5.5-153.8], P=[3.3-177.9], K=[3.5-236.8] kg/ha). The Random Forest model is extrapolating outside its observed training distribution; predictions represent algorithmic extrapolation and should be interpreted with caution.",
+    "top_3_crops": [
+      "Grapes (27.5%)",
+      "Maize (17.0%)",
+      "Banana (14.5%)"
+    ],
+    "crops_detailed": [
+      {
+        "name": "Grapes",
+        "confidence": 0.275,
+        "profit": "Very High",
+        "yield": "10\u201315 tons/ha",
+        "price": "\u20b940\u2013100/kg",
+        "season": "Annual",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Maize",
+        "confidence": 0.17,
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Banana",
+        "confidence": 0.145,
+        "profit": "High",
+        "yield": "20\u201330 tons/ha",
+        "price": "\u20b915\u201325/kg",
+        "season": "Annual",
+        "water_need": "High"
+      }
+    ],
+    "training_ranges": {
+      "N": {
+        "min": 5.53,
+        "max": 153.79,
+        "unit": "kg/ha"
+      },
+      "P": {
+        "min": 3.3,
+        "max": 177.91,
+        "unit": "kg/ha"
+      },
+      "K": {
+        "min": 3.54,
+        "max": 236.77,
+        "unit": "kg/ha"
+      },
+      "temperature": {
+        "min": 11.54,
+        "max": 40.5,
+        "unit": "\u00b0C"
+      },
+      "humidity": {
+        "min": 1.76,
+        "max": 100.0,
+        "unit": "%"
+      },
+      "ph": {
+        "min": 4.9,
+        "max": 7.76,
+        "unit": "scale (0-14)"
+      },
+      "rainfall": {
+        "min": 7.39,
+        "max": 315.58,
+        "unit": "mm"
+      }
+    }
+  }
+]

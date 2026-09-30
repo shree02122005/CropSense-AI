@@ -1,0 +1,32 @@
+{
+  "name": "cropsense-frontend",
+  "version": "2.0.0",
+  "private": true,
+  "dependencies": {
+    "ajv": "8.20.0",
+    "ajv-keywords": "5.1.0",
+    "axios": "^1.7.2",
+    "framer-motion": "^11.2.10",
+    "lucide-react": "^0.383.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-scripts": "5.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build"
+  },
+  "proxy": "http://localhost:8000",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

@@ -1,0 +1,1806 @@
+[
+  {
+    "id": "2026-09-30T15:55:17.090865",
+    "timestamp": "2026-09-30T15:55:17.090865",
+    "location": "Bengaluru",
+    "latitude": 12.9716,
+    "longitude": 77.5946,
+    "soil_type": "Black",
+    "soil_confidence": 0.76,
+    "temperature": 28.9,
+    "humidity": 65.0,
+    "rainfall": 1.9,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Grapes",
+        "confidence": 0.3,
+        "profit": "Very High",
+        "yield": "10\u201315 tons/ha",
+        "price": "\u20b940\u2013100/kg",
+        "season": "Annual",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Maize",
+        "confidence": 0.185,
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Muskmelon",
+        "confidence": 0.105,
+        "profit": "High",
+        "yield": "15\u201320 tons/ha",
+        "price": "\u20b910\u201318/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "test_soil.jpg"
+  },
+  {
+    "id": "2026-09-30T15:54:41.984455",
+    "timestamp": "2026-09-30T15:54:41.984455",
+    "location": "Bengaluru",
+    "latitude": 12.9716,
+    "longitude": 77.5946,
+    "soil_type": "Black",
+    "soil_confidence": 0.76,
+    "temperature": 28.9,
+    "humidity": 65.0,
+    "rainfall": 1.9,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Grapes",
+        "confidence": 0.3,
+        "profit": "Very High",
+        "yield": "10\u201315 tons/ha",
+        "price": "\u20b940\u2013100/kg",
+        "season": "Annual",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Maize",
+        "confidence": 0.185,
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Muskmelon",
+        "confidence": 0.105,
+        "profit": "High",
+        "yield": "15\u201320 tons/ha",
+        "price": "\u20b910\u201318/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "test_soil.jpg"
+  },
+  {
+    "id": "2026-09-30T15:47:42.101368",
+    "timestamp": "2026-09-30T15:47:42.101368",
+    "location": "Bengaluru",
+    "latitude": 12.9716,
+    "longitude": 77.5946,
+    "soil_type": "Sandy",
+    "soil_confidence": 0.344,
+    "temperature": 29.0,
+    "humidity": 65.0,
+    "rainfall": 1.9,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Grapes",
+        "confidence": 0.305,
+        "profit": "Very High",
+        "yield": "10\u201315 tons/ha",
+        "price": "\u20b940\u2013100/kg",
+        "season": "Annual",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Muskmelon",
+        "confidence": 0.22,
+        "profit": "High",
+        "yield": "15\u201320 tons/ha",
+        "price": "\u20b910\u201318/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Maize",
+        "confidence": 0.175,
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "demo.jpg"
+  },
+  {
+    "id": "2026-09-30T15:30:49.223176",
+    "timestamp": "2026-09-30T15:30:49.223176",
+    "location": "Bengaluru",
+    "latitude": 12.9716,
+    "longitude": 77.5946,
+    "soil_type": "Black",
+    "soil_confidence": 0.76,
+    "temperature": 29.1,
+    "humidity": 63.0,
+    "rainfall": 1.9,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Grapes",
+        "confidence": 0.295,
+        "profit": "Very High",
+        "yield": "10\u201315 tons/ha",
+        "price": "\u20b940\u2013100/kg",
+        "season": "Annual",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Maize",
+        "confidence": 0.185,
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Muskmelon",
+        "confidence": 0.105,
+        "profit": "High",
+        "yield": "15\u201320 tons/ha",
+        "price": "\u20b910\u201318/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "s.jpg"
+  },
+  {
+    "id": "2026-09-30T15:29:59.369953",
+    "timestamp": "2026-09-30T15:29:59.369953",
+    "location": "Bengaluru",
+    "latitude": 12.9716,
+    "longitude": 77.5946,
+    "soil_type": "Black",
+    "soil_confidence": 0.76,
+    "temperature": 29.1,
+    "humidity": 63.0,
+    "rainfall": 1.9,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Grapes",
+        "confidence": 0.295,
+        "profit": "Very High",
+        "yield": "10\u201315 tons/ha",
+        "price": "\u20b940\u2013100/kg",
+        "season": "Annual",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Maize",
+        "confidence": 0.185,
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Muskmelon",
+        "confidence": 0.105,
+        "profit": "High",
+        "yield": "15\u201320 tons/ha",
+        "price": "\u20b910\u201318/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "s.jpg"
+  },
+  {
+    "id": "2026-09-30T15:04:00.770512",
+    "timestamp": "2026-09-30T15:04:00.770512",
+    "location": "Bengaluru",
+    "latitude": 12.9716,
+    "longitude": 77.5946,
+    "soil_type": "Black",
+    "soil_confidence": 0.76,
+    "temperature": 29.2,
+    "humidity": 63.0,
+    "rainfall": 1.9,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Grapes",
+        "confidence": 0.295,
+        "profit": "Very High",
+        "yield": "10\u201315 tons/ha",
+        "price": "\u20b940\u2013100/kg",
+        "season": "Annual",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Maize",
+        "confidence": 0.185,
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Muskmelon",
+        "confidence": 0.105,
+        "profit": "High",
+        "yield": "15\u201320 tons/ha",
+        "price": "\u20b910\u201318/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "s.jpg"
+  },
+  {
+    "id": "2026-09-30T15:03:20.682784",
+    "timestamp": "2026-09-30T15:03:20.682784",
+    "location": "Bengaluru",
+    "latitude": 12.9716,
+    "longitude": 77.5946,
+    "soil_type": "Black",
+    "soil_confidence": 0.76,
+    "temperature": 29.2,
+    "humidity": 63.0,
+    "rainfall": 1.9,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Grapes",
+        "confidence": 0.295,
+        "profit": "Very High",
+        "yield": "10\u201315 tons/ha",
+        "price": "\u20b940\u2013100/kg",
+        "season": "Annual",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Maize",
+        "confidence": 0.185,
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Muskmelon",
+        "confidence": 0.105,
+        "profit": "High",
+        "yield": "15\u201320 tons/ha",
+        "price": "\u20b910\u201318/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "soil.jpg"
+  },
+  {
+    "id": "2026-09-30T15:02:46.318262",
+    "timestamp": "2026-09-30T15:02:46.318262",
+    "location": "Bengaluru",
+    "latitude": 12.9716,
+    "longitude": 77.5946,
+    "soil_type": "Black",
+    "soil_confidence": 0.76,
+    "temperature": 29.2,
+    "humidity": 63.0,
+    "rainfall": 1.9,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Grapes",
+        "confidence": 0.295,
+        "profit": "Very High",
+        "yield": "10\u201315 tons/ha",
+        "price": "\u20b940\u2013100/kg",
+        "season": "Annual",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Maize",
+        "confidence": 0.185,
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Muskmelon",
+        "confidence": 0.105,
+        "profit": "High",
+        "yield": "15\u201320 tons/ha",
+        "price": "\u20b910\u201318/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "soil.jpg"
+  },
+  {
+    "id": "2026-09-30T14:49:10.643839",
+    "timestamp": "2026-09-30T14:49:10.643839",
+    "location": "Bengaluru",
+    "latitude": 13.014768667939093,
+    "longitude": 77.65793478670741,
+    "soil_type": "Black",
+    "soil_confidence": 0.664,
+    "temperature": 29.5,
+    "humidity": 64.0,
+    "rainfall": 0.8,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Grapes",
+        "confidence": 0.295,
+        "profit": "Very High",
+        "yield": "10\u201315 tons/ha",
+        "price": "\u20b940\u2013100/kg",
+        "season": "Annual",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Maize",
+        "confidence": 0.185,
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Muskmelon",
+        "confidence": 0.105,
+        "profit": "High",
+        "yield": "15\u201320 tons/ha",
+        "price": "\u20b910\u201318/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "soil3.jpeg"
+  },
+  {
+    "id": "2026-09-30T13:17:03.358737",
+    "timestamp": "2026-09-30T13:17:03.358737",
+    "location": "Hadagalli",
+    "latitude": 15.020624,
+    "longitude": 75.9318973,
+    "soil_type": "Loamy",
+    "soil_confidence": 0.857,
+    "temperature": 30.9,
+    "humidity": 52.0,
+    "rainfall": 0.0,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Muskmelon",
+        "confidence": 0.28,
+        "profit": "High",
+        "yield": "15\u201320 tons/ha",
+        "price": "\u20b910\u201318/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Grapes",
+        "confidence": 0.27,
+        "profit": "Very High",
+        "yield": "10\u201315 tons/ha",
+        "price": "\u20b940\u2013100/kg",
+        "season": "Annual",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Watermelon",
+        "confidence": 0.13,
+        "profit": "High",
+        "yield": "20\u201330 tons/ha",
+        "price": "\u20b98\u201315/kg",
+        "season": "Summer",
+        "water_need": "High"
+      }
+    ],
+    "image_name": "soil5.jpeg"
+  },
+  {
+    "id": "2026-09-30T13:15:18.237416",
+    "timestamp": "2026-09-30T13:15:18.237416",
+    "location": "Bengaluru",
+    "latitude": 13.014737652376494,
+    "longitude": 77.65795192580828,
+    "soil_type": "Clay",
+    "soil_confidence": 0.85,
+    "temperature": 29.5,
+    "humidity": 58.0,
+    "rainfall": 0.6,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Grapes",
+        "confidence": 0.305,
+        "profit": "Very High",
+        "yield": "10\u201315 tons/ha",
+        "price": "\u20b940\u2013100/kg",
+        "season": "Annual",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Maize",
+        "confidence": 0.155,
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Muskmelon",
+        "confidence": 0.115,
+        "profit": "High",
+        "yield": "15\u201320 tons/ha",
+        "price": "\u20b910\u201318/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "soil7.jpeg"
+  },
+  {
+    "id": "2026-09-30T13:05:48.282951",
+    "timestamp": "2026-09-30T13:05:48.282951",
+    "location": "Bengaluru",
+    "latitude": 12.9716,
+    "longitude": 77.5946,
+    "soil_type": "Sandy",
+    "soil_confidence": 0.344,
+    "temperature": 28.5,
+    "humidity": 64.0,
+    "rainfall": 0.7,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Grapes",
+        "confidence": 0.305,
+        "profit": "Very High",
+        "yield": "10\u201315 tons/ha",
+        "price": "\u20b940\u2013100/kg",
+        "season": "Annual",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Muskmelon",
+        "confidence": 0.22,
+        "profit": "High",
+        "yield": "15\u201320 tons/ha",
+        "price": "\u20b910\u201318/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Maize",
+        "confidence": 0.175,
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "demo.jpg"
+  },
+  {
+    "id": "2026-09-30T12:43:12.663711",
+    "timestamp": "2026-09-30T12:43:12.663711",
+    "location": "Bengaluru",
+    "latitude": 12.9716,
+    "longitude": 77.5946,
+    "soil_type": "Sandy",
+    "soil_confidence": 0.344,
+    "temperature": 28.5,
+    "humidity": 64.0,
+    "rainfall": 0.7,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Grapes",
+        "confidence": 0.305,
+        "profit": "Very High",
+        "yield": "10\u201315 tons/ha",
+        "price": "\u20b940\u2013100/kg",
+        "season": "Annual",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Muskmelon",
+        "confidence": 0.22,
+        "profit": "High",
+        "yield": "15\u201320 tons/ha",
+        "price": "\u20b910\u201318/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Maize",
+        "confidence": 0.175,
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "test_red_000.jpg"
+  },
+  {
+    "id": "2026-06-04T21:30:38.159757",
+    "timestamp": "2026-06-04T21:30:38.159757",
+    "location": "Bengaluru",
+    "latitude": 12.985714758549305,
+    "longitude": 77.68971590335343,
+    "soil_type": "Black",
+    "soil_confidence": 0.887,
+    "temperature": 23.0,
+    "humidity": 91.0,
+    "rainfall": 0.0,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Maize",
+        "confidence": 0.347,
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Wheat",
+        "confidence": 0.287,
+        "profit": "High",
+        "yield": "2.5\u20134 tons/ha",
+        "price": "\u20b918\u201322/kg",
+        "season": "Winter",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Muskmelon",
+        "confidence": 0.084,
+        "profit": "High",
+        "yield": "15\u201320 tons/ha",
+        "price": "\u20b910\u201318/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "black.jpg"
+  },
+  {
+    "id": "2026-06-04T18:53:29.472710",
+    "timestamp": "2026-06-04T18:53:29.472710",
+    "location": "Bengaluru",
+    "latitude": 12.98546478077573,
+    "longitude": 77.68987220681834,
+    "soil_type": "Loamy",
+    "soil_confidence": 0.91,
+    "temperature": 29.5,
+    "humidity": 57.0,
+    "rainfall": 0.0,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Jute",
+        "confidence": 0.23,
+        "profit": "Medium",
+        "yield": "2\u20133 tons/ha",
+        "price": "\u20b930\u201350/kg",
+        "season": "Kharif",
+        "water_need": "High"
+      },
+      {
+        "name": "Mango",
+        "confidence": 0.185,
+        "profit": "Very High",
+        "yield": "5\u20138 tons/ha",
+        "price": "\u20b930\u201380/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Banana",
+        "confidence": 0.135,
+        "profit": "High",
+        "yield": "20\u201330 tons/ha",
+        "price": "\u20b915\u201325/kg",
+        "season": "Annual",
+        "water_need": "High"
+      }
+    ],
+    "image_name": "red soil.png"
+  },
+  {
+    "id": "2026-06-04T18:52:28.565381",
+    "timestamp": "2026-06-04T18:52:28.565381",
+    "location": "Bengaluru",
+    "latitude": 12.985491421242855,
+    "longitude": 77.69027187926892,
+    "soil_type": "Black",
+    "soil_confidence": 0.797,
+    "temperature": 29.5,
+    "humidity": 57.0,
+    "rainfall": 0.0,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Maize",
+        "confidence": 0.575,
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Wheat",
+        "confidence": 0.225,
+        "profit": "High",
+        "yield": "2.5\u20134 tons/ha",
+        "price": "\u20b918\u201322/kg",
+        "season": "Winter",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Muskmelon",
+        "confidence": 0.04,
+        "profit": "High",
+        "yield": "15\u201320 tons/ha",
+        "price": "\u20b910\u201318/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "black soil.jpg"
+  },
+  {
+    "id": "2026-06-04T18:51:19.085955",
+    "timestamp": "2026-06-04T18:51:19.085955",
+    "location": "Bengaluru",
+    "latitude": 12.985491421242855,
+    "longitude": 77.69027187926892,
+    "soil_type": "Black",
+    "soil_confidence": 0.887,
+    "temperature": 29.5,
+    "humidity": 57.0,
+    "rainfall": 0.0,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Maize",
+        "confidence": 0.575,
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Wheat",
+        "confidence": 0.225,
+        "profit": "High",
+        "yield": "2.5\u20134 tons/ha",
+        "price": "\u20b918\u201322/kg",
+        "season": "Winter",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Muskmelon",
+        "confidence": 0.04,
+        "profit": "High",
+        "yield": "15\u201320 tons/ha",
+        "price": "\u20b910\u201318/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "loamy.jpg"
+  },
+  {
+    "id": "2026-06-04T18:49:37.329273",
+    "timestamp": "2026-06-04T18:49:37.329273",
+    "location": "Bengaluru",
+    "latitude": 12.985491421242855,
+    "longitude": 77.69027187926892,
+    "soil_type": "Loamy",
+    "soil_confidence": 0.906,
+    "temperature": 29.5,
+    "humidity": 57.0,
+    "rainfall": 0.0,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Jute",
+        "confidence": 0.23,
+        "profit": "Medium",
+        "yield": "2\u20133 tons/ha",
+        "price": "\u20b930\u201350/kg",
+        "season": "Kharif",
+        "water_need": "High"
+      },
+      {
+        "name": "Mango",
+        "confidence": 0.185,
+        "profit": "Very High",
+        "yield": "5\u20138 tons/ha",
+        "price": "\u20b930\u201380/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Banana",
+        "confidence": 0.135,
+        "profit": "High",
+        "yield": "20\u201330 tons/ha",
+        "price": "\u20b915\u201325/kg",
+        "season": "Annual",
+        "water_need": "High"
+      }
+    ],
+    "image_name": "red.png"
+  },
+  {
+    "id": "2026-06-04T18:45:52.332942",
+    "timestamp": "2026-06-04T18:45:52.332942",
+    "location": "Bengaluru",
+    "latitude": 12.985491421242855,
+    "longitude": 77.69027187926892,
+    "soil_type": "Loamy",
+    "soil_confidence": 0.906,
+    "temperature": 29.5,
+    "humidity": 57.0,
+    "rainfall": 0.0,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Jute",
+        "confidence": 0.23,
+        "profit": "Medium",
+        "yield": "2\u20133 tons/ha",
+        "price": "\u20b930\u201350/kg",
+        "season": "Kharif",
+        "water_need": "High"
+      },
+      {
+        "name": "Mango",
+        "confidence": 0.185,
+        "profit": "Very High",
+        "yield": "5\u20138 tons/ha",
+        "price": "\u20b930\u201380/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Banana",
+        "confidence": 0.135,
+        "profit": "High",
+        "yield": "20\u201330 tons/ha",
+        "price": "\u20b915\u201325/kg",
+        "season": "Annual",
+        "water_need": "High"
+      }
+    ],
+    "image_name": "red.png"
+  },
+  {
+    "id": "2026-06-04T17:48:54.854245",
+    "timestamp": "2026-06-04T17:48:54.854245",
+    "location": "Bengaluru",
+    "latitude": 12.985474196930339,
+    "longitude": 77.6901089760777,
+    "soil_type": "Black",
+    "soil_confidence": 0.887,
+    "temperature": 29.7,
+    "humidity": 55.0,
+    "rainfall": 0.0,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Maize",
+        "confidence": 0.565,
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Wheat",
+        "confidence": 0.215,
+        "profit": "High",
+        "yield": "2.5\u20134 tons/ha",
+        "price": "\u20b918\u201322/kg",
+        "season": "Winter",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Mungbean",
+        "confidence": 0.045,
+        "profit": "Medium",
+        "yield": "0.8\u20131.2 tons/ha",
+        "price": "\u20b960\u201380/kg",
+        "season": "Zaid",
+        "water_need": "Low"
+      }
+    ],
+    "image_name": "loamy.jpg"
+  },
+  {
+    "id": "2026-06-04T17:48:23.217775",
+    "timestamp": "2026-06-04T17:48:23.217775",
+    "location": "Bengaluru",
+    "latitude": 12.985474196930339,
+    "longitude": 77.6901089760777,
+    "soil_type": "Black",
+    "soil_confidence": 0.887,
+    "temperature": 29.7,
+    "humidity": 55.0,
+    "rainfall": 0.0,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Maize",
+        "confidence": 0.565,
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Wheat",
+        "confidence": 0.215,
+        "profit": "High",
+        "yield": "2.5\u20134 tons/ha",
+        "price": "\u20b918\u201322/kg",
+        "season": "Winter",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Mungbean",
+        "confidence": 0.045,
+        "profit": "Medium",
+        "yield": "0.8\u20131.2 tons/ha",
+        "price": "\u20b960\u201380/kg",
+        "season": "Zaid",
+        "water_need": "Low"
+      }
+    ],
+    "image_name": "loamy.jpg"
+  },
+  {
+    "id": "2026-06-04T17:27:59.662241",
+    "timestamp": "2026-06-04T17:27:59.662241",
+    "location": "Bengaluru",
+    "latitude": 12.985474196930339,
+    "longitude": 77.6901089760777,
+    "soil_type": "Black",
+    "soil_confidence": 0.797,
+    "temperature": 30.3,
+    "humidity": 55.0,
+    "rainfall": 0.0,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Maize",
+        "confidence": 0.555,
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Wheat",
+        "confidence": 0.215,
+        "profit": "High",
+        "yield": "2.5\u20134 tons/ha",
+        "price": "\u20b918\u201322/kg",
+        "season": "Winter",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Mungbean",
+        "confidence": 0.045,
+        "profit": "Medium",
+        "yield": "0.8\u20131.2 tons/ha",
+        "price": "\u20b960\u201380/kg",
+        "season": "Zaid",
+        "water_need": "Low"
+      }
+    ],
+    "image_name": "black soil.jpg"
+  },
+  {
+    "id": "2026-06-04T16:46:31.619328",
+    "timestamp": "2026-06-04T16:46:31.619328",
+    "location": "Yadgir",
+    "latitude": 16.7700414,
+    "longitude": 77.1777795,
+    "soil_type": "Loamy",
+    "soil_confidence": 0.91,
+    "temperature": 35.6,
+    "humidity": 34.0,
+    "rainfall": 0.0,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Jute",
+        "confidence": 0.22,
+        "profit": "Medium",
+        "yield": "2\u20133 tons/ha",
+        "price": "\u20b930\u201350/kg",
+        "season": "Kharif",
+        "water_need": "High"
+      },
+      {
+        "name": "Mango",
+        "confidence": 0.195,
+        "profit": "Very High",
+        "yield": "5\u20138 tons/ha",
+        "price": "\u20b930\u201380/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Maize",
+        "confidence": 0.11,
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "red soil.png"
+  },
+  {
+    "id": "2026-06-04T16:40:55.647082",
+    "timestamp": "2026-06-04T16:40:55.647082",
+    "location": "Nagla Dh\u012bmar",
+    "latitude": 27.1750075,
+    "longitude": 78.0421013,
+    "soil_type": "Loamy",
+    "soil_confidence": 0.91,
+    "temperature": 42.4,
+    "humidity": 15.0,
+    "rainfall": 0.0,
+    "ph": 7.6,
+    "organic_carbon": 4.26,
+    "crops": [
+      {
+        "name": "Chickpea",
+        "confidence": 0.29,
+        "profit": "High",
+        "yield": "1\u20131.5 tons/ha",
+        "price": "\u20b950\u201360/kg",
+        "season": "Rabi",
+        "water_need": "Low"
+      },
+      {
+        "name": "Jute",
+        "confidence": 0.225,
+        "profit": "Medium",
+        "yield": "2\u20133 tons/ha",
+        "price": "\u20b930\u201350/kg",
+        "season": "Kharif",
+        "water_need": "High"
+      },
+      {
+        "name": "Muskmelon",
+        "confidence": 0.095,
+        "profit": "High",
+        "yield": "15\u201320 tons/ha",
+        "price": "\u20b910\u201318/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "red soil.png"
+  },
+  {
+    "id": "2026-06-04T16:37:38.738130",
+    "timestamp": "2026-06-04T16:37:38.738130",
+    "location": "Bengaluru",
+    "latitude": 12.985555871639141,
+    "longitude": 77.6896623639455,
+    "soil_type": "Loamy",
+    "soil_confidence": 0.91,
+    "temperature": 30.4,
+    "humidity": 53.0,
+    "rainfall": 0.0,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Jute",
+        "confidence": 0.22,
+        "profit": "Medium",
+        "yield": "2\u20133 tons/ha",
+        "price": "\u20b930\u201350/kg",
+        "season": "Kharif",
+        "water_need": "High"
+      },
+      {
+        "name": "Mango",
+        "confidence": 0.18,
+        "profit": "Very High",
+        "yield": "5\u20138 tons/ha",
+        "price": "\u20b930\u201380/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Maize",
+        "confidence": 0.13,
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "red soil.png"
+  },
+  {
+    "id": "2026-06-04T16:22:57.365507",
+    "timestamp": "2026-06-04T16:22:57.365507",
+    "location": "Bengaluru",
+    "latitude": 12.985555871639141,
+    "longitude": 77.6896623639455,
+    "soil_type": "Loamy",
+    "soil_confidence": 0.91,
+    "temperature": 30.0,
+    "humidity": 54.0,
+    "rainfall": 0.0,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Jute",
+        "confidence": 0.225,
+        "profit": "Medium",
+        "yield": "2\u20133 tons/ha",
+        "price": "\u20b930\u201350/kg",
+        "season": "Kharif",
+        "water_need": "High"
+      },
+      {
+        "name": "Mango",
+        "confidence": 0.18,
+        "profit": "Very High",
+        "yield": "5\u20138 tons/ha",
+        "price": "\u20b930\u201380/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Maize",
+        "confidence": 0.13,
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "red soil.png"
+  },
+  {
+    "id": "2026-06-04T16:22:42.520475",
+    "timestamp": "2026-06-04T16:22:42.520475",
+    "location": "Bengaluru",
+    "latitude": 12.985555871639141,
+    "longitude": 77.6896623639455,
+    "soil_type": "Loamy",
+    "soil_confidence": 0.91,
+    "temperature": 30.0,
+    "humidity": 54.0,
+    "rainfall": 0.0,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Jute",
+        "confidence": 0.225,
+        "profit": "Medium",
+        "yield": "2\u20133 tons/ha",
+        "price": "\u20b930\u201350/kg",
+        "season": "Kharif",
+        "water_need": "High"
+      },
+      {
+        "name": "Mango",
+        "confidence": 0.18,
+        "profit": "Very High",
+        "yield": "5\u20138 tons/ha",
+        "price": "\u20b930\u201380/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Maize",
+        "confidence": 0.13,
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "red soil.png"
+  },
+  {
+    "id": "2026-06-04T15:29:58.800361",
+    "timestamp": "2026-06-04T15:29:58.800361",
+    "location": "Fallback location (12.94, 77.69)",
+    "latitude": 12.9354523,
+    "longitude": 77.6909776,
+    "soil_type": "Loamy",
+    "soil_confidence": 0.91,
+    "temperature": 28.0,
+    "humidity": 75.0,
+    "rainfall": 110.0,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Jute",
+        "confidence": 0.428,
+        "profit": "Medium",
+        "yield": "2\u20133 tons/ha",
+        "price": "\u20b930\u201350/kg",
+        "season": "Kharif",
+        "water_need": "High"
+      },
+      {
+        "name": "Banana",
+        "confidence": 0.356,
+        "profit": "High",
+        "yield": "20\u201330 tons/ha",
+        "price": "\u20b915\u201325/kg",
+        "season": "Annual",
+        "water_need": "High"
+      },
+      {
+        "name": "Mango",
+        "confidence": 0.057,
+        "profit": "Very High",
+        "yield": "5\u20138 tons/ha",
+        "price": "\u20b930\u201380/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "red soil.png"
+  },
+  {
+    "id": "2026-06-04T15:28:41.449339",
+    "timestamp": "2026-06-04T15:28:41.449339",
+    "location": "Fallback location (12.99, 77.69)",
+    "latitude": 12.985491406765702,
+    "longitude": 77.68955731732333,
+    "soil_type": "Loamy",
+    "soil_confidence": 0.91,
+    "temperature": 28.0,
+    "humidity": 75.0,
+    "rainfall": 110.0,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Jute",
+        "confidence": 0.428,
+        "profit": "Medium",
+        "yield": "2\u20133 tons/ha",
+        "price": "\u20b930\u201350/kg",
+        "season": "Kharif",
+        "water_need": "High"
+      },
+      {
+        "name": "Banana",
+        "confidence": 0.356,
+        "profit": "High",
+        "yield": "20\u201330 tons/ha",
+        "price": "\u20b915\u201325/kg",
+        "season": "Annual",
+        "water_need": "High"
+      },
+      {
+        "name": "Mango",
+        "confidence": 0.057,
+        "profit": "Very High",
+        "yield": "5\u20138 tons/ha",
+        "price": "\u20b930\u201380/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "red soil.png"
+  },
+  {
+    "id": "2026-06-04T15:28:29.581768",
+    "timestamp": "2026-06-04T15:28:29.581768",
+    "location": "Fallback location (12.99, 77.69)",
+    "latitude": 12.985491406765702,
+    "longitude": 77.68955731732333,
+    "soil_type": "Loamy",
+    "soil_confidence": 0.91,
+    "temperature": 28.0,
+    "humidity": 75.0,
+    "rainfall": 110.0,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Jute",
+        "confidence": 0.428,
+        "profit": "Medium",
+        "yield": "2\u20133 tons/ha",
+        "price": "\u20b930\u201350/kg",
+        "season": "Kharif",
+        "water_need": "High"
+      },
+      {
+        "name": "Banana",
+        "confidence": 0.356,
+        "profit": "High",
+        "yield": "20\u201330 tons/ha",
+        "price": "\u20b915\u201325/kg",
+        "season": "Annual",
+        "water_need": "High"
+      },
+      {
+        "name": "Mango",
+        "confidence": 0.057,
+        "profit": "Very High",
+        "yield": "5\u20138 tons/ha",
+        "price": "\u20b930\u201380/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "red soil.png"
+  },
+  {
+    "id": "2026-06-04T15:26:17.693903",
+    "timestamp": "2026-06-04T15:26:17.693903",
+    "location": "Fallback location (12.94, 77.69)",
+    "latitude": 12.9354523,
+    "longitude": 77.6909776,
+    "soil_type": "Black",
+    "soil_confidence": 0.797,
+    "temperature": 28.0,
+    "humidity": 75.0,
+    "rainfall": 110.0,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Maize",
+        "confidence": 0.533,
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Wheat",
+        "confidence": 0.244,
+        "profit": "High",
+        "yield": "2.5\u20134 tons/ha",
+        "price": "\u20b918\u201322/kg",
+        "season": "Winter",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Banana",
+        "confidence": 0.169,
+        "profit": "High",
+        "yield": "20\u201330 tons/ha",
+        "price": "\u20b915\u201325/kg",
+        "season": "Annual",
+        "water_need": "High"
+      }
+    ],
+    "image_name": "black soil.jpg"
+  },
+  {
+    "id": "2026-06-04T15:22:52.488052",
+    "timestamp": "2026-06-04T15:22:52.488052",
+    "location": "Fallback location (12.99, 77.69)",
+    "latitude": 12.985491406765702,
+    "longitude": 77.68955731732333,
+    "soil_type": "Black",
+    "soil_confidence": 0.797,
+    "temperature": 28.0,
+    "humidity": 75.0,
+    "rainfall": 110.0,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Maize",
+        "confidence": 0.533,
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Wheat",
+        "confidence": 0.244,
+        "profit": "High",
+        "yield": "2.5\u20134 tons/ha",
+        "price": "\u20b918\u201322/kg",
+        "season": "Winter",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Banana",
+        "confidence": 0.169,
+        "profit": "High",
+        "yield": "20\u201330 tons/ha",
+        "price": "\u20b915\u201325/kg",
+        "season": "Annual",
+        "water_need": "High"
+      }
+    ],
+    "image_name": "black soil.jpg"
+  },
+  {
+    "id": "2026-05-30T21:18:49.805464",
+    "timestamp": "2026-05-30T21:18:49.805464",
+    "location": "Fallback location (15.21, 75.88)",
+    "latitude": 15.206113,
+    "longitude": 75.883191,
+    "soil_type": "Loamy",
+    "soil_confidence": 0.91,
+    "temperature": 28.0,
+    "humidity": 75.0,
+    "rainfall": 110.0,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Jute",
+        "confidence": 0.428,
+        "profit": "Medium",
+        "yield": "2\u20133 tons/ha",
+        "price": "\u20b930\u201350/kg",
+        "season": "Kharif",
+        "water_need": "High"
+      },
+      {
+        "name": "Banana",
+        "confidence": 0.356,
+        "profit": "High",
+        "yield": "20\u201330 tons/ha",
+        "price": "\u20b915\u201325/kg",
+        "season": "Annual",
+        "water_need": "High"
+      },
+      {
+        "name": "Mango",
+        "confidence": 0.057,
+        "profit": "Very High",
+        "yield": "5\u20138 tons/ha",
+        "price": "\u20b930\u201380/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "red soil.png"
+  },
+  {
+    "id": "2026-05-30T15:45:31.647062",
+    "timestamp": "2026-05-30T15:45:31.647062",
+    "location": "Fallback location (13.11, 77.38)",
+    "latitude": 13.1056,
+    "longitude": 77.3827,
+    "soil_type": "Loamy",
+    "soil_confidence": 0.91,
+    "temperature": 28.0,
+    "humidity": 75.0,
+    "rainfall": 110.0,
+    "ph": 6.4,
+    "organic_carbon": 1.91,
+    "crops": [
+      {
+        "name": "Jute",
+        "confidence": 0.575,
+        "profit": "Medium",
+        "yield": "2\u20133 tons/ha",
+        "price": "\u20b930\u201350/kg",
+        "season": "Kharif",
+        "water_need": "High"
+      },
+      {
+        "name": "Banana",
+        "confidence": 0.2,
+        "profit": "High",
+        "yield": "20\u201330 tons/ha",
+        "price": "\u20b915\u201325/kg",
+        "season": "Annual",
+        "water_need": "High"
+      },
+      {
+        "name": "Wheat",
+        "confidence": 0.053,
+        "profit": "High",
+        "yield": "2.5\u20134 tons/ha",
+        "price": "\u20b918\u201322/kg",
+        "season": "Winter",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "red soil.png"
+  },
+  {
+    "id": "2026-05-30T15:43:08.163790",
+    "timestamp": "2026-05-30T15:43:08.163790",
+    "location": "Fallback location (13.11, 77.38)",
+    "latitude": 13.1056,
+    "longitude": 77.3827,
+    "soil_type": "Loamy",
+    "soil_confidence": 0.91,
+    "temperature": 28.0,
+    "humidity": 75.0,
+    "rainfall": 110.0,
+    "ph": 6.4,
+    "organic_carbon": 1.91,
+    "crops": [
+      {
+        "name": "Jute",
+        "confidence": 0.575,
+        "profit": "Medium",
+        "yield": "2\u20133 tons/ha",
+        "price": "\u20b930\u201350/kg",
+        "season": "Kharif",
+        "water_need": "High"
+      },
+      {
+        "name": "Banana",
+        "confidence": 0.2,
+        "profit": "High",
+        "yield": "20\u201330 tons/ha",
+        "price": "\u20b915\u201325/kg",
+        "season": "Annual",
+        "water_need": "High"
+      },
+      {
+        "name": "Wheat",
+        "confidence": 0.053,
+        "profit": "High",
+        "yield": "2.5\u20134 tons/ha",
+        "price": "\u20b918\u201322/kg",
+        "season": "Winter",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "red soil.png"
+  },
+  {
+    "id": "2026-05-30T15:42:57.625586",
+    "timestamp": "2026-05-30T15:42:57.625586",
+    "location": "Fallback location (13.11, 77.38)",
+    "latitude": 13.1056,
+    "longitude": 77.3827,
+    "soil_type": "Loamy",
+    "soil_confidence": 0.91,
+    "temperature": 28.0,
+    "humidity": 75.0,
+    "rainfall": 110.0,
+    "ph": 6.4,
+    "organic_carbon": 1.91,
+    "crops": [
+      {
+        "name": "Jute",
+        "confidence": 0.575,
+        "profit": "Medium",
+        "yield": "2\u20133 tons/ha",
+        "price": "\u20b930\u201350/kg",
+        "season": "Kharif",
+        "water_need": "High"
+      },
+      {
+        "name": "Banana",
+        "confidence": 0.2,
+        "profit": "High",
+        "yield": "20\u201330 tons/ha",
+        "price": "\u20b915\u201325/kg",
+        "season": "Annual",
+        "water_need": "High"
+      },
+      {
+        "name": "Wheat",
+        "confidence": 0.053,
+        "profit": "High",
+        "yield": "2.5\u20134 tons/ha",
+        "price": "\u20b918\u201322/kg",
+        "season": "Winter",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "red soil.png"
+  },
+  {
+    "id": "2026-05-21T12:47:09.254772",
+    "timestamp": "2026-05-21T12:47:09.254772",
+    "location": "Fallback location (12.93, 77.69)",
+    "latitude": 12.933911549911295,
+    "longitude": 77.69253291117681,
+    "soil_type": "Black",
+    "soil_confidence": 0.797,
+    "temperature": 28.0,
+    "humidity": 75.0,
+    "rainfall": 110.0,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Maize",
+        "confidence": 0.533,
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Wheat",
+        "confidence": 0.244,
+        "profit": "High",
+        "yield": "2.5\u20134 tons/ha",
+        "price": "\u20b918\u201322/kg",
+        "season": "Winter",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Banana",
+        "confidence": 0.169,
+        "profit": "High",
+        "yield": "20\u201330 tons/ha",
+        "price": "\u20b915\u201325/kg",
+        "season": "Annual",
+        "water_need": "High"
+      }
+    ],
+    "image_name": "black soil.jpg"
+  },
+  {
+    "id": "2026-05-21T12:43:53.856401",
+    "timestamp": "2026-05-21T12:43:53.856401",
+    "location": "Fallback location (12.93, 77.69)",
+    "latitude": 12.933911549911295,
+    "longitude": 77.69253291117681,
+    "soil_type": "Black",
+    "soil_confidence": 0.797,
+    "temperature": 28.0,
+    "humidity": 75.0,
+    "rainfall": 110.0,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Maize",
+        "confidence": 0.533,
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Wheat",
+        "confidence": 0.244,
+        "profit": "High",
+        "yield": "2.5\u20134 tons/ha",
+        "price": "\u20b918\u201322/kg",
+        "season": "Winter",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Banana",
+        "confidence": 0.169,
+        "profit": "High",
+        "yield": "20\u201330 tons/ha",
+        "price": "\u20b915\u201325/kg",
+        "season": "Annual",
+        "water_need": "High"
+      }
+    ],
+    "image_name": "black soil.jpg"
+  },
+  {
+    "id": "2026-05-21T12:42:57.270501",
+    "timestamp": "2026-05-21T12:42:57.270501",
+    "location": "Fallback location (12.93, 77.69)",
+    "latitude": 12.933911549911295,
+    "longitude": 77.69253291117681,
+    "soil_type": "Black",
+    "soil_confidence": 0.797,
+    "temperature": 28.0,
+    "humidity": 75.0,
+    "rainfall": 110.0,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Maize",
+        "confidence": 0.533,
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Wheat",
+        "confidence": 0.244,
+        "profit": "High",
+        "yield": "2.5\u20134 tons/ha",
+        "price": "\u20b918\u201322/kg",
+        "season": "Winter",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Banana",
+        "confidence": 0.169,
+        "profit": "High",
+        "yield": "20\u201330 tons/ha",
+        "price": "\u20b915\u201325/kg",
+        "season": "Annual",
+        "water_need": "High"
+      }
+    ],
+    "image_name": "loamy image.jpg"
+  },
+  {
+    "id": "2026-05-21T12:40:28.102450",
+    "timestamp": "2026-05-21T12:40:28.102450",
+    "location": "Fallback location (12.93, 77.69)",
+    "latitude": 12.933911549911295,
+    "longitude": 77.69253291117681,
+    "soil_type": "Loamy",
+    "soil_confidence": 0.921,
+    "temperature": 28.0,
+    "humidity": 75.0,
+    "rainfall": 110.0,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Jute",
+        "confidence": 0.428,
+        "profit": "Medium",
+        "yield": "2\u20133 tons/ha",
+        "price": "\u20b930\u201350/kg",
+        "season": "Kharif",
+        "water_need": "High"
+      },
+      {
+        "name": "Banana",
+        "confidence": 0.356,
+        "profit": "High",
+        "yield": "20\u201330 tons/ha",
+        "price": "\u20b915\u201325/kg",
+        "season": "Annual",
+        "water_need": "High"
+      },
+      {
+        "name": "Mango",
+        "confidence": 0.057,
+        "profit": "Very High",
+        "yield": "5\u20138 tons/ha",
+        "price": "\u20b930\u201380/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "black soil.png"
+  },
+  {
+    "id": "2026-05-21T12:39:03.653592",
+    "timestamp": "2026-05-21T12:39:03.653592",
+    "location": "Fallback location (12.93, 77.69)",
+    "latitude": 12.933911549911295,
+    "longitude": 77.69253291117681,
+    "soil_type": "Loamy",
+    "soil_confidence": 0.921,
+    "temperature": 28.0,
+    "humidity": 75.0,
+    "rainfall": 110.0,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Jute",
+        "confidence": 0.428,
+        "profit": "Medium",
+        "yield": "2\u20133 tons/ha",
+        "price": "\u20b930\u201350/kg",
+        "season": "Kharif",
+        "water_need": "High"
+      },
+      {
+        "name": "Banana",
+        "confidence": 0.356,
+        "profit": "High",
+        "yield": "20\u201330 tons/ha",
+        "price": "\u20b915\u201325/kg",
+        "season": "Annual",
+        "water_need": "High"
+      },
+      {
+        "name": "Mango",
+        "confidence": 0.057,
+        "profit": "Very High",
+        "yield": "5\u20138 tons/ha",
+        "price": "\u20b930\u201380/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "black soil.png"
+  }
+]

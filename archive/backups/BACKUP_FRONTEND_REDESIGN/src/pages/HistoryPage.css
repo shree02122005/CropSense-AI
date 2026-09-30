@@ -1,0 +1,281 @@
+.history-page {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #e0e0e0;
+}
+
+.history-header {
+  margin-bottom: 30px;
+}
+
+.history-header h1 {
+  color: #4ade80;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+}
+
+.stats {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  background: rgba(30, 30, 30, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #333;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 120px;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 5px;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #4ade80;
+}
+
+.filters {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  flex: 1;
+  min-width: 200px;
+}
+
+.search-input, .soil-type-select {
+  width: 100%;
+  padding: 12px;
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid #555;
+  border-radius: 8px;
+  color: #e0e0e0;
+  font-size: 1rem;
+}
+
+.search-input:focus, .soil-type-select:focus {
+  outline: none;
+  border-color: #4ade80;
+  box-shadow: 0 0 0 2px rgba(74, 222, 128, 0.2);
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.history-card {
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.history-card:hover {
+  border-color: #4ade80;
+  box-shadow: 0 4px 20px rgba(74, 222, 128, 0.1);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.location-time h3 {
+  margin: 0 0 5px 0;
+  color: #4ade80;
+  font-size: 1.3rem;
+}
+
+.timestamp {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.delete-btn {
+  background: rgba(220, 38, 38, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+  transform: scale(1.1);
+}
+
+.card-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.soil-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.soil-type, .confidence {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.value {
+  font-weight: bold;
+  color: #e0e0e0;
+}
+
+.conditions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.condition-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #333;
+}
+
+.condition-item:last-child {
+  border-bottom: none;
+}
+
+.coordinates {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.coord {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.crops-section {
+  grid-column: 1 / -1;
+  margin-top: 15px;
+}
+
+.crops-section h4 {
+  margin: 0 0 10px 0;
+  color: #4ade80;
+  font-size: 1.1rem;
+}
+
+.crops-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.crop-item {
+  background: rgba(74, 222, 128, 0.1);
+  border: 1px solid #4ade80;
+  border-radius: 6px;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.crop-name {
+  font-weight: bold;
+  color: #4ade80;
+}
+
+.crop-confidence {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.more-crops {
+  color: #888;
+  font-style: italic;
+  align-self: center;
+}
+
+.no-history {
+  text-align: center;
+  padding: 40px;
+  color: #888;
+  font-size: 1.2rem;
+}
+
+.loading, .error {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.2rem;
+}
+
+.error {
+  color: #ef4444;
+}
+
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .card-content {
+    grid-template-columns: 1fr;
+  }
+
+  .conditions {
+    grid-template-columns: 1fr;
+  }
+
+  .coordinates {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .stats {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filters {
+    flex-direction: column;
+  }
+}
