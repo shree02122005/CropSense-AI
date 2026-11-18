@@ -1,31 +1,44 @@
 /**
  * reportUtils.js — Utilities for generating and exporting prediction reports
  */
+import { makeTranslator } from './i18n/LanguageContext';
+import { getLanguage } from './i18n/languages';
+
+// Fallback i18n helpers (English) when a report is generated without a language context.
+const englishI18n = (() => {
+  const t = makeTranslator('en');
+  const tv = (group, raw) => (raw ? t(`${group}.${String(raw).toLowerCase().replace(/[^a-z]/g, '')}`, null, String(raw)) : raw);
+  return { t, lang: 'en', meta: getLanguage('en'), crop: n => tv('crops', n), soil: n => tv('soils', n),
+    formatDate: ts => new Date(ts).toLocaleString('en-IN') };
+})();
+
+const escapeHTML = v => String(v ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
 /**
  * Generate HTML content for a prediction report
  */
-export const generateReportHTML = (prediction) => {
-  const formatDate = (timestamp) => {
-    return new Date(timestamp).toLocaleString();
-  };
+export const generateReportHTML = (prediction, i18n = englishI18n) => {
+  const { t } = i18n;
+  const formatDate = (timestamp) => i18n.formatDate(timestamp);
 
-  const cropsHTML = (prediction.crops ?? []).map(crop =>
-    `<tr>
-      <td>${crop.crop ?? 'Unknown'}</td>
-      <td>${((crop.confidence ?? 0) * 100).toFixed(1)}%</td>
-    </tr>`
-  ).join('');
+  const cropsHTML = (prediction.crops ?? []).map(crop => {
+    const conf = ((crop.confidence ?? 0) * 100).toFixed(1);
+    const match = t(`match.${crop.confidence_level || (crop.confidence >= 0.5 ? 'strong' : crop.confidence >= 0.2 ? 'moderate' : 'low')}`);
+    return `<tr>
+      <td>${escapeHTML(i18n.crop(crop.name ?? crop.crop) ?? t('common.unknown'))}</td>
+      <td>${conf}% (${match})</td>
+    </tr>`;
+  }).join('');
 
   return `
     <!DOCTYPE html>
-    <html>
+    <html lang="${i18n.meta.code}" dir="${i18n.meta.dir}">
     <head>
       <meta charset="UTF-8">
-      <title>CropSense AI Prediction Report</title>
+      <title>${t('report.title')}</title>
       <style>
         body {
-          font-family: Arial, sans-serif;
+          font-family: Arial, 'Nirmala UI', 'Noto Sans', 'Noto Sans Devanagari', 'Noto Sans Kannada', 'Noto Sans Telugu', 'Noto Sans Tamil', 'Noto Sans Malayalam', 'Noto Sans Bengali', 'Noto Sans Gujarati', 'Noto Sans Gurmukhi', 'Noto Sans Oriya', sans-serif;
           line-height: 1.6;
           color: #333;
           max-width: 800px;
@@ -113,96 +126,96 @@ export const generateReportHTML = (prediction) => {
     </head>
     <body>
       <div class="header">
-        <h1>CropSense AI Prediction Report</h1>
-        <div class="timestamp">Generated on ${formatDate(new Date())}</div>
+        <h1>${t('report.title')}</h1>
+        <div class="timestamp">${t('report.generated', { date: formatDate(new Date()) })}</div>
       </div>
 
       <div class="section">
-        <h2>Location & Soil Information</h2>
+        <h2>${t('report.locSoil')}</h2>
         <div class="info-grid">
           <div class="info-item">
-            <span class="label">Location:</span>
-            <span class="value">${prediction.location ?? 'Unknown'}</span>
+            <span class="label">${t('report.location')}</span>
+            <span class="value">${escapeHTML(prediction.location ?? t('common.unknown'))}</span>
           </div>
           <div class="info-item">
-            <span class="label">Soil Type:</span>
-            <span class="value">${prediction.soil_type ?? 'Unknown'}</span>
+            <span class="label">${t('report.soilType')}</span>
+            <span class="value">${escapeHTML(prediction.soil_type ? i18n.soil(prediction.soil_type) : t('common.unknown'))}</span>
           </div>
           <div class="info-item">
-            <span class="label">Confidence:</span>
+            <span class="label">${t('report.confidence')}</span>
             <span class="value">${((prediction.soil_confidence ?? 0) * 100).toFixed(1)}%</span>
           </div>
           <div class="info-item">
-            <span class="label">Image:</span>
-            <span class="value">${prediction.image_name ?? 'Unknown'}</span>
+            <span class="label">${t('report.image')}</span>
+            <span class="value">${escapeHTML(prediction.image_name ?? t('common.unknown'))}</span>
           </div>
         </div>
       </div>
 
       <div class="section">
-        <h2>Environmental Conditions</h2>
+        <h2>${t('report.env')}</h2>
         <div class="info-grid">
           <div class="info-item">
-            <span class="label">Temperature:</span>
-            <span class="value">${prediction.temperature ?? 'N/A'}°C</span>
+            <span class="label">${t('report.temperature')}</span>
+            <span class="value">${prediction.temperature ?? t('common.na')}°C</span>
           </div>
           <div class="info-item">
-            <span class="label">Humidity:</span>
-            <span class="value">${prediction.humidity ?? 'N/A'}%</span>
+            <span class="label">${t('report.humidity')}</span>
+            <span class="value">${prediction.humidity ?? t('common.na')}%</span>
           </div>
           <div class="info-item">
-            <span class="label">Rainfall:</span>
-            <span class="value">${prediction.rainfall ?? 'N/A'}mm</span>
+            <span class="label">${t('report.rainfall')}</span>
+            <span class="value">${prediction.rainfall ?? t('common.na')}mm</span>
           </div>
           <div class="info-item">
-            <span class="label">pH Level:</span>
-            <span class="value">${prediction.ph ?? 'N/A'}</span>
+            <span class="label">${t('report.ph')}</span>
+            <span class="value">${prediction.ph ?? t('common.na')}</span>
           </div>
           <div class="info-item">
-            <span class="label">Organic Carbon:</span>
-            <span class="value">${prediction.organic_carbon ?? 'N/A'}%</span>
+            <span class="label">${t('report.oc')}</span>
+            <span class="value">${prediction.organic_carbon ?? t('common.na')}%</span>
           </div>
         </div>
       </div>
 
       <div class="section">
-        <h2>Soil Macronutrients (N, P, K)</h2>
+        <h2>${t('report.npkTitle')}</h2>
         <div class="info-grid">
           <div class="info-item">
-            <span class="label">Available Nitrogen (N):</span>
-            <span class="value">${prediction.N ?? 'N/A'} kg/ha</span>
+            <span class="label">${t('report.availN')}</span>
+            <span class="value">${prediction.N ?? t('common.na')} kg/ha</span>
           </div>
           <div class="info-item">
-            <span class="label">Available Phosphorus (P):</span>
-            <span class="value">${prediction.P ?? 'N/A'} kg/ha</span>
+            <span class="label">${t('report.availP')}</span>
+            <span class="value">${prediction.P ?? t('common.na')} kg/ha</span>
           </div>
           <div class="info-item">
-            <span class="label">Available Potassium (K):</span>
-            <span class="value">${prediction.K ?? 'N/A'} kg/ha</span>
+            <span class="label">${t('report.availK')}</span>
+            <span class="value">${prediction.K ?? t('common.na')} kg/ha</span>
           </div>
           <div class="info-item">
-            <span class="label">NPK Source:</span>
+            <span class="label">${t('report.npkSource')}</span>
             <span class="value">${prediction.npk_district ?? 'Karnataka Baseline'} (${(prediction.npk_source_type ?? 'published').replace('_', ' ')})</span>
           </div>
         </div>
         ${prediction.npk_out_of_training_range ? `
         <div style="margin-top: 10px; padding: 8px 12px; background: #fef3c7; border: 1px solid #f59e0b; border-radius: 6px; font-size: 11px; color: #92400e;">
-          <strong>Out-of-Distribution Notice:</strong> ${prediction.ood_warning || 'Soil nutrient inputs exceed empirical training limits; model outputs represent algorithmic extrapolation.'}
+          <strong>${t('report.oodLabel')}</strong> ${escapeHTML((i18n.lang === 'en' && prediction.ood_warning) || t('report.oodDefault'))}
         </div>` : ''}
       </div>
 
       <div class="coordinates">
-        <strong>GPS Coordinates:</strong><br>
-        Latitude: ${(prediction.latitude ?? 0).toFixed(6)}, Longitude: ${(prediction.longitude ?? 0).toFixed(6)}
+        <strong>${t('report.gps')}</strong><br>
+        ${t('report.latitude')}: ${(prediction.latitude ?? 0).toFixed(6)}, ${t('report.longitude')}: ${(prediction.longitude ?? 0).toFixed(6)}
       </div>
 
       <div class="section">
-        <h2>Recommended Crops</h2>
+        <h2>${t('report.crops')}</h2>
         <table class="crops-table">
           <thead>
             <tr>
-              <th>Crop</th>
-              <th>Confidence</th>
+              <th>${t('report.crop')}</th>
+              <th>${t('report.confidenceCol')}</th>
             </tr>
           </thead>
           <tbody>
@@ -212,8 +225,8 @@ export const generateReportHTML = (prediction) => {
       </div>
 
       <div class="footer">
-        <p>This report was generated by CropSense AI - Advanced Soil Analysis & Crop Recommendation System</p>
-        <p>Report ID: ${prediction.id ?? 'Unknown'}</p>
+        <p>${t('report.footer')}</p>
+        <p>${t('report.reportId', { id: escapeHTML(prediction.id ?? t('common.unknown')) })}</p>
       </div>
     </body>
     </html>
@@ -223,9 +236,9 @@ export const generateReportHTML = (prediction) => {
 /**
  * Print the prediction report
  */
-export const printReport = (prediction) => {
+export const printReport = (prediction, i18n) => {
   const printWindow = window.open('', '_blank');
-  const htmlContent = generateReportHTML(prediction);
+  const htmlContent = generateReportHTML(prediction, i18n);
 
   printWindow.document.write(htmlContent);
   printWindow.document.close();
@@ -242,9 +255,9 @@ export const printReport = (prediction) => {
  * Download the prediction report as PDF
  * Note: This uses the browser's print-to-PDF functionality
  */
-export const downloadPDF = (prediction) => {
+export const downloadPDF = (prediction, i18n) => {
   const printWindow = window.open('', '_blank');
-  const htmlContent = generateReportHTML(prediction);
+  const htmlContent = generateReportHTML(prediction, i18n);
 
   printWindow.document.write(htmlContent);
   printWindow.document.close();

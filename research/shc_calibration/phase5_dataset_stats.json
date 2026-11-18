@@ -1,0 +1,34 @@
+{
+  "rows_raw_shc": 6600,
+  "unique_district_years_before": 1320,
+  "rows_after_join_clean": 1100,
+  "rows_lost": 220,
+  "pct_lost": 16.67,
+  "unique_districts": 600,
+  "unique_states": 31,
+  "year_distribution": {
+    "2024-25": 569,
+    "2023-24": 531
+  },
+  "karnataka_observations": 58,
+  "karnataka_districts": 29,
+  "covariates": [
+    "phh2o_0-5cm",
+    "phh2o_0-30cm",
+    "soc_0-5cm",
+    "soc_0-30cm",
+    "nitrogen_0-5cm",
+    "nitrogen_0-30cm",
+    "clay_0-5cm",
+    "clay_0-30cm",
+    "sand_0-5cm",
+    "sand_0-30cm",
+    "cec_0-5cm",
+    "cec_0-30cm"
+  ],
+  "targets": [
+    "N_kg_ha",
+    "P_kg_ha",
+    "K_kg_ha"
+  ]
+}

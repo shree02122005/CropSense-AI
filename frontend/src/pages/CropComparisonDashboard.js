@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronLeft, Sparkles, TrendingUp } from 'lucide-react';
+import { useI18n } from '../i18n/LanguageContext';
 
 const fu = (d = 0) => ({initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 }, transition: { delay: d, duration: 0.55, ease: [0.22, 1, 0.36, 1] }});
 
@@ -16,7 +17,12 @@ function ConfidenceBar({ value }) {
 }
 
 function ComparisonCard({ crop, rank, isBest }) {
-  const conf = Math.round(crop.confidence * 100);
+  const i18n       = useI18n();
+  const { t }      = i18n;
+  const conf       = Math.round(crop.confidence * 100);
+  const matchLabel = t(`match.${crop.confidence_level || (conf >= 50 ? 'strong' : conf >= 20 ? 'moderate' : 'low')}`);
+  const matchColor = conf >= 50 ? '#4ade80' : conf >= 20 ? '#fbbf24' : '#fb923c';
+
   return (
     <motion.div {...fu(rank * 0.05)} whileHover={{y:-6,boxShadow:'0 18px 40px rgba(0,255,100,0.12)'}}
       style={{
@@ -30,26 +36,30 @@ function ComparisonCard({ crop, rank, isBest }) {
       }}
     >
       {isBest && (
-        <div style={{position:'absolute',top:16,right:16,background:'rgba(34,197,94,0.13)',color:'#ecfccb',padding:'6px 10px',borderRadius:999,fontSize:10,fontWeight:700,letterSpacing:'0.04em',textTransform:'uppercase'}}>🏆 BEST MATCH</div>
+        <div style={{position:'absolute',top:16,right:16,background:'rgba(34,197,94,0.13)',color:'#ecfccb',padding:'6px 10px',borderRadius:999,fontSize:10,fontWeight:700,letterSpacing:'0.04em',textTransform:'uppercase'}}>{t('compare.bestMatch')}</div>
       )}
       <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:18}}>
         <div>
-          <div style={{fontSize:10,color:'#6b7280',textTransform:'uppercase',letterSpacing:'0.12em',marginBottom:8}}>Rank {rank}</div>
-          <h3 style={{fontFamily:'var(--font-h)',fontSize:'1.45rem',fontWeight:800,color:'#f0fdf4',margin:0}}>{crop.name}</h3>
+          <div style={{display:'flex',alignItems:'center',gap:6,marginBottom:8}}>
+            <span style={{fontSize:10,color:'#6b7280',textTransform:'uppercase',letterSpacing:'0.12em'}}>{t('compare.rank', { n: rank })}</span>
+            <span style={{fontSize:10,fontWeight:700,color:matchColor}}>• {matchLabel}</span>
+          </div>
+          <h3 style={{fontFamily:'var(--font-h)',fontSize:'1.45rem',fontWeight:800,color:'#f0fdf4',margin:0}}>{i18n.crop(crop.name)}</h3>
         </div>
         <div style={{textAlign:'right'}}>
-          <div style={{fontSize:'1.7rem',fontWeight:800,color:'#4ade80'}}>{conf}%</div>
-          <div style={{fontSize:10,color:'#6b7280',textTransform:'uppercase',letterSpacing:'0.08em'}}>Confidence</div>
+          <div style={{fontSize:'1.7rem',fontWeight:800,color:matchColor}}>{conf}%</div>
+          <div style={{fontSize:10,color:'#6b7280',textTransform:'uppercase',letterSpacing:'0.08em'}}>{t('common.confidenceCap')}</div>
+          <div style={{fontSize:11,fontWeight:700,color:matchColor,marginTop:2}}>{matchLabel}</div>
         </div>
       </div>
 
       <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:14,marginBottom:22}}>
         {[
-          ['Profit', crop.profit],
-          ['Yield', crop.yield],
-          ['Market', crop.price],
-          ['Water', crop.water_need],
-          ['Season', crop.season]
+          [t('compare.profit'), i18n.level(crop.profit)],
+          [t('result.yield'), crop.yield],
+          [t('result.market'), crop.price],
+          [t('result.water'), i18n.level(crop.water_need)],
+          [t('result.season'), i18n.season(crop.season)]
         ].map(([label, value]) => (
           <div key={label} style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.08)',borderRadius:14,padding:14}}>
             <div style={{fontSize:10,color:'#6b7280',textTransform:'uppercase',letterSpacing:'0.06em',marginBottom:6}}>{label}</div>
@@ -59,7 +69,7 @@ function ComparisonCard({ crop, rank, isBest }) {
       </div>
 
       <div style={{display:'flex',alignItems:'center',gap:8,color:'#a7f3d0',fontSize:'0.82rem',fontWeight:700,textTransform:'uppercase',letterSpacing:'0.08em'}}>
-        <TrendingUp size={14}/> {crop.profit} profit outlook
+        <TrendingUp size={14}/> {t('compare.profitOutlook', { level: i18n.level(crop.profit) })}
       </div>
     </motion.div>
   );
@@ -77,6 +87,8 @@ function ComparisonRow({ label, values }) {
 }
 
 export default function CropComparisonDashboard({ result, onBack }) {
+  const i18n = useI18n();
+  const { t } = i18n;
   if (!result || !Array.isArray(result.crops)) return null;
 
   const crops = [...result.crops].sort((a, b) => b.confidence - a.confidence).slice(0, 3);
@@ -89,15 +101,15 @@ export default function CropComparisonDashboard({ result, onBack }) {
           <div>
             <div style={{display:'flex',alignItems:'center',gap:8,marginBottom:10}}>
               <div style={{width:10,height:10,borderRadius:'50%',background:'#4ade80'}} />
-              <span style={{color:'#4ade80',fontSize:'0.8rem',fontWeight:700,letterSpacing:'0.12em',textTransform:'uppercase'}}>Crop Comparison Dashboard</span>
+              <span style={{color:'#4ade80',fontSize:'0.8rem',fontWeight:700,letterSpacing:'0.12em',textTransform:'uppercase'}}>{t('compare.title')}</span>
             </div>
-            <h1 style={{fontFamily:'var(--font-h)',fontSize:'clamp(2rem,3vw,3rem)',fontWeight:800,color:'#f8fafc',margin:0,lineHeight:1.05}}>Crop Comparison Dashboard</h1>
-            <p style={{marginTop:12,color:'#cbd5e1',maxWidth:640,fontSize:'0.98rem',lineHeight:1.75}}>Compare the top recommended crops and choose the best option.</p>
+            <h1 style={{fontFamily:'var(--font-h)',fontSize:'clamp(2rem,3vw,3rem)',fontWeight:800,color:'#f8fafc',margin:0,lineHeight:1.05}}>{t('compare.title')}</h1>
+            <p style={{marginTop:12,color:'#cbd5e1',maxWidth:640,fontSize:'0.98rem',lineHeight:1.75}}>{t('compare.sub')}</p>
           </div>
           <motion.button whileHover={{scale:1.03}} whileTap={{scale:0.97}} onClick={onBack}
             style={{display:'flex',alignItems:'center',gap:8,background:'rgba(15,23,42,0.9)',border:'1px solid rgba(74,222,128,0.18)',borderRadius:12,padding:'12px 18px',color:'#f8fafc',fontSize:'0.9rem',fontWeight:700,cursor:'pointer'}}
           >
-            <ChevronLeft size={16}/> Back to Results
+            <ChevronLeft size={16}/> {t('compare.backToResults')}
           </motion.button>
         </motion.div>
 
@@ -111,16 +123,16 @@ export default function CropComparisonDashboard({ result, onBack }) {
           <div style={{background:'rgba(255,255,255,0.04)',border:'1px solid rgba(255,255,255,0.08)',borderRadius:20,padding:24}}>
             <div style={{display:'flex',alignItems:'center',gap:10,marginBottom:18}}>
               <div style={{width:12,height:12,borderRadius:'50%',background:'#4ade80'}} />
-              <span style={{fontSize:'0.85rem',fontWeight:700,color:'#f8fafc',letterSpacing:'0.08em',textTransform:'uppercase'}}>Comparison Parameters</span>
+              <span style={{fontSize:'0.85rem',fontWeight:700,color:'#f8fafc',letterSpacing:'0.08em',textTransform:'uppercase'}}>{t('compare.params')}</span>
             </div>
             <div style={{background:'rgba(255,255,255,0.02)',border:'1px solid rgba(255,255,255,0.06)',borderRadius:20,overflow:'hidden'}}>
               <div style={{display:'grid',gridTemplateColumns:'1.5fr repeat(3,1fr)',gap:12,padding:'14px 18px',borderBottom:'1px solid rgba(255,255,255,0.08)',fontSize:'0.72rem',textTransform:'uppercase',letterSpacing:'0.12em',color:'#9ca3af'}}>
-                <div>Parameter</div>
-                {crops.map(c => <div key={c.name} style={{textAlign:'center'}}>{c.name}</div>)}
+                <div>{t('compare.parameter')}</div>
+                {crops.map(c => <div key={c.name} style={{textAlign:'center'}}>{i18n.crop(c.name)}</div>)}
               </div>
-              <ComparisonRow label="Confidence Score" values={crops.map(c => `${Math.round(c.confidence*100)}%`)} />
+              <ComparisonRow label={t('compare.confScore')} values={crops.map(c => `${Math.round(c.confidence*100)}%`)} />
               <div style={{padding:'0 18px 14px'}}>
-                <div style={{color:'#9ca3af',fontSize:'0.75rem',marginBottom:10}}>Confidence Progress</div>
+                <div style={{color:'#9ca3af',fontSize:'0.75rem',marginBottom:10}}>{t('compare.confProgress')}</div>
                 <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:12}}>
                   {crops.map(c => <div key={c.name}>
                     <div style={{color:'#f0fdf4',fontSize:'0.78rem',marginBottom:8,textAlign:'center'}}>{Math.round(c.confidence*100)}%</div>
@@ -128,24 +140,24 @@ export default function CropComparisonDashboard({ result, onBack }) {
                   </div>)}
                 </div>
               </div>
-              <ComparisonRow label="Yield" values={crops.map(c => c.yield)} />
-              <ComparisonRow label="Market Price" values={crops.map(c => c.price)} />
-              <ComparisonRow label="Water Requirement" values={crops.map(c => c.water_need)} />
-              <ComparisonRow label="Profit Level" values={crops.map(c => c.profit)} />
+              <ComparisonRow label={t('result.yield')} values={crops.map(c => c.yield)} />
+              <ComparisonRow label={t('compare.marketPrice')} values={crops.map(c => c.price)} />
+              <ComparisonRow label={t('compare.waterReq')} values={crops.map(c => i18n.level(c.water_need))} />
+              <ComparisonRow label={t('compare.profitLevel')} values={crops.map(c => i18n.level(c.profit))} />
             </div>
           </div>
 
           <div style={{background:'rgba(255,255,255,0.04)',border:'1px solid rgba(255,255,255,0.08)',borderRadius:20,padding:24,display:'flex',flexDirection:'column',gap:18}}>
             <div style={{display:'flex',alignItems:'center',gap:10}}>
               <div style={{width:12,height:12,borderRadius:'50%',background:'#4ade80'}} />
-              <span style={{fontSize:'0.85rem',fontWeight:700,color:'#f8fafc',letterSpacing:'0.08em',textTransform:'uppercase'}}>Overall Ranking</span>
+              <span style={{fontSize:'0.85rem',fontWeight:700,color:'#f8fafc',letterSpacing:'0.08em',textTransform:'uppercase'}}>{t('compare.overall')}</span>
             </div>
             <div style={{display:'grid',gap:12}}>
               {crops.map((crop,index) => (
                 <div key={crop.name} style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.08)',borderRadius:16,padding:14,display:'flex',justifyContent:'space-between',alignItems:'center'}}>
                   <div>
-                    <div style={{fontSize:'0.9rem',fontWeight:700,color:'#f0fdf4'}}>{index===0?'🥇':index===1?'🥈':'🥉'} Rank {index+1}</div>
-                    <div style={{color:'#9ca3af',fontSize:'0.78rem'}}>{crop.name}</div>
+                    <div style={{fontSize:'0.9rem',fontWeight:700,color:'#f0fdf4'}}>{index===0?'🥇':index===1?'🥈':'🥉'} {t('compare.rank', { n: index+1 })}</div>
+                    <div style={{color:'#9ca3af',fontSize:'0.78rem'}}>{i18n.crop(crop.name)}</div>
                   </div>
                   <div style={{fontSize:'0.85rem',fontWeight:700,color:'#4ade80'}}>{Math.round(crop.confidence*100)}%</div>
                 </div>
@@ -157,15 +169,15 @@ export default function CropComparisonDashboard({ result, onBack }) {
         <motion.div {...fu(0.2)} style={{background:'rgba(255,255,255,0.04)',border:'1px solid rgba(255,255,255,0.08)',borderRadius:20,padding:24}}>
           <div style={{display:'flex',alignItems:'center',gap:10,marginBottom:16}}>
             <Sparkles size={18} color='#4ade80' />
-            <span style={{fontSize:'0.85rem',fontWeight:700,color:'#f8fafc',letterSpacing:'0.08em',textTransform:'uppercase'}}>Final Recommendation</span>
+            <span style={{fontSize:'0.85rem',fontWeight:700,color:'#f8fafc',letterSpacing:'0.08em',textTransform:'uppercase'}}>{t('compare.final')}</span>
           </div>
-          <h2 style={{fontFamily:'var(--font-h)',fontSize:'1.65rem',fontWeight:800,color:'#f0fdf4',margin:'0 0 10px'}}>Recommended Crop: {bestCrop.name}</h2>
-          <p style={{color:'#cbd5e1',lineHeight:1.75,marginBottom:20}}>Based on the top prediction results, this crop offers the highest confidence, strong market value, and the best alignment with your detected soil and weather conditions.</p>
+          <h2 style={{fontFamily:'var(--font-h)',fontSize:'1.65rem',fontWeight:800,color:'#f0fdf4',margin:'0 0 10px'}}>{t('compare.recommendedCrop', { name: i18n.crop(bestCrop.name) })}</h2>
+          <p style={{color:'#cbd5e1',lineHeight:1.75,marginBottom:20}}>{t('compare.finalText')}</p>
           <ul style={{display:'grid',gap:10,paddingLeft:20,color:'#f8fafc'}}>
-            <li style={{position:'relative',marginBottom:4}}>✓ Highest confidence score</li>
-            <li style={{position:'relative',marginBottom:4}}>✓ Suitable for detected soil type</li>
-            <li style={{position:'relative',marginBottom:4}}>✓ Suitable for current weather conditions</li>
-            <li style={{position:'relative',marginBottom:4}}>✓ Good expected market value</li>
+            <li style={{position:'relative',marginBottom:4}}>{t('compare.b1')}</li>
+            <li style={{position:'relative',marginBottom:4}}>{t('compare.b2')}</li>
+            <li style={{position:'relative',marginBottom:4}}>{t('compare.b3')}</li>
+            <li style={{position:'relative',marginBottom:4}}>{t('compare.b4')}</li>
           </ul>
         </motion.div>
       </div>

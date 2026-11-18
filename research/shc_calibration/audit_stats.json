@@ -1,0 +1,12 @@
+{
+  "total_shc_rows": 6600,
+  "dedup_rows": 1320,
+  "unique_districts": 717,
+  "unique_states": 32,
+  "years": {
+    "2024-25": 3410,
+    "2023-24": 3190
+  },
+  "karnataka_districts": 31,
+  "karnataka_obs": 62
+}

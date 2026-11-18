@@ -1,0 +1,53 @@
+{
+  "files_inspected": [
+    "raw_shc",
+    "npk_tidy",
+    "npk_wide",
+    "district_share"
+  ],
+  "raw_shc_rows": 363080,
+  "npk_wide_rows": 12520,
+  "npk_tidy_rows": 112680,
+  "district_share_rows": 93,
+  "unique_districts": 31,
+  "districts_list": [
+    "Bagalkote",
+    "Ballari",
+    "Belagavi",
+    "Bengaluru Rural",
+    "Bengaluru South",
+    "Bengaluru Urban",
+    "Bidar",
+    "Chamarajanagar",
+    "Chikkaballapura",
+    "Chikkamagaluru",
+    "Chitradurga",
+    "Dakshina Kannada",
+    "Davanagere",
+    "Dharwad",
+    "Gadag",
+    "Hassan",
+    "Haveri",
+    "Kalaburagi",
+    "Kodagu",
+    "Kolar",
+    "Koppal",
+    "Mandya",
+    "Mysuru",
+    "Raichur",
+    "Shivamogga",
+    "Tumakuru",
+    "Udupi",
+    "Uttara Kannada",
+    "Vijayanagara",
+    "Vijayapura",
+    "Yadgir"
+  ],
+  "years": {
+    "2024-25": 7560,
+    "2023-24": 4960
+  },
+  "total_shc_nitrogen_cards": 692142,
+  "total_shc_phosphorus_cards": 692155,
+  "total_shc_potassium_cards": 692162
+}

@@ -3,8 +3,11 @@ import axios from 'axios';
 import { motion } from 'framer-motion';
 import './HistoryPage.css'; // We'll create this CSS file
 import { ArrowLeft } from 'lucide-react';
+import { useI18n } from '../i18n/LanguageContext';
 
 const HistoryPage = ({ onBack }) => {
+  const i18n = useI18n();
+  const { t } = i18n;
   const [history, setHistory] = useState([]);
   const [filteredHistory, setFilteredHistory] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -32,15 +35,15 @@ const HistoryPage = ({ onBack }) => {
       setLoading(false);
     } catch (err) {
       console.error('Failed to load prediction history:', err);
-      let errorMessage = 'Failed to load prediction history';
+      let errorMessage = 'history.loadFailed';
       
       if (err.code === 'NETWORK_ERROR' || err.message.includes('Network Error')) {
-        errorMessage = 'Unable to connect to server. Please check if the backend is running.';
+        errorMessage = 'history.noConnect';
       } else if (err.response) {
         if (err.response.status === 404) {
-          errorMessage = 'History service not available. Please try again later.';
+          errorMessage = 'history.notAvailable';
         } else if (err.response.status >= 500) {
-          errorMessage = 'Server error. Please try again later.';
+          errorMessage = 'history.serverError';
         }
       }
       
@@ -86,27 +89,27 @@ const HistoryPage = ({ onBack }) => {
   };
 
   const deletePrediction = async (id) => {
-    if (!window.confirm('Are you sure you want to delete this prediction?')) return;
+    if (!window.confirm(t('history.confirmDelete'))) return;
 
     try {
       await axios.delete(`http://localhost:8000/history/${id}`);
       setHistory(history.filter(item => item.id !== id));
     } catch (err) {
-      alert('Failed to delete prediction');
+      alert(t('history.deleteFailed'));
     }
   };
 
   const formatDate = (timestamp) => {
-    return new Date(timestamp).toLocaleString();
+    return i18n.formatDate(timestamp);
   };
 
-  const getCropName = (crop) => crop.name || crop.crop || 'Unknown';
+  const getCropName = (crop) => i18n.crop(crop.name || crop.crop) || t('common.unknown');
   const getRankEmoji = (index) => (index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : '•');
 
   if (loading) {
     return (
       <div className="history-page">
-        <div className="loading">Loading prediction history...</div>
+        <div className="loading">{t('history.loading')}</div>
       </div>
     );
   }
@@ -115,7 +118,7 @@ const HistoryPage = ({ onBack }) => {
     return (
       <div className="history-page">
         <div className="error-container">
-          <div className="error">{error}</div>
+          <div className="error">{t(error)}</div>
           <motion.button
             whileHover={{scale: 1.05}}
             whileTap={{scale: 0.95}}
@@ -137,7 +140,7 @@ const HistoryPage = ({ onBack }) => {
               marginTop: '16px'
             }}
           >
-            Try Again
+            {t('history.tryAgain')}
           </motion.button>
         </div>
       </div>
@@ -171,26 +174,26 @@ const HistoryPage = ({ onBack }) => {
             }}
           >
             <ArrowLeft size={16} />
-            Back
+            {t('common.back')}
           </motion.button>
-          <h1>Prediction History</h1>
+          <h1>{t('history.title')}</h1>
         </div>
         {stats && (
           <div className="stats">
             <div className="stat-item">
-              <span className="stat-label">Total Predictions:</span>
+              <span className="stat-label">{t('history.total')}</span>
               <span className="stat-value">{stats.total_predictions ?? 0}</span>
             </div>
             <div className="stat-item">
-              <span className="stat-label">Unique Locations:</span>
+              <span className="stat-label">{t('history.uniqueLoc')}</span>
               <span className="stat-value">{stats.unique_locations ?? 0}</span>
             </div>
             <div className="stat-item">
-              <span className="stat-label">Soil Types:</span>
+              <span className="stat-label">{t('history.soilTypes')}</span>
               <span className="stat-value">{stats.unique_soil_types ?? 0}</span>
             </div>
             <div className="stat-item">
-              <span className="stat-label">Avg Confidence:</span>
+              <span className="stat-label">{t('history.avgConf')}</span>
               <span className="stat-value">{((stats.avg_soil_confidence ?? 0) * 100).toFixed(1)}%</span>
             </div>
           </div>
@@ -201,7 +204,7 @@ const HistoryPage = ({ onBack }) => {
         <div className="filter-group">
           <input
             type="text"
-            placeholder="Search by location..."
+            placeholder={t('history.searchPlaceholder')}
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="search-input"
@@ -213,9 +216,9 @@ const HistoryPage = ({ onBack }) => {
             onChange={(e) => setSoilTypeFilter(e.target.value)}
             className="soil-type-select"
           >
-            <option value="">All Soil Types</option>
+            <option value="">{t('history.allSoils')}</option>
             {soilTypes.map(type => (
-              <option key={type} value={type}>{type}</option>
+              <option key={type} value={type}>{i18n.soil(type)}</option>
             ))}
           </select>
         </div>
@@ -224,7 +227,7 @@ const HistoryPage = ({ onBack }) => {
       <div className="history-list">
         {filteredHistory.length === 0 ? (
           <div className="no-history">
-            {history.length === 0 ? 'No prediction history available yet.' : 'No predictions match your filters'}
+            {history.length === 0 ? t('history.none') : t('history.noMatch')}
           </div>
         ) : (
           filteredHistory.map((prediction) => (
@@ -237,13 +240,13 @@ const HistoryPage = ({ onBack }) => {
             >
               <div className="card-header">
                 <div className="location-time">
-                  <h3>{prediction.location ?? 'Unknown Location'}</h3>
+                  <h3>{prediction.location ?? t('history.unknownLocation')}</h3>
                   <span className="timestamp">{formatDate(prediction.timestamp)}</span>
                 </div>
                 <button
                   className="delete-btn"
                   onClick={() => deletePrediction(prediction.id)}
-                  title="Delete prediction"
+                  title={t('history.deleteTitle')}
                 >
                   ×
                 </button>
@@ -252,45 +255,45 @@ const HistoryPage = ({ onBack }) => {
               <div className="card-content">
                 <div className="soil-info">
                   <div className="soil-type">
-                    <span className="label">Soil Type:</span>
-                    <span className="value">{prediction.soil_type ?? 'Unknown'}</span>
+                    <span className="label">{t('history.soilType')}</span>
+                    <span className="value">{prediction.soil_type ? i18n.soil(prediction.soil_type) : t('common.unknown')}</span>
                   </div>
                   <div className="confidence">
-                    <span className="label">Confidence:</span>
+                    <span className="label">{t('history.confidence')}</span>
                     <span className="value">{((prediction.soil_confidence ?? 0) * 100).toFixed(1)}%</span>
                   </div>
                 </div>
 
                 <div className="conditions">
                   <div className="condition-item">
-                    <span className="label">Temperature:</span>
-                    <span className="value">{prediction.temperature ?? 'N/A'}°C</span>
+                    <span className="label">{t('history.temperature')}</span>
+                    <span className="value">{prediction.temperature ?? t('common.na')}°C</span>
                   </div>
                   <div className="condition-item">
-                    <span className="label">Humidity:</span>
-                    <span className="value">{prediction.humidity ?? 'N/A'}%</span>
+                    <span className="label">{t('history.humidity')}</span>
+                    <span className="value">{prediction.humidity ?? t('common.na')}%</span>
                   </div>
                   <div className="condition-item">
-                    <span className="label">Rainfall:</span>
-                    <span className="value">{prediction.rainfall ?? 'N/A'}mm</span>
+                    <span className="label">{t('history.rainfall')}</span>
+                    <span className="value">{prediction.rainfall ?? t('common.na')}mm</span>
                   </div>
                   <div className="condition-item">
-                    <span className="label">pH:</span>
-                    <span className="value">{prediction.ph ?? 'N/A'}</span>
+                    <span className="label">{t('history.ph')}</span>
+                    <span className="value">{prediction.ph ?? t('common.na')}</span>
                   </div>
                   <div className="condition-item">
-                    <span className="label">Organic Carbon:</span>
-                    <span className="value">{prediction.organic_carbon ?? 'N/A'}%</span>
+                    <span className="label">{t('history.oc')}</span>
+                    <span className="value">{prediction.organic_carbon ?? t('common.na')}%</span>
                   </div>
                 </div>
 
                 <div className="coordinates">
-                  <span className="coord">Lat: {(prediction.latitude ?? 0).toFixed(4)}</span>
-                  <span className="coord">Lng: {(prediction.longitude ?? 0).toFixed(4)}</span>
+                  <span className="coord">{t('history.lat')}: {(prediction.latitude ?? 0).toFixed(4)}</span>
+                  <span className="coord">{t('history.lng')}: {(prediction.longitude ?? 0).toFixed(4)}</span>
                 </div>
 
                 <div className="crops-section">
-                  <h4>Recommended Crops:</h4>
+                  <h4>{t('history.recCrops')}</h4>
                   <div className="crops-list">
                     {((prediction.crops ?? []).slice().sort((a, b) => (b.confidence ?? 0) - (a.confidence ?? 0))).slice(0, 3).map((crop, index) => (
                       <div key={index} className="crop-item">
@@ -299,7 +302,7 @@ const HistoryPage = ({ onBack }) => {
                       </div>
                     ))}
                     {(prediction.crops ?? []).length > 3 && (
-                      <span className="more-crops">+{(prediction.crops ?? []).length - 3} more</span>
+                      <span className="more-crops">{t('history.more', { n: (prediction.crops ?? []).length - 3 })}</span>
                     )}
                   </div>
                 </div>

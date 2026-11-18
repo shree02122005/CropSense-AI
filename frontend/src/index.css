@@ -1,5 +1,7 @@
 /* CropSense AI — Professional Design System & Styles */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+/* Indic scripts (only the scripts actually rendered are downloaded, via unicode-range) */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;800&family=Noto+Sans+Kannada:wght@400;600;700;800&family=Noto+Sans+Telugu:wght@400;600;700;800&family=Noto+Sans+Tamil:wght@400;600;700;800&family=Noto+Sans+Malayalam:wght@400;600;700;800&family=Noto+Sans+Bengali:wght@400;600;700;800&family=Noto+Sans+Gujarati:wght@400;600;700;800&family=Noto+Sans+Gurmukhi:wght@400;600;700;800&family=Noto+Sans+Oriya:wght@400;600;700;800&display=swap');
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -35,8 +37,8 @@
   --border-light: rgba(255, 255, 255, 0.08);
 
   /* Typography tokens */
-  --font-h: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-b: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-h: 'Outfit', 'Noto Sans Devanagari', 'Noto Sans Kannada', 'Noto Sans Telugu', 'Noto Sans Tamil', 'Noto Sans Malayalam', 'Noto Sans Bengali', 'Noto Sans Gujarati', 'Noto Sans Gurmukhi', 'Noto Sans Oriya', 'Nirmala UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-b: 'Plus Jakarta Sans', 'Noto Sans Devanagari', 'Noto Sans Kannada', 'Noto Sans Telugu', 'Noto Sans Tamil', 'Noto Sans Malayalam', 'Noto Sans Bengali', 'Noto Sans Gujarati', 'Noto Sans Gurmukhi', 'Noto Sans Oriya', 'Nirmala UI', -apple-system, BlinkMacSystemFont, sans-serif;
 
   /* Elevation */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
@@ -745,4 +747,21 @@ body {
   .footer-top {
     flex-direction: column;
   }
+}
+
+/* ── Multilingual support ─────────────────────────────────────────────────── */
+/* Indic scripts need extra line height for matras/vowel signs, and letter-spacing
+   or uppercase transforms break conjunct shaping, so neutralise them. */
+html:not([lang="en"]) body { line-height: 1.7; }
+html:not([lang="en"]) h1,
+html:not([lang="en"]) h2,
+html:not([lang="en"]) h3,
+html:not([lang="en"]) h4 { line-height: 1.35; letter-spacing: normal !important; }
+html:not([lang="en"]) * { letter-spacing: normal !important; }
+html:not([lang="en"]) .navbar-links { gap: 20px; }
+html:not([lang="en"]) .nav-link,
+html:not([lang="en"]) .navbar-cta { white-space: nowrap; }
+@media (max-width: 1440px) {
+  html:not([lang="en"]) .navbar-links { display: none; }
+  html:not([lang="en"]) .mobile-menu-toggle { display: block; }
 }

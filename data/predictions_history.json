@@ -1,5 +1,825 @@
 [
   {
+    "id": "2026-11-18T11:49:24.298105",
+    "timestamp": "2026-11-18T11:49:24.298105",
+    "location": "Hadagalli",
+    "latitude": 15.020624,
+    "longitude": 75.9318973,
+    "soil_type": "Clay",
+    "soil_confidence": 0.502,
+    "temperature": 29.0,
+    "humidity": 36.0,
+    "rainfall": 0.0,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Maize",
+        "confidence": 0.244,
+        "raw_model_probability": 0.055,
+        "confidence_level": "moderate",
+        "match_strength": "Moderate match",
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Wheat",
+        "confidence": 0.222,
+        "raw_model_probability": 0.05,
+        "confidence_level": "moderate",
+        "match_strength": "Moderate match",
+        "profit": "High",
+        "yield": "2.5\u20134 tons/ha",
+        "price": "\u20b918\u201322/kg",
+        "season": "Winter",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Coffee",
+        "confidence": 0.156,
+        "raw_model_probability": 0.035,
+        "confidence_level": "low",
+        "match_strength": "Low match",
+        "profit": "Very High",
+        "yield": "1\u20132 tons/ha",
+        "price": "\u20b9150\u2013300/kg",
+        "season": "Annual",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "soil4.jpeg"
+  },
+  {
+    "id": "2026-11-18T11:48:33.596545",
+    "timestamp": "2026-11-18T11:48:33.596545",
+    "location": "Bengaluru",
+    "latitude": 12.933502342811114,
+    "longitude": 77.6924856721318,
+    "soil_type": "Red",
+    "soil_confidence": 0.56,
+    "temperature": 25.7,
+    "humidity": 44.0,
+    "rainfall": 0.0,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Maize",
+        "confidence": 0.568,
+        "raw_model_probability": 0.25,
+        "confidence_level": "strong",
+        "match_strength": "Strong match",
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Cotton",
+        "confidence": 0.125,
+        "raw_model_probability": 0.055,
+        "confidence_level": "low",
+        "match_strength": "Low match",
+        "profit": "High",
+        "yield": "1.5\u20132.5 tons/ha",
+        "price": "\u20b955\u201365/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Chickpea",
+        "confidence": 0.091,
+        "raw_model_probability": 0.04,
+        "confidence_level": "low",
+        "match_strength": "Low match",
+        "profit": "High",
+        "yield": "1\u20131.5 tons/ha",
+        "price": "\u20b950\u201360/kg",
+        "season": "Rabi",
+        "water_need": "Low"
+      }
+    ],
+    "image_name": "soil5.jpeg"
+  },
+  {
+    "id": "2026-11-18T11:26:57.649459",
+    "timestamp": "2026-11-18T11:26:57.649459",
+    "location": "Bengaluru",
+    "latitude": 12.933501915478317,
+    "longitude": 77.69247749503734,
+    "soil_type": "Red",
+    "soil_confidence": 0.56,
+    "temperature": 25.8,
+    "humidity": 44.0,
+    "rainfall": 0.0,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Maize",
+        "confidence": 0.568,
+        "raw_model_probability": 0.25,
+        "confidence_level": "strong",
+        "match_strength": "Strong match",
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Cotton",
+        "confidence": 0.125,
+        "raw_model_probability": 0.055,
+        "confidence_level": "low",
+        "match_strength": "Low match",
+        "profit": "High",
+        "yield": "1.5\u20132.5 tons/ha",
+        "price": "\u20b955\u201365/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Chickpea",
+        "confidence": 0.091,
+        "raw_model_probability": 0.04,
+        "confidence_level": "low",
+        "match_strength": "Low match",
+        "profit": "High",
+        "yield": "1\u20131.5 tons/ha",
+        "price": "\u20b950\u201360/kg",
+        "season": "Rabi",
+        "water_need": "Low"
+      }
+    ],
+    "image_name": "soil5.jpeg"
+  },
+  {
+    "id": "2026-11-17T22:26:56.838470",
+    "timestamp": "2026-11-17T22:26:56.838470",
+    "location": "Bengaluru",
+    "latitude": 13.01542813304721,
+    "longitude": 77.65802000000001,
+    "soil_type": "Black",
+    "soil_confidence": 0.999,
+    "temperature": 20.8,
+    "humidity": 62.0,
+    "rainfall": 0.0,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Maize",
+        "confidence": 0.348,
+        "raw_model_probability": 0.155,
+        "confidence_level": "moderate",
+        "match_strength": "Moderate match",
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Wheat",
+        "confidence": 0.303,
+        "raw_model_probability": 0.135,
+        "confidence_level": "moderate",
+        "match_strength": "Moderate match",
+        "profit": "High",
+        "yield": "2.5\u20134 tons/ha",
+        "price": "\u20b918\u201322/kg",
+        "season": "Winter",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Cotton",
+        "confidence": 0.18,
+        "raw_model_probability": 0.08,
+        "confidence_level": "low",
+        "match_strength": "Low match",
+        "profit": "High",
+        "yield": "1.5\u20132.5 tons/ha",
+        "price": "\u20b955\u201365/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "soil3.jpeg"
+  },
+  {
+    "id": "2026-11-17T22:22:17.933229",
+    "timestamp": "2026-11-17T22:22:17.933229",
+    "location": "Bengaluru",
+    "latitude": 12.9716,
+    "longitude": 77.5946,
+    "soil_type": "Black",
+    "soil_confidence": 0.997,
+    "temperature": 20.8,
+    "humidity": 62.0,
+    "rainfall": 0.0,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Maize",
+        "confidence": 0.348,
+        "raw_model_probability": 0.155,
+        "confidence_level": "moderate",
+        "match_strength": "Moderate match",
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Wheat",
+        "confidence": 0.303,
+        "raw_model_probability": 0.135,
+        "confidence_level": "moderate",
+        "match_strength": "Moderate match",
+        "profit": "High",
+        "yield": "2.5\u20134 tons/ha",
+        "price": "\u20b918\u201322/kg",
+        "season": "Winter",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Cotton",
+        "confidence": 0.18,
+        "raw_model_probability": 0.08,
+        "confidence_level": "low",
+        "match_strength": "Low match",
+        "profit": "High",
+        "yield": "1.5\u20132.5 tons/ha",
+        "price": "\u20b955\u201365/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "test_black_000.jpg"
+  },
+  {
+    "id": "2026-11-17T21:24:19.304973",
+    "timestamp": "2026-11-17T21:24:19.304973",
+    "location": "Bengaluru",
+    "latitude": 13.015442102475435,
+    "longitude": 77.6580267739371,
+    "soil_type": "Clay",
+    "soil_confidence": 0.974,
+    "temperature": 21.5,
+    "humidity": 59.0,
+    "rainfall": 0.0,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Maize",
+        "confidence": 0.372,
+        "raw_model_probability": 0.145,
+        "confidence_level": "moderate",
+        "match_strength": "Moderate match",
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Wheat",
+        "confidence": 0.269,
+        "raw_model_probability": 0.105,
+        "confidence_level": "moderate",
+        "match_strength": "Moderate match",
+        "profit": "High",
+        "yield": "2.5\u20134 tons/ha",
+        "price": "\u20b918\u201322/kg",
+        "season": "Winter",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Cotton",
+        "confidence": 0.141,
+        "raw_model_probability": 0.055,
+        "confidence_level": "low",
+        "match_strength": "Low match",
+        "profit": "High",
+        "yield": "1.5\u20132.5 tons/ha",
+        "price": "\u20b955\u201365/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "soil7.jpeg"
+  },
+  {
+    "id": "2026-11-17T17:22:45.200294",
+    "timestamp": "2026-11-17T17:22:45.200294",
+    "location": "Bengaluru",
+    "latitude": 12.933502790877586,
+    "longitude": 77.69247060880062,
+    "soil_type": "Clay",
+    "soil_confidence": 0.477,
+    "temperature": 27.3,
+    "humidity": 38.0,
+    "rainfall": 0.0,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Maize",
+        "confidence": 0.15,
+        "confidence_level": "low",
+        "match_strength": "Low match",
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Wheat",
+        "confidence": 0.075,
+        "confidence_level": "low",
+        "match_strength": "Low match",
+        "profit": "High",
+        "yield": "2.5\u20134 tons/ha",
+        "price": "\u20b918\u201322/kg",
+        "season": "Winter",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Cotton",
+        "confidence": 0.06,
+        "confidence_level": "low",
+        "match_strength": "Low match",
+        "profit": "High",
+        "yield": "1.5\u20132.5 tons/ha",
+        "price": "\u20b955\u201365/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "soil1.jpeg"
+  },
+  {
+    "id": "2026-11-17T17:20:38.984659",
+    "timestamp": "2026-11-17T17:20:38.984659",
+    "location": "Bengaluru",
+    "latitude": 12.93350235076123,
+    "longitude": 77.69246393568511,
+    "soil_type": "Black",
+    "soil_confidence": 0.664,
+    "temperature": 27.3,
+    "humidity": 38.0,
+    "rainfall": 0.0,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Maize",
+        "confidence": 0.19,
+        "confidence_level": "low",
+        "match_strength": "Low match",
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Wheat",
+        "confidence": 0.1,
+        "confidence_level": "low",
+        "match_strength": "Low match",
+        "profit": "High",
+        "yield": "2.5\u20134 tons/ha",
+        "price": "\u20b918\u201322/kg",
+        "season": "Winter",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Cotton",
+        "confidence": 0.075,
+        "confidence_level": "low",
+        "match_strength": "Low match",
+        "profit": "High",
+        "yield": "1.5\u20132.5 tons/ha",
+        "price": "\u20b955\u201365/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "soil3.jpeg"
+  },
+  {
+    "id": "2026-11-17T16:57:58.789374",
+    "timestamp": "2026-11-17T16:57:58.789374",
+    "location": "Bengaluru",
+    "latitude": 12.933501675118196,
+    "longitude": 77.69245988593813,
+    "soil_type": "Loamy",
+    "soil_confidence": 0.631,
+    "temperature": 27.2,
+    "humidity": 40.0,
+    "rainfall": 0.0,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Maize",
+        "confidence": 0.16,
+        "confidence_level": "low",
+        "match_strength": "Low match",
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Wheat",
+        "confidence": 0.07,
+        "confidence_level": "low",
+        "match_strength": "Low match",
+        "profit": "High",
+        "yield": "2.5\u20134 tons/ha",
+        "price": "\u20b918\u201322/kg",
+        "season": "Winter",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Cotton",
+        "confidence": 0.065,
+        "confidence_level": "low",
+        "match_strength": "Low match",
+        "profit": "High",
+        "yield": "1.5\u20132.5 tons/ha",
+        "price": "\u20b955\u201365/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "soil6.jpeg"
+  },
+  {
+    "id": "2026-11-17T15:00:39.484647",
+    "timestamp": "2026-11-17T15:00:39.484647",
+    "location": "Bengaluru",
+    "latitude": 12.93350157455746,
+    "longitude": 77.69247321567856,
+    "soil_type": "Sandy",
+    "soil_confidence": 0.472,
+    "temperature": 29.0,
+    "humidity": 32.0,
+    "rainfall": 0.0,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Maize",
+        "confidence": 0.17,
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Chickpea",
+        "confidence": 0.04,
+        "profit": "High",
+        "yield": "1\u20131.5 tons/ha",
+        "price": "\u20b950\u201360/kg",
+        "season": "Rabi",
+        "water_need": "Low"
+      },
+      {
+        "name": "Wheat",
+        "confidence": 0.03,
+        "profit": "High",
+        "yield": "2.5\u20134 tons/ha",
+        "price": "\u20b918\u201322/kg",
+        "season": "Winter",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "soil4.jpeg"
+  },
+  {
+    "id": "2026-11-17T13:46:20.001659",
+    "timestamp": "2026-11-17T13:46:20.001659",
+    "location": "Bengaluru",
+    "latitude": 12.933501315893057,
+    "longitude": 77.69246966909273,
+    "soil_type": "Loamy",
+    "soil_confidence": 0.857,
+    "temperature": 28.6,
+    "humidity": 34.0,
+    "rainfall": 0.0,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Grapes",
+        "confidence": 0.3,
+        "profit": "Very High",
+        "yield": "10\u201315 tons/ha",
+        "price": "\u20b940\u2013100/kg",
+        "season": "Annual",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Maize",
+        "confidence": 0.155,
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Muskmelon",
+        "confidence": 0.125,
+        "profit": "High",
+        "yield": "15\u201320 tons/ha",
+        "price": "\u20b910\u201318/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "soil5.jpeg"
+  },
+  {
+    "id": "2026-11-17T13:44:19.033157",
+    "timestamp": "2026-11-17T13:44:19.033157",
+    "location": "Bengaluru",
+    "latitude": 12.93350069652428,
+    "longitude": 77.69247786938443,
+    "soil_type": "Black",
+    "soil_confidence": 0.664,
+    "temperature": 28.6,
+    "humidity": 34.0,
+    "rainfall": 0.0,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Grapes",
+        "confidence": 0.29,
+        "profit": "Very High",
+        "yield": "10\u201315 tons/ha",
+        "price": "\u20b940\u2013100/kg",
+        "season": "Annual",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Maize",
+        "confidence": 0.19,
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Muskmelon",
+        "confidence": 0.105,
+        "profit": "High",
+        "yield": "15\u201320 tons/ha",
+        "price": "\u20b910\u201318/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "soil3.jpeg"
+  },
+  {
+    "id": "2026-10-14T10:33:38.012860",
+    "timestamp": "2026-10-14T10:33:38.012860",
+    "location": "Bengaluru",
+    "latitude": 13.01471423914829,
+    "longitude": 77.6579629175756,
+    "soil_type": "Loamy",
+    "soil_confidence": 0.699,
+    "temperature": 27.4,
+    "humidity": 52.0,
+    "rainfall": 0.0,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Grapes",
+        "confidence": 0.31,
+        "profit": "Very High",
+        "yield": "10\u201315 tons/ha",
+        "price": "\u20b940\u2013100/kg",
+        "season": "Annual",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Maize",
+        "confidence": 0.16,
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Muskmelon",
+        "confidence": 0.11,
+        "profit": "High",
+        "yield": "15\u201320 tons/ha",
+        "price": "\u20b910\u201318/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "soil8.jpeg"
+  },
+  {
+    "id": "2026-10-14T10:33:31.738630",
+    "timestamp": "2026-10-14T10:33:31.738630",
+    "location": "Bengaluru",
+    "latitude": 13.01471423914829,
+    "longitude": 77.6579629175756,
+    "soil_type": "Loamy",
+    "soil_confidence": 0.699,
+    "temperature": 27.4,
+    "humidity": 52.0,
+    "rainfall": 0.0,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Grapes",
+        "confidence": 0.31,
+        "profit": "Very High",
+        "yield": "10\u201315 tons/ha",
+        "price": "\u20b940\u2013100/kg",
+        "season": "Annual",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Maize",
+        "confidence": 0.16,
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Muskmelon",
+        "confidence": 0.11,
+        "profit": "High",
+        "yield": "15\u201320 tons/ha",
+        "price": "\u20b910\u201318/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "soil8.jpeg"
+  },
+  {
+    "id": "2026-10-05T20:38:52.738220",
+    "timestamp": "2026-10-05T20:38:52.738220",
+    "location": "Bengaluru",
+    "latitude": 13.014768667939093,
+    "longitude": 77.65793478670741,
+    "soil_type": "Loamy",
+    "soil_confidence": 0.699,
+    "temperature": 23.4,
+    "humidity": 84.0,
+    "rainfall": 1.6,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Grapes",
+        "confidence": 0.305,
+        "profit": "Very High",
+        "yield": "10\u201315 tons/ha",
+        "price": "\u20b940\u2013100/kg",
+        "season": "Annual",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Muskmelon",
+        "confidence": 0.16,
+        "profit": "High",
+        "yield": "15\u201320 tons/ha",
+        "price": "\u20b910\u201318/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Banana",
+        "confidence": 0.145,
+        "profit": "High",
+        "yield": "20\u201330 tons/ha",
+        "price": "\u20b915\u201325/kg",
+        "season": "Annual",
+        "water_need": "High"
+      }
+    ],
+    "image_name": "soil8.jpeg"
+  },
+  {
+    "id": "2026-10-05T12:33:50.921925",
+    "timestamp": "2026-10-05T12:33:50.921925",
+    "location": "Bengaluru",
+    "latitude": 12.9716,
+    "longitude": 77.5946,
+    "soil_type": "Sandy",
+    "soil_confidence": 0.344,
+    "temperature": 28.6,
+    "humidity": 57.0,
+    "rainfall": 0.2,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Grapes",
+        "confidence": 0.305,
+        "profit": "Very High",
+        "yield": "10\u201315 tons/ha",
+        "price": "\u20b940\u2013100/kg",
+        "season": "Annual",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Muskmelon",
+        "confidence": 0.22,
+        "profit": "High",
+        "yield": "15\u201320 tons/ha",
+        "price": "\u20b910\u201318/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Maize",
+        "confidence": 0.175,
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "demo.jpg"
+  },
+  {
+    "id": "2026-10-01T11:30:52.403860",
+    "timestamp": "2026-10-01T11:30:52.403860",
+    "location": "Bengaluru",
+    "latitude": 12.933333,
+    "longitude": 77.69194200000001,
+    "soil_type": "Loamy",
+    "soil_confidence": 0.857,
+    "temperature": 28.5,
+    "humidity": 63.0,
+    "rainfall": 0.0,
+    "ph": 5.8,
+    "organic_carbon": 2.5,
+    "crops": [
+      {
+        "name": "Grapes",
+        "confidence": 0.31,
+        "profit": "Very High",
+        "yield": "10\u201315 tons/ha",
+        "price": "\u20b940\u2013100/kg",
+        "season": "Annual",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Maize",
+        "confidence": 0.165,
+        "profit": "Medium",
+        "yield": "4\u20136 tons/ha",
+        "price": "\u20b915\u201318/kg",
+        "season": "Kharif",
+        "water_need": "Medium"
+      },
+      {
+        "name": "Muskmelon",
+        "confidence": 0.125,
+        "profit": "High",
+        "yield": "15\u201320 tons/ha",
+        "price": "\u20b910\u201318/kg",
+        "season": "Summer",
+        "water_need": "Medium"
+      }
+    ],
+    "image_name": "soil5.jpeg"
+  },
+  {
     "id": "2026-09-30T15:55:17.090865",
     "timestamp": "2026-09-30T15:55:17.090865",
     "location": "Bengaluru",

@@ -2,19 +2,21 @@ import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import axios from 'axios';
 import { MapPin, Upload, Loader, CheckCircle, AlertCircle, ArrowLeft, Image as Img } from 'lucide-react';
+import { useI18n, translateBackendError } from '../i18n/LanguageContext';
 
 const API = process.env.REACT_APP_API_URL?.replace(/\/+$/, '') || '';
 const PREDICT_ENDPOINT = API ? `${API}/predict` : '/predict';
 
 const STEPS = [
-  { key:'gps',     label:'GPS Coordinates' },
-  { key:'cnn',     label:'CNN Soil Classification' },
-  { key:'weather', label:'Weather API Fetch' },
-  { key:'soil',    label:'SoilGrids API Fetch' },
-  { key:'ml',      label:'ML Crop Prediction' },
+  { key:'gps',     label:'analysis.stepGps' },
+  { key:'cnn',     label:'analysis.stepCnn' },
+  { key:'weather', label:'analysis.stepWeather' },
+  { key:'soil',    label:'analysis.stepSoil' },
+  { key:'ml',      label:'analysis.stepMl' },
 ];
 
 export default function AnalysisPage({ onResult, onBack }) {
+  const { t } = useI18n();
   const [coords,   setCoords]   = useState(null);
   const [file,     setFile]     = useState(null);
   const [preview,  setPreview]  = useState(null);
@@ -58,7 +60,7 @@ export default function AnalysisPage({ onResult, onBack }) {
   // Forward geocoding: convert location name to lat/lon
   const searchLocation = async (name) => {
     if (!name.trim()) {
-      setImageErr('Please enter a location name');
+      setImageErr(t('errors.enterLocation'));
       return;
     }
     setManualLocLoading(true);
@@ -69,7 +71,7 @@ export default function AnalysisPage({ onResult, onBack }) {
         { timeout: 5000 }
       );
       if (!response.data || response.data.length === 0) {
-        setImageErr('Location not found. Please try another name.');
+        setImageErr(t('errors.locationNotFound'));
         setManualLocLoading(false);
         return;
       }
@@ -83,18 +85,18 @@ export default function AnalysisPage({ onResult, onBack }) {
       setShowManual(false);
       setManualLocation('');
     } catch (e) {
-      setImageErr('Failed to search location. Please try again.');
+      setImageErr(t('errors.searchFailed'));
     }
     setManualLocLoading(false);
   };
 
   const detectLoc = () => {
     setLocSt('loading'); setErr('');
-    if (!navigator.geolocation) { setLocSt('error'); setErr('Geolocation not supported.'); return; }
+    if (!navigator.geolocation) { setLocSt('error'); setErr(t('errors.geoUnsupported')); return; }
     
     const timeoutId = setTimeout(() => {
       setLocSt('error'); 
-      setErr('Location detection timed out. Please try manual input or check permissions.');
+      setErr(t('errors.geoTimeout'));
     }, 10000);
     
     navigator.geolocation.getCurrentPosition(
@@ -111,7 +113,7 @@ export default function AnalysisPage({ onResult, onBack }) {
       (error) => { 
         clearTimeout(timeoutId);
         setLocSt('error'); 
-        const msg = error.code === 1 ? 'Location permission denied. Please use manual input.' : 'Location detection failed. Please try manual input.';
+        const msg = error.code === 1 ? t('errors.geoDenied') : t('errors.geoFailed');
         setErr(msg);
       }
     );
@@ -119,13 +121,13 @@ export default function AnalysisPage({ onResult, onBack }) {
 
   const handleFile = f => {
     if (!f) return;
-    if (!['image/jpeg','image/png','image/jpg'].includes(f.type)) { setImageErr('Please upload a JPG or PNG image.'); return; }
+    if (!['image/jpeg','image/png','image/jpg'].includes(f.type)) { setImageErr(t('errors.invalidFile')); return; }
     setFile(f); setPreview(URL.createObjectURL(f)); setImageErr('');
   };
 
   const runAnalysis = async () => {
-    if (!coords) { setErr('Detect your location first.'); return; }
-    if (!file)   { setErr('Upload a soil image first.'); return; }
+    if (!coords) { setErr(t('errors.needLocation')); return; }
+    if (!file)   { setErr(t('errors.needImage')); return; }
     setRunning(true); setErr('');
     setSteps({gps:'idle',cnn:'idle',weather:'idle',soil:'idle',ml:'idle'});
 
@@ -155,16 +157,18 @@ export default function AnalysisPage({ onResult, onBack }) {
       const res = await apiCall;
       setStep('ml','done');
       await delay(400);
-      onResult(res.data);
+      // Keep the analysed coordinates so the chatbot can reuse this location (SoilGrids lookup).
+      onResult({ ...res.data, latitude: coords.lat, longitude: coords.lon, location_name: locationName || res.data.location });
     } catch(e) {
       const raw = e?.response?.data?.message ?? e?.response?.data?.detail ?? e?.message ?? 'Cannot connect to backend. Make sure FastAPI is running on port 8000.';
       const msg = typeof raw === 'string' ? raw : JSON.stringify(raw);
-      // Check for soil image validation error safely
+      // Check for soil image validation error safely (on the original English text)
       const msgLower = msg.toLowerCase();
+      const shown = translateBackendError(msg, t);
       if (msgLower.includes('soil')) {
-        setImageErr(msg);
+        setImageErr(shown);
       } else {
-        setErr(msg);
+        setErr(shown);
       }
       setSteps(s=>Object.fromEntries(Object.entries(s).map(([k,v])=>[k,v==='active'?'error':v])));
     } finally {
@@ -179,43 +183,43 @@ export default function AnalysisPage({ onResult, onBack }) {
       <motion.button initial={{opacity:0}} animate={{opacity:1}} onClick={onBack} disabled={running}
         style={{alignSelf:'flex-start',display:'flex',alignItems:'center',gap:6,background:'rgba(255,255,255,0.05)',border:'1px solid rgba(255,255,255,0.1)',borderRadius:8,padding:'7px 14px',cursor:running?'not-allowed':'pointer',color:'#86efac',fontSize:13,fontFamily:'var(--font-b)',marginBottom:36}}
       >
-        <ArrowLeft size={13}/> Back
+        <ArrowLeft size={13}/> {t('common.back')}
       </motion.button>
 
       <motion.h2 initial={{opacity:0,y:-16}} animate={{opacity:1,y:0}}
         style={{fontFamily:'var(--font-h)',fontSize:'1.9rem',fontWeight:800,letterSpacing:'-0.02em',marginBottom:6,textAlign:'center'}}
-      >Prepare Your Analysis</motion.h2>
-      <p style={{color:'#6b7280',marginBottom:40,textAlign:'center'}}>Detect location & upload a soil image to begin</p>
+      >{t('analysis.title')}</motion.h2>
+      <p style={{color:'#6b7280',marginBottom:40,textAlign:'center'}}>{t('analysis.sub')}</p>
 
       <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(290px,1fr))',gap:18,maxWidth:900,width:'100%'}}>
 
         {/* Location */}
         <Card delay={0.05}>
-          <Row><MapPin size={18} color="#4ade80"/><SectionTitle>Live Location</SectionTitle></Row>
+          <Row><MapPin size={18} color="#4ade80"/><SectionTitle>{t('analysis.liveLocation')}</SectionTitle></Row>
           {coords && (
             <motion.div initial={{opacity:0}} animate={{opacity:1}}
               style={{background:'rgba(74,222,128,0.07)',border:'1px solid rgba(74,222,128,0.2)',borderRadius:10,padding:'10px 14px',marginBottom:14,fontSize:'0.82rem',color:'#86efac',fontFamily:'monospace',lineHeight:1.8}}
             >
               {locationName && <div style={{marginBottom:8,fontSize:'0.9rem',color:'#a3e635',fontFamily:'var(--font-b)'}}>{locationName}</div>}
-              Lat: {coords.lat.toFixed(6)}<br/>Lon: {coords.lon.toFixed(6)}
+              {t('analysis.lat')}: {coords.lat.toFixed(6)}<br/>{t('analysis.lon')}: {coords.lon.toFixed(6)}
             </motion.div>
           )}
           <GreenBtn onClick={detectLoc} disabled={locSt==='loading'} done={locSt==='done'} error={locSt==='error'}>
             {locSt==='loading'&&<Spin/>}{locSt==='done'&&<CheckCircle size={15}/>}{locSt==='idle'&&<MapPin size={15}/>}{locSt==='error'&&<AlertCircle size={15} color="#f87171"/>}
-            {locSt==='loading'?'Detecting…':locSt==='done'?'Location Detected ✓':'Detect My Location'}
+            {locSt==='loading'?t('analysis.detecting'):locSt==='done'?t('analysis.detected'):t('analysis.detect')}
           </GreenBtn>
           <button 
             onClick={() => setShowManual(!showManual)}
             style={{width:'100%',marginTop:10,padding:'8px',borderRadius:8,border:'1px solid rgba(248,188,36,0.3)',background:'rgba(248,188,36,0.05)',color:'#fbbf24',fontSize:'0.8rem',fontWeight:600,cursor:'pointer',fontFamily:'var(--font-b)',transition:'all 0.2s'}}
           >
-            {showManual ? 'Hide Search Location' : 'Search Location →'}
+            {showManual ? t('analysis.hideSearch') : t('analysis.showSearch')}
           </button>
           <AnimatePresence>
             {showManual && (
               <motion.div initial={{opacity:0,height:0}} animate={{opacity:1,height:'auto'}} exit={{opacity:0,height:0}} style={{marginTop:12,display:'flex',flexDirection:'column',gap:8}}>
                 <input 
                   type="text" 
-                  placeholder="Enter location name (e.g., Bengaluru, Delhi)" 
+                  placeholder={t('analysis.searchPlaceholder')} 
                   value={manualLocation} 
                   onChange={e => setManualLocation(e.target.value)}
                   onKeyPress={e => e.key === 'Enter' && searchLocation(manualLocation)}
@@ -227,7 +231,7 @@ export default function AnalysisPage({ onResult, onBack }) {
                   style={{width:'100%',padding:'8px',borderRadius:8,border:'none',background:'linear-gradient(135deg,#4ade80,#16a34a)',color:'#050a05',fontWeight:600,cursor:manualLocLoading?'not-allowed':'pointer',fontFamily:'var(--font-b)',fontSize:'0.85rem',display:'flex',alignItems:'center',justifyContent:'center',gap:6}}
                 >
                   {manualLocLoading && <Spin/>}
-                  {manualLocLoading ? 'Searching…' : 'Search'}
+                  {manualLocLoading ? t('analysis.searching') : t('analysis.search')}
                 </button>
               </motion.div>
             )}
@@ -236,7 +240,7 @@ export default function AnalysisPage({ onResult, onBack }) {
 
         {/* Image upload */}
         <Card delay={0.1}>
-          <Row><Img size={18} color="#4ade80"/><SectionTitle>Soil Image</SectionTitle></Row>
+          <Row><Img size={18} color="#4ade80"/><SectionTitle>{t('analysis.soilImage')}</SectionTitle></Row>
           <div
             onDrop={e=>{e.preventDefault();setDrag(false);handleFile(e.dataTransfer.files[0])}}
             onDragOver={e=>{e.preventDefault();setDrag(true)}}
@@ -246,7 +250,7 @@ export default function AnalysisPage({ onResult, onBack }) {
           >
             {preview
               ? <img src={preview} alt="soil" style={{width:'100%',maxHeight:170,objectFit:'cover',display:'block'}}/>
-              : <div><Upload size={26} color="#4ade80" style={{margin:'0 auto 10px'}}/><p style={{color:'#6b7280',fontSize:'0.82rem'}}>Drag & drop or click<br/><span style={{fontSize:'0.72rem'}}>JPG / PNG</span></p></div>
+              : <div><Upload size={26} color="#4ade80" style={{margin:'0 auto 10px'}}/><p style={{color:'#6b7280',fontSize:'0.82rem'}}>{t('analysis.dragDrop')}<br/><span style={{fontSize:'0.72rem'}}>JPG / PNG</span></p></div>
             }
           </div>
           <input ref={inputRef} type="file" accept="image/jpeg,image/png" style={{display:'none'}} onChange={e=>handleFile(e.target.files[0])}/>
@@ -256,7 +260,7 @@ export default function AnalysisPage({ onResult, onBack }) {
 
         {/* Pipeline */}
         <Card delay={0.15} style={{gridColumn:'1/-1'}}>
-          <SectionTitle style={{marginBottom:16}}>AI Pipeline Status</SectionTitle>
+          <SectionTitle style={{marginBottom:16}}>{t('analysis.pipelineStatus')}</SectionTitle>
           <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))',gap:'4px 24px'}}>
             {STEPS.map((s,i)=>{
               const st = steps[s.key];
@@ -266,7 +270,7 @@ export default function AnalysisPage({ onResult, onBack }) {
                   <div style={{width:28,height:28,borderRadius:'50%',border:`2px solid ${c}`,display:'flex',alignItems:'center',justifyContent:'center',fontSize:12,fontWeight:700,color:c,flexShrink:0,transition:'all 0.3s'}}>
                     {st==='done'?'✓':st==='error'?'✗':i+1}
                   </div>
-                  <span style={{fontSize:'0.85rem',color:c,transition:'color 0.3s'}}>{s.label}</span>
+                  <span style={{fontSize:'0.85rem',color:c,transition:'color 0.3s'}}>{t(s.label)}</span>
                   {st==='active'&&<div style={{marginLeft:'auto',width:14,height:14,border:'2px solid #4ade80',borderTopColor:'transparent',borderRadius:'50%',animation:'spin 0.8s linear infinite'}}/>}
                 </div>
               );
@@ -300,7 +304,7 @@ export default function AnalysisPage({ onResult, onBack }) {
         }}
       >
         {running&&<Spin/>}
-        {running ? 'Analysing your field…' : 'Run Hybrid AI Analysis →'}
+        {running ? t('analysis.analysing') : t('analysis.run')}
       </motion.button>
     </div>
   );

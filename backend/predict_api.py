@@ -160,12 +160,35 @@ def _normalize_soc(raw_soc):
     return None
 
 
+def _normalize_nitrogen(raw_nitrogen):
+    """
+    Normalizes SoilGrids total nitrogen.
+    SoilGrids mapped units: cg/kg (centigrams per kilogram).
+    Conventional units: g/kg (conversion: value / 100.0).
+    Typical topsoil total nitrogen: 0.1 to 15.0 g/kg (or 10 to 1500 cg/kg).
+    """
+    try:
+        value = float(raw_nitrogen)
+    except (TypeError, ValueError):
+        return None
+
+    if 0.1 <= value <= 15.0:
+        return round(value, 2)
+
+    for divisor in (100.0, 10.0, 1000.0):
+        candidate = value / divisor
+        if 0.1 <= candidate <= 15.0:
+            return round(candidate, 2)
+
+    return None
+
+
 # ── SoilGrids ─────────────────────────────────────────────────────────────────
 async def _fetch_soil(lat: float, lon: float):
     try:
         url = (
             "https://rest.isric.org/soilgrids/v2.0/properties/query"
-            f"?lon={lon}&lat={lat}&property=phh2o&property=soc&depth=0-5cm&value=mean"
+            f"?lon={lon}&lat={lat}&property=phh2o&property=soc&property=nitrogen&depth=0-5cm&value=mean"
         )
         async with httpx.AsyncClient(timeout=12) as client:
             r = await client.get(url)
@@ -197,9 +220,11 @@ async def _fetch_soil(lat: float, lon: float):
 
         raw_ph = layers.get("phh2o")
         raw_soc = layers.get("soc")
+        raw_nitrogen = layers.get("nitrogen")
 
         ph_value = _normalize_ph(raw_ph)
         soc_value = _normalize_soc(raw_soc)
+        nitrogen_value = _normalize_nitrogen(raw_nitrogen)
 
         if ph_value is None or not (3.5 <= ph_value <= 9.0):
             ph_value = None
@@ -207,11 +232,20 @@ async def _fetch_soil(lat: float, lon: float):
             soc_value = None
 
         if ph_value is None or soc_value is None:
-            return _soil_fallback(lat, lon, reason="SoilGrids returned null values for depth layer (urban/sealed or unmapped coordinate)")
+            ph_fb, soc_fb, is_fb, reason = _soil_fallback(lat, lon, reason="SoilGrids returned null values for depth layer (urban/sealed or unmapped coordinate)")
+            return ph_fb, soc_fb, is_fb, reason, None, None
 
-        return round(ph_value, 2), round(soc_value, 2), False, "ISRIC SoilGrids 2.0 REST API (0-5cm depth mean)"
+        return (
+            round(ph_value, 2),
+            round(soc_value, 2),
+            False,
+            "ISRIC SoilGrids 2.0 REST API (0-5cm depth mean)",
+            raw_nitrogen,
+            nitrogen_value,
+        )
     except Exception as e:
-        return _soil_fallback(lat, lon, reason=f"SoilGrids request failed/timeout: {type(e).__name__}")
+        ph_fb, soc_fb, is_fb, reason = _soil_fallback(lat, lon, reason=f"SoilGrids request failed/timeout: {type(e).__name__}")
+        return ph_fb, soc_fb, is_fb, reason, None, None
 
 
 def _soil_fallback(lat: float, lon: float, reason: str = "SoilGrids unavailable"):
@@ -279,8 +313,15 @@ def detect_out_of_distribution_features(N: float, P: float, K: float, temp: floa
     }
 
 
+# Excluded fruit and tree crop classes for field-crop recommendation display
+EXCLUDED_CLASSES = {
+    "apple", "banana", "grapes", "mango", "muskmelon", "orange",
+    "papaya", "pomegranate", "watermelon", "coconut"
+}
+
+
 # ── ML prediction ─────────────────────────────────────────────────────────────
-def _predict_crops(N, P, K, temp, humidity, ph, rainfall, soil_type_encoded, latitude=None, longitude=None):
+def _predict_crops(N, P, K, temp, humidity, ph, rainfall, soil_type_encoded, latitude=None, longitude=None, include_fruits: bool = False):
     model = _load_ml_model()
     _verify_ml_model_features(model)
     # Always use the exact 8-feature vector matching training order:
@@ -290,9 +331,20 @@ def _predict_crops(N, P, K, temp, humidity, ph, rainfall, soil_type_encoded, lat
 
     proba = model.predict_proba(feat)[0]
 
-    # Pure model inference: no artificial multipliers, diversity boosts, or heuristics
-    top3 = np.argsort(proba)[::-1][:3]
-    return [(model.classes_[i], float(proba[i])) for i in top3]
+    # The model scores all 23 classes. When fruit/tree crops are hidden from the
+    # recommendation, the displayed confidence is the conditional probability
+    # P(crop | crop is an eligible field crop) = p_i / sum(p_eligible).
+    # Otherwise probability mass assigned to never-shown fruit classes would
+    # silently deflate every visible score. No multipliers or heuristics are
+    # applied; the raw model probability is returned alongside for transparency.
+    eligible = np.array([
+        include_fruits or c.lower() not in EXCLUDED_CLASSES for c in model.classes_
+    ])
+    eligible_mass = float(proba[eligible].sum())
+    cond = np.where(eligible, proba, 0.0) / eligible_mass if eligible_mass > 0 else proba
+
+    top_indices = np.argsort(cond)[::-1][:3]
+    return [(model.classes_[i], float(cond[i]), float(proba[i])) for i in top_indices]
 
 
 
@@ -308,7 +360,7 @@ def _validate_soil_image(soil_type: str, soil_conf: float, min_confidence: float
 
 
 # ── Main predict function ─────────────────────────────────────────────────────
-async def predict_crop(image_bytes: bytes, latitude: float, longitude: float) -> dict:
+async def predict_crop(image_bytes: bytes, latitude: float, longitude: float, include_fruits: bool = False) -> dict:
     # Step 1: soil type
     soil_type, soil_conf = predict_soil_from_bytes(image_bytes)
     
@@ -317,10 +369,13 @@ async def predict_crop(image_bytes: bytes, latitude: float, longitude: float) ->
         raise ValueError(f"Please upload a valid soil image. Detected: {soil_type} (confidence: {soil_conf:.1%})")
 
     # Step 2 & 3: weather + soil data (run concurrently)
-    (temp, humidity, rainfall, location), (ph, organic_carbon, ph_is_fallback, ph_source) = await asyncio.gather(
+    (temp, humidity, rainfall, location), soil_data = await asyncio.gather(
         _fetch_weather(latitude, longitude),
         _fetch_soil(latitude, longitude),
     )
+    ph, organic_carbon, ph_is_fallback, ph_source = soil_data[0], soil_data[1], soil_data[2], soil_data[3]
+    raw_soil_nitrogen = soil_data[4] if len(soil_data) > 4 else None
+    converted_soil_nitrogen = soil_data[5] if len(soil_data) > 5 else None
 
     # Step 4: Soil Nutrient Reference Profile (NPK) lookup
     try:
@@ -354,17 +409,35 @@ async def predict_crop(image_bytes: bytes, latitude: float, longitude: float) ->
     # Pass actual raw N, P, K into prediction without artificial manipulation
     top_crops = _predict_crops(
         N, P, K, temp, humidity, ph, rainfall,
-        soil_type_encoded, latitude, longitude
+        soil_type_encoded, latitude, longitude,
+        include_fruits=include_fruits
     )
 
     crops = []
-    for name, confidence in top_crops:
+    for name, confidence, raw_probability in top_crops:
         info = crop_info(name)
+        conf_val = round(confidence, 3)
+        if conf_val >= 0.50:
+            conf_level = "strong"
+            match_str = "Strong match"
+        elif conf_val >= 0.20:
+            conf_level = "moderate"
+            match_str = "Moderate match"
+        else:
+            conf_level = "low"
+            match_str = "Low match"
+
         crops.append({
-            "name":       name.title(),
-            "confidence": round(confidence, 3),
+            "name":             name.title(),
+            "confidence":       conf_val,
+            "raw_model_probability": round(raw_probability, 3),
+            "confidence_level": conf_level,
+            "match_strength":   match_str,
             **info,
         })
+
+    top_confidence_level = crops[0]["confidence_level"] if crops else "low"
+    is_low_confidence = (crops[0]["confidence"] < 0.20) if crops else True
 
     return {
         "location":                  location,
@@ -378,6 +451,8 @@ async def predict_crop(image_bytes: bytes, latitude: float, longitude: float) ->
         "ph_is_fallback":            ph_is_fallback,
         "ph_source":                 ph_source,
         "organic_carbon":            round(organic_carbon, 2),
+        "soilgrids_nitrogen_raw":    raw_soil_nitrogen,
+        "soilgrids_nitrogen_gkg":    converted_soil_nitrogen,
         "N":                         round(N, 1),
         "P":                         round(P, 1),
         "K":                         round(K, 1),
@@ -393,5 +468,7 @@ async def predict_crop(image_bytes: bytes, latitude: float, longitude: float) ->
         "training_ranges":           ood_info["training_ranges"],
         "feature_vector":            [round(N, 1), round(P, 1), round(K, 1), round(temp, 1), round(humidity, 1), round(ph, 2), round(rainfall, 1), soil_type_encoded],
         "crops":                     crops,
+        "top_confidence_level":      top_confidence_level,
+        "is_low_confidence":         is_low_confidence,
     }
 

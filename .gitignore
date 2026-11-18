@@ -55,3 +55,11 @@ temp/
 
 # Note: Models (models/) and Datasets (datasets/, data/) are deliberately TRACKED.
 # All model files are < 15 MB, well within GitHub's standard 100 MB file limit.
+
+# RAG chatbot: generated artefacts (rebuilt automatically)
+backend/rag/index/
+backend/data/soilgrids_cache.json
+
+.cache/
+models/backup_before_retrain/
+.env

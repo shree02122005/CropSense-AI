@@ -1,0 +1,73 @@
+{
+  "num_classes": 23,
+  "classes": [
+    "apple",
+    "banana",
+    "blackgram",
+    "chickpea",
+    "coconut",
+    "coffee",
+    "cotton",
+    "grapes",
+    "jute",
+    "kidneybeans",
+    "lentil",
+    "maize",
+    "mango",
+    "mothbeans",
+    "mungbean",
+    "muskmelon",
+    "orange",
+    "papaya",
+    "pigeonpeas",
+    "pomegranate",
+    "rice",
+    "watermelon",
+    "wheat"
+  ],
+  "num_fruits": 9,
+  "fruits": [
+    "apple",
+    "banana",
+    "grapes",
+    "mango",
+    "muskmelon",
+    "orange",
+    "papaya",
+    "pomegranate",
+    "watermelon"
+  ],
+  "num_cereals": 3,
+  "cereals": [
+    "maize",
+    "rice",
+    "wheat"
+  ],
+  "num_pulses": 7,
+  "pulses": [
+    "blackgram",
+    "chickpea",
+    "kidneybeans",
+    "lentil",
+    "mothbeans",
+    "mungbean",
+    "pigeonpeas"
+  ],
+  "num_commercial": 4,
+  "commercial": [
+    "coconut",
+    "coffee",
+    "cotton",
+    "jute"
+  ],
+  "num_vegetables": 0,
+  "num_flowers": 0,
+  "most_predicted_crop": "apple",
+  "most_predicted_count": 11,
+  "most_predicted_pct": 4.78,
+  "distinct_crops_predicted": 23,
+  "grapes_test_pct": 3.91304347826087,
+  "grapes_test_count": 9,
+  "grapes_rank": 19,
+  "test_accuracy": 0.9304347826086956
+}

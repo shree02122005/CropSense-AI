@@ -19,9 +19,12 @@ import {
   ShieldCheck,
   ChevronRight
 } from 'lucide-react';
+import { useI18n } from '../i18n/LanguageContext';
+import LanguageSwitcher from '../i18n/LanguageSwitcher';
 
 export default function HeroPage({ onStart, onHistory }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t, crop, level, soil } = useI18n();
 
   const scrollToSection = (id) => {
     setMobileMenuOpen(false);
@@ -32,64 +35,64 @@ export default function HeroPage({ onStart, onHistory }) {
   };
 
   const stats = [
-    { value: '23', label: 'Crop Types' },
-    { value: '93.04%', label: 'Accuracy' },
-    { value: '93.22%', label: 'Precision' },
-    { value: '93.04%', label: 'Recall' },
-    { value: '93.00%', label: 'F1 Score' },
-    { value: 'CNN + RF', label: 'Model Pipeline' }
+    { value: '23', label: t('stats.cropTypes') },
+    { value: '93.04%', label: t('stats.accuracy') },
+    { value: '93.22%', label: t('stats.precision') },
+    { value: '93.04%', label: t('stats.recall') },
+    { value: '93.00%', label: t('stats.f1') },
+    { value: 'CNN + RF', label: t('stats.pipeline') }
   ];
 
   const steps = [
     {
       num: '01',
-      title: 'Upload Soil Photo',
-      desc: 'Upload a clear, focused photograph of your surface soil sample.',
-      detail: 'Supports standard JPG/PNG images of black, clay, loamy, red, or sandy soil.',
+      title: t('how.s1Title'),
+      desc: t('how.s1Desc'),
+      detail: t('how.s1Detail'),
       icon: <UploadCloud size={22} />
     },
     {
       num: '02',
-      title: 'Analyze with Soil CNN',
-      desc: 'The MobileNetV2 deep learning classifier detects the soil class.',
-      detail: 'Evaluates color gradients and morphological soil aggregate textures.',
+      title: t('how.s2Title'),
+      desc: t('how.s2Desc'),
+      detail: t('how.s2Detail'),
       icon: <Cpu size={22} />
     },
     {
       num: '03',
-      title: 'Combine Telemetry',
-      desc: 'Location, live weather, SoilGrids pH, and NPK profiles are unified.',
-      detail: 'Haversine distance matching against published ICAR and UAS university research.',
+      title: t('how.s3Title'),
+      desc: t('how.s3Desc'),
+      detail: t('how.s3Detail'),
       icon: <Layers size={22} />
     },
     {
       num: '04',
-      title: 'Predict Crops',
-      desc: 'The 200-tree Random Forest predicts the top-ranked suitable crops.',
-      detail: 'Generates probability rankings alongside market prices, profit ratings, and water needs.',
+      title: t('how.s4Title'),
+      desc: t('how.s4Desc'),
+      detail: t('how.s4Detail'),
       icon: <TrendingUp size={22} />
     }
   ];
 
   const features = [
     {
-      title: 'Soil Intelligence',
-      desc: 'Convolutional neural network trained on authentic field photography to identify 5 core agronomic soil types with non-soil rejection filters.',
+      title: t('features.f1Title'),
+      desc: t('features.f1Desc'),
       icon: <Sparkles size={24} />
     },
     {
-      title: 'Location Aware',
-      desc: 'GPS coordinate matching references published agricultural university soil fertility surveys across Karnataka districts for genuine nutrient profiles.',
+      title: t('features.f2Title'),
+      desc: t('features.f2Desc'),
       icon: <MapPin size={24} />
     },
     {
-      title: 'Environmental Telemetry',
-      desc: 'Pulls real-time temperature, atmospheric humidity, and rainfall from OpenWeather combined with surface depth pH from ISRIC SoilGrids 2.0.',
+      title: t('features.f3Title'),
+      desc: t('features.f3Desc'),
       icon: <Thermometer size={24} />
     },
     {
-      title: 'Actionable Crop Insights',
-      desc: 'Machine learning ensemble outputs ranked candidate crops accompanied by indicative yield ranges, seasonal planting windows, and commercial market rates.',
+      title: t('features.f4Title'),
+      desc: t('features.f4Desc'),
       icon: <Activity size={24} />
     }
   ];
@@ -108,23 +111,24 @@ export default function HeroPage({ onStart, onHistory }) {
           </div>
 
           <ul className="navbar-links">
-            <li><button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="nav-link">Home</button></li>
-            <li><button onClick={() => scrollToSection('how-it-works')} className="nav-link">How It Works</button></li>
-            <li><button onClick={() => scrollToSection('features')} className="nav-link">Features</button></li>
-            <li><button onClick={() => scrollToSection('preview')} className="nav-link">Preview</button></li>
+            <li><button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="nav-link">{t('nav.home')}</button></li>
+            <li><button onClick={() => scrollToSection('how-it-works')} className="nav-link">{t('nav.howItWorks')}</button></li>
+            <li><button onClick={() => scrollToSection('features')} className="nav-link">{t('nav.features')}</button></li>
+            <li><button onClick={() => scrollToSection('preview')} className="nav-link">{t('nav.preview')}</button></li>
             {onHistory && (
-              <li><button onClick={onHistory} className="nav-link">History</button></li>
+              <li><button onClick={onHistory} className="nav-link">{t('nav.history')}</button></li>
             )}
           </ul>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+            <LanguageSwitcher />
             <button onClick={onStart} className="navbar-cta">
-              Start Analysis <ArrowRight size={15} />
+              {t('nav.startAnalysis')} <ArrowRight size={15} />
             </button>
             <button 
               className="mobile-menu-toggle" 
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle navigation menu"
+              aria-label={t('nav.toggleMenu')}
             >
               {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
@@ -140,15 +144,15 @@ export default function HeroPage({ onStart, onHistory }) {
               exit={{ opacity: 0, height: 0 }}
               className="mobile-drawer"
             >
-              <button onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); setMobileMenuOpen(false); }} className="nav-link" style={{ textAlign: 'left' }}>Home</button>
-              <button onClick={() => scrollToSection('how-it-works')} className="nav-link" style={{ textAlign: 'left' }}>How It Works</button>
-              <button onClick={() => scrollToSection('features')} className="nav-link" style={{ textAlign: 'left' }}>Features</button>
-              <button onClick={() => scrollToSection('preview')} className="nav-link" style={{ textAlign: 'left' }}>Preview</button>
+              <button onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); setMobileMenuOpen(false); }} className="nav-link" style={{ textAlign: 'left' }}>{t('nav.home')}</button>
+              <button onClick={() => scrollToSection('how-it-works')} className="nav-link" style={{ textAlign: 'left' }}>{t('nav.howItWorks')}</button>
+              <button onClick={() => scrollToSection('features')} className="nav-link" style={{ textAlign: 'left' }}>{t('nav.features')}</button>
+              <button onClick={() => scrollToSection('preview')} className="nav-link" style={{ textAlign: 'left' }}>{t('nav.preview')}</button>
               {onHistory && (
-                <button onClick={() => { onHistory(); setMobileMenuOpen(false); }} className="nav-link" style={{ textAlign: 'left' }}>Query History</button>
+                <button onClick={() => { onHistory(); setMobileMenuOpen(false); }} className="nav-link" style={{ textAlign: 'left' }}>{t('nav.queryHistory')}</button>
               )}
               <button onClick={() => { onStart(); setMobileMenuOpen(false); }} className="btn-primary" style={{ marginTop: 12, justifyContent: 'center' }}>
-                Start Analysis <ArrowRight size={16} />
+                {t('nav.startAnalysis')} <ArrowRight size={16} />
               </button>
             </motion.div>
           )}
@@ -166,7 +170,7 @@ export default function HeroPage({ onStart, onHistory }) {
             className="hero-eyebrow"
           >
             <Sprout size={13} />
-            <span>AI-Powered Agriculture</span>
+            <span>{t('hero.eyebrow')}</span>
           </motion.div>
 
           <motion.h1 
@@ -175,8 +179,8 @@ export default function HeroPage({ onStart, onHistory }) {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="hero-title"
           >
-            Smarter Crops. <br />
-            <span className="hero-title-highlight">Better Decisions.</span>
+            {t('hero.title1')} <br />
+            <span className="hero-title-highlight">{t('hero.title2')}</span>
           </motion.h1>
 
           <motion.p 
@@ -185,7 +189,7 @@ export default function HeroPage({ onStart, onHistory }) {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="hero-description"
           >
-            Analyze soil and environmental conditions to discover suitable crops for your location.
+            {t('hero.desc')}
           </motion.p>
 
           <motion.div 
@@ -195,10 +199,10 @@ export default function HeroPage({ onStart, onHistory }) {
             className="hero-button-group"
           >
             <button onClick={onStart} className="btn-primary">
-              Start Analysis <ArrowRight size={17} />
+              {t('nav.startAnalysis')} <ArrowRight size={17} />
             </button>
             <button onClick={() => scrollToSection('how-it-works')} className="btn-secondary">
-              Explore How It Works <ArrowDown size={16} />
+              {t('hero.explore')} <ArrowDown size={16} />
             </button>
           </motion.div>
         </div>
@@ -223,7 +227,7 @@ export default function HeroPage({ onStart, onHistory }) {
             ))}
           </div>
           <p className="stats-footnote">
-            Holdout evaluation metrics on benchmark test split. Predictions on field data reflect live soil and atmospheric conditions.
+            {t('stats.footnote')}
           </p>
         </div>
       </section>
@@ -231,10 +235,10 @@ export default function HeroPage({ onStart, onHistory }) {
       {/* ── 4. How It Works Section ─────────────────────────────────────────── */}
       <section className="content-section" id="how-it-works">
         <div className="section-header">
-          <span className="section-eyebrow">Methodology</span>
-          <h2 className="section-headline">HOW CROPSENSE AI WORKS</h2>
+          <span className="section-eyebrow">{t('how.eyebrow')}</span>
+          <h2 className="section-headline">{t('how.headline')}</h2>
           <p className="section-subtext">
-            From soil image to crop insights in a simple analysis.
+            {t('how.sub')}
           </p>
         </div>
 
@@ -265,10 +269,10 @@ export default function HeroPage({ onStart, onHistory }) {
       {/* ── 5. Features Section ─────────────────────────────────────────────── */}
       <section className="content-section" id="features" style={{ paddingTop: 0 }}>
         <div className="section-header">
-          <span className="section-eyebrow">System Capabilities</span>
-          <h2 className="section-headline">Built for Smarter Crop Analysis</h2>
+          <span className="section-eyebrow">{t('features.eyebrow')}</span>
+          <h2 className="section-headline">{t('features.headline')}</h2>
           <p className="section-subtext">
-            Enterprise-grade artificial intelligence engineered for practical agronomic decision support.
+            {t('features.sub')}
           </p>
         </div>
 
@@ -295,10 +299,10 @@ export default function HeroPage({ onStart, onHistory }) {
       {/* ── 6. Interactive Analysis Preview ─────────────────────────────────── */}
       <section className="content-section" id="preview" style={{ paddingTop: 0 }}>
         <div className="section-header">
-          <span className="section-eyebrow">Telemetry Preview</span>
-          <h2 className="section-headline">Comprehensive Output Structure</h2>
+          <span className="section-eyebrow">{t('preview.eyebrow')}</span>
+          <h2 className="section-headline">{t('preview.headline')}</h2>
           <p className="section-subtext">
-            Illustrative sample demonstrating the multi-dimensional environmental and agricultural report generated by CropSense AI.
+            {t('preview.sub')}
           </p>
         </div>
 
@@ -311,43 +315,43 @@ export default function HeroPage({ onStart, onHistory }) {
           <div className="preview-badge-header">
             <div>
               <span style={{ fontSize: '0.8rem', color: 'var(--green-primary)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-                Field Analysis Sample (Belagavi District)
+                {t('preview.sampleTitle')}
               </span>
               <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginTop: 2 }}>
-                Location: 15.8497°N, 74.4977°E • Detected Soil: Clay / Medium Black
+                {t('preview.sampleLocation', { coords: '15.8497°N, 74.4977°E' })}
               </div>
             </div>
-            <span className="preview-tag">Illustrative Preview</span>
+            <span className="preview-tag">{t('preview.tag')}</span>
           </div>
 
           {/* Environmental factors grid */}
           <div className="preview-metrics-grid">
             <div className="preview-metric-box">
-              <div className="preview-metric-label">Soil Type</div>
-              <div className="preview-metric-val" style={{ color: 'var(--green-primary)' }}>Clay</div>
+              <div className="preview-metric-label">{t('result.soilType')}</div>
+              <div className="preview-metric-val" style={{ color: 'var(--green-primary)' }}>{soil('clay')}</div>
             </div>
             <div className="preview-metric-box">
-              <div className="preview-metric-label">Available N</div>
+              <div className="preview-metric-label">{t('preview.availN')}</div>
               <div className="preview-metric-val">249.7 <span style={{ fontSize: '0.75rem', color: 'var(--text-dim)' }}>kg/ha</span></div>
             </div>
             <div className="preview-metric-box">
-              <div className="preview-metric-label">Available P</div>
+              <div className="preview-metric-label">{t('preview.availP')}</div>
               <div className="preview-metric-val">46.8 <span style={{ fontSize: '0.75rem', color: 'var(--text-dim)' }}>kg/ha</span></div>
             </div>
             <div className="preview-metric-box">
-              <div className="preview-metric-label">Available K</div>
+              <div className="preview-metric-label">{t('preview.availK')}</div>
               <div className="preview-metric-val">180.4 <span style={{ fontSize: '0.75rem', color: 'var(--text-dim)' }}>kg/ha</span></div>
             </div>
             <div className="preview-metric-box">
-              <div className="preview-metric-label">Temperature</div>
+              <div className="preview-metric-label">{t('result.temperature')}</div>
               <div className="preview-metric-val">29.5°C</div>
             </div>
             <div className="preview-metric-box">
-              <div className="preview-metric-label">Humidity</div>
+              <div className="preview-metric-label">{t('result.humidity')}</div>
               <div className="preview-metric-val">58%</div>
             </div>
             <div className="preview-metric-box">
-              <div className="preview-metric-label">Soil pH</div>
+              <div className="preview-metric-label">{t('result.soilPh')}</div>
               <div className="preview-metric-val">5.8</div>
             </div>
           </div>
@@ -355,58 +359,58 @@ export default function HeroPage({ onStart, onHistory }) {
           {/* Recommended crops sample */}
           <div style={{ marginBottom: 12, fontWeight: 700, fontSize: '0.95rem', color: 'var(--text-main)', display: 'flex', alignItems: 'center', gap: 8 }}>
             <TrendingUp size={16} color="var(--green-primary)" />
-            <span>Top Crop Insights (Example Output)</span>
+            <span>{t('preview.topInsights')}</span>
           </div>
 
           <div className="preview-crops-grid">
             <div className="preview-crop-card highlight">
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 10 }}>
                 <div>
-                  <h4 style={{ fontFamily: 'var(--font-h)', fontSize: '1.2rem', fontWeight: 800 }}>Grapes</h4>
-                  <span style={{ fontSize: '0.75rem', color: 'var(--green-primary)', fontWeight: 700 }}>Rank #1 Recommendation</span>
+                  <h4 style={{ fontFamily: 'var(--font-h)', fontSize: '1.2rem', fontWeight: 800 }}>{crop('grapes')}</h4>
+                  <span style={{ fontSize: '0.75rem', color: 'var(--green-primary)', fontWeight: 700 }}>{t('preview.rank', { n: 1 })}</span>
                 </div>
                 <div style={{ textAlign: 'right' }}>
                   <span style={{ fontFamily: 'var(--font-h)', fontSize: '1.4rem', fontWeight: 800, color: 'var(--green-primary)' }}>31%</span>
-                  <div style={{ fontSize: '0.7rem', color: 'var(--text-dim)' }}>confidence</div>
+                  <div style={{ fontSize: '0.7rem', color: 'var(--text-dim)' }}>{t('common.confidence')}</div>
                 </div>
               </div>
               <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', display: 'flex', gap: 12 }}>
-                <span>Profit: <strong>Very High</strong></span>
-                <span>Water: <strong>Medium</strong></span>
+                <span>{t('preview.profit')}: <strong>{level('Very High')}</strong></span>
+                <span>{t('preview.water')}: <strong>{level('Medium')}</strong></span>
               </div>
             </div>
 
             <div className="preview-crop-card">
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 10 }}>
                 <div>
-                  <h4 style={{ fontFamily: 'var(--font-h)', fontSize: '1.2rem', fontWeight: 800 }}>Maize</h4>
-                  <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Rank #2 Recommendation</span>
+                  <h4 style={{ fontFamily: 'var(--font-h)', fontSize: '1.2rem', fontWeight: 800 }}>{crop('maize')}</h4>
+                  <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{t('preview.rank', { n: 2 })}</span>
                 </div>
                 <div style={{ textAlign: 'right' }}>
                   <span style={{ fontFamily: 'var(--font-h)', fontSize: '1.4rem', fontWeight: 800 }}>16%</span>
-                  <div style={{ fontSize: '0.7rem', color: 'var(--text-dim)' }}>confidence</div>
+                  <div style={{ fontSize: '0.7rem', color: 'var(--text-dim)' }}>{t('common.confidence')}</div>
                 </div>
               </div>
               <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', display: 'flex', gap: 12 }}>
-                <span>Profit: <strong>Medium</strong></span>
-                <span>Water: <strong>Medium</strong></span>
+                <span>{t('preview.profit')}: <strong>{level('Medium')}</strong></span>
+                <span>{t('preview.water')}: <strong>{level('Medium')}</strong></span>
               </div>
             </div>
 
             <div className="preview-crop-card">
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 10 }}>
                 <div>
-                  <h4 style={{ fontFamily: 'var(--font-h)', fontSize: '1.2rem', fontWeight: 800 }}>Muskmelon</h4>
-                  <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Rank #3 Recommendation</span>
+                  <h4 style={{ fontFamily: 'var(--font-h)', fontSize: '1.2rem', fontWeight: 800 }}>{crop('muskmelon')}</h4>
+                  <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{t('preview.rank', { n: 3 })}</span>
                 </div>
                 <div style={{ textAlign: 'right' }}>
                   <span style={{ fontFamily: 'var(--font-h)', fontSize: '1.4rem', fontWeight: 800 }}>12%</span>
-                  <div style={{ fontSize: '0.7rem', color: 'var(--text-dim)' }}>confidence</div>
+                  <div style={{ fontSize: '0.7rem', color: 'var(--text-dim)' }}>{t('common.confidence')}</div>
                 </div>
               </div>
               <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', display: 'flex', gap: 12 }}>
-                <span>Profit: <strong>High</strong></span>
-                <span>Water: <strong>Medium</strong></span>
+                <span>{t('preview.profit')}: <strong>{level('High')}</strong></span>
+                <span>{t('preview.water')}: <strong>{level('Medium')}</strong></span>
               </div>
             </div>
           </div>
@@ -416,12 +420,12 @@ export default function HeroPage({ onStart, onHistory }) {
       {/* ── 7. Final Call to Action ─────────────────────────────────────────── */}
       <section className="content-section" style={{ paddingTop: 0 }}>
         <div className="cta-banner-wrapper">
-          <h2 className="cta-banner-title">Ready to analyze your soil?</h2>
+          <h2 className="cta-banner-title">{t('cta.title')}</h2>
           <p className="cta-banner-text">
-            Start an analysis and explore crop insights based on your soil and environmental conditions.
+            {t('cta.text')}
           </p>
           <button onClick={onStart} className="btn-primary" style={{ padding: '16px 40px', fontSize: '1.05rem' }}>
-            Start Analysis <ArrowRight size={18} />
+            {t('nav.startAnalysis')} <ArrowRight size={18} />
           </button>
         </div>
       </section>
@@ -438,20 +442,20 @@ export default function HeroPage({ onStart, onHistory }) {
                 <span>CropSense AI</span>
               </div>
               <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
-                AI-assisted crop analysis using soil and environmental data.
+                {t('footer.tagline')}
               </p>
             </div>
 
             <div className="footer-links-col">
               <div>
-                <h4 style={{ fontSize: '0.82rem', fontWeight: 700, textTransform: 'uppercase', color: 'var(--text-main)', letterSpacing: '0.08em', marginBottom: 16 }}>Navigation</h4>
+                <h4 style={{ fontSize: '0.82rem', fontWeight: 700, textTransform: 'uppercase', color: 'var(--text-main)', letterSpacing: '0.08em', marginBottom: 16 }}>{t('footer.navigation')}</h4>
                 <ul className="footer-nav-list">
-                  <li><button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="footer-nav-link">Home</button></li>
-                  <li><button onClick={() => scrollToSection('how-it-works')} className="footer-nav-link">How It Works</button></li>
-                  <li><button onClick={() => scrollToSection('features')} className="footer-nav-link">Features</button></li>
-                  <li><button onClick={() => scrollToSection('preview')} className="footer-nav-link">Preview</button></li>
+                  <li><button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="footer-nav-link">{t('nav.home')}</button></li>
+                  <li><button onClick={() => scrollToSection('how-it-works')} className="footer-nav-link">{t('nav.howItWorks')}</button></li>
+                  <li><button onClick={() => scrollToSection('features')} className="footer-nav-link">{t('nav.features')}</button></li>
+                  <li><button onClick={() => scrollToSection('preview')} className="footer-nav-link">{t('nav.preview')}</button></li>
                   {onHistory && (
-                    <li><button onClick={onHistory} className="footer-nav-link">Query History</button></li>
+                    <li><button onClick={onHistory} className="footer-nav-link">{t('nav.queryHistory')}</button></li>
                   )}
                 </ul>
               </div>
@@ -459,12 +463,12 @@ export default function HeroPage({ onStart, onHistory }) {
           </div>
 
           <div className="footer-disclaimer-box">
-            <strong>Advisory Disclaimer:</strong> AI-generated estimates are intended for decision support and should be validated with local agricultural expertise and certified soil laboratory testing.
+            <strong>{t('footer.disclaimerLabel')}</strong> {t('footer.disclaimer')}
           </div>
 
           <div className="footer-bottom">
-            <span>© 2026 CropSense AI — College Major Project. All rights reserved.</span>
-            <span>Machine Learning & Computer Vision Decision Support System</span>
+            <span>{t('footer.rights')}</span>
+            <span>{t('footer.system')}</span>
           </div>
         </div>
       </footer>

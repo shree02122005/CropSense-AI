@@ -193,7 +193,7 @@ def test_section_6_and_7_ood_and_rf_prediction():
         soil_type_encoded=0
     )
     assert len(crops) == 3, f"Expected 3 crops, got {len(crops)}"
-    for name, prob in crops:
+    for name, prob, *_ in crops:
         assert isinstance(name, str) and 0.0 <= prob <= 1.0
     print("✔ Crop prediction returned top 3 candidates with valid probabilities:", crops)
     return True

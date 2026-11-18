@@ -1,0 +1,31 @@
+district,old_N,old_P,old_K,new_N,new_P,new_K,old_prediction,new_prediction,old_confidence,new_confidence,changed_yes_no,is_ood,ood_reasons
+Bengaluru Urban,249.7,46.8,180.4,142.1,26.9,184.1,grapes,coffee,0.2,0.2,yes,no,
+Bengaluru Rural,249.7,46.8,180.4,142.8,29.1,199.9,grapes,grapes,0.2,0.215,no,no,
+Ramanagara,249.7,46.8,180.4,249.7,46.8,180.4,grapes,grapes,0.2,0.2,no,yes,N_high
+Chikkaballapur,249.7,46.8,180.4,139.3,34.8,229.7,grapes,grapes,0.2,0.21,no,no,
+Kolar,249.7,46.8,180.4,142.8,32.9,175.1,grapes,grapes,0.2,0.195,no,no,
+Tumakuru,249.7,46.8,180.4,150.1,31.3,221.8,grapes,grapes,0.2,0.215,no,no,
+Hassan,369.7,9.2,265.6,222.4,38.1,218.8,grapes,grapes,0.205,0.215,no,yes,N_high
+Mysuru,369.7,9.2,265.6,137.9,34.6,252.5,grapes,grapes,0.205,0.21,no,yes,K_high
+Mandya,369.7,9.2,265.6,150.2,33.6,234.4,grapes,grapes,0.205,0.21,no,no,
+Chamarajanagar,369.7,9.2,265.6,220.8,31.1,180.1,grapes,grapes,0.205,0.195,no,yes,N_high
+Kodagu,369.7,9.2,265.6,211.8,28.8,250.6,grapes,coffee,0.205,0.205,yes,yes,N_high K_high
+Chikkamagaluru,369.7,9.2,265.6,149.4,35.5,253.7,grapes,grapes,0.205,0.21,no,yes,K_high
+Dakshina Kannada,369.7,9.2,265.6,140.1,22.5,138.5,grapes,coffee,0.205,0.19,yes,no,
+Udupi,369.7,9.2,265.6,169.3,27.5,172.9,grapes,coffee,0.205,0.2,yes,yes,N_high
+Shivamogga,369.7,9.2,265.6,155.8,25.5,265.6,grapes,grapes,0.205,0.205,no,yes,N_high K_high
+Uttara Kannada,369.7,9.2,265.6,152.1,24.7,194.0,grapes,coffee,0.205,0.2,yes,no,
+Belagavi,202.0,18.9,347.0,143.5,22.3,212.7,grapes,grapes,0.205,0.21,no,no,
+Dharwad,202.0,18.9,347.0,209.0,17.6,268.0,grapes,grapes,0.205,0.205,no,yes,N_high K_high
+Gadag,202.0,18.9,347.0,208.4,19.0,254.1,grapes,grapes,0.205,0.205,no,yes,N_high K_high
+Haveri,202.0,18.9,347.0,191.6,18.5,191.3,grapes,grapes,0.205,0.2,no,yes,N_high
+Bagalkot,203.6,30.9,346.4,171.5,24.7,235.4,grapes,grapes,0.21,0.205,no,yes,N_high
+Vijayapura,203.6,30.9,346.4,138.9,37.2,251.2,grapes,grapes,0.21,0.21,no,yes,K_high
+Koppal,203.6,30.9,346.4,227.4,37.5,287.8,grapes,grapes,0.21,0.21,no,yes,N_high K_high
+Raichur,203.6,30.9,346.4,137.6,17.1,150.0,grapes,grapes,0.21,0.18,no,no,
+Yadgir,203.6,30.9,346.4,149.2,32.9,373.5,grapes,grapes,0.21,0.21,no,yes,K_high
+Kalaburagi,250.0,75.0,390.0,150.0,38.9,398.6,grapes,grapes,0.22,0.21,no,yes,K_high
+Bidar,203.6,30.9,346.4,177.8,16.2,396.5,grapes,grapes,0.21,0.205,no,yes,N_high K_high
+Ballari,203.6,30.9,346.4,200.3,23.4,184.8,grapes,coffee,0.21,0.19,yes,yes,N_high
+Vijayanagara,203.6,30.9,346.4,178.0,25.2,160.4,grapes,coffee,0.21,0.2,yes,yes,N_high
+Chitradurga,202.0,18.9,347.0,141.4,34.6,236.3,grapes,grapes,0.205,0.21,no,no,

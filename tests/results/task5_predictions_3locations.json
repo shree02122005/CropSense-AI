@@ -1,0 +1,658 @@
+{
+  "Bengaluru Urban": {
+    "include_fruits_false": {
+      "location": "Fallback location (12.97, 77.59)",
+      "soil_type": "Sandy",
+      "soil_type_encoded": 4,
+      "soil_confidence": 0.344,
+      "temperature": 28.0,
+      "humidity": 75.0,
+      "rainfall": 110.0,
+      "ph": 5.8,
+      "ph_is_fallback": true,
+      "ph_source": "Agro-climatic regional fallback (Offline demonstration)",
+      "organic_carbon": 2.5,
+      "soilgrids_nitrogen_raw": null,
+      "soilgrids_nitrogen_gkg": null,
+      "N": 249.7,
+      "P": 46.8,
+      "K": 180.4,
+      "npk_district": "Bengaluru Urban",
+      "npk_reference_place": "Bengaluru",
+      "npk_distance_km": 0.0,
+      "npk_source_type": "published_measured",
+      "npk_source_note": "GKVK Bengaluru 2024",
+      "npk_out_of_training_range": true,
+      "npk_ood_features": [
+        "N"
+      ],
+      "all_ood_features": [
+        "N"
+      ],
+      "ood_warning": "Input features ['N'] exceed the empirical training dataset bounds (Training ranges: N=[5.5-153.8], P=[3.3-177.9], K=[3.5-236.8] kg/ha). The Random Forest model is extrapolating outside its observed training distribution; predictions represent algorithmic extrapolation and should be interpreted with caution.",
+      "training_ranges": {
+        "N": {
+          "min": 5.53,
+          "max": 153.79,
+          "unit": "kg/ha"
+        },
+        "P": {
+          "min": 3.3,
+          "max": 177.91,
+          "unit": "kg/ha"
+        },
+        "K": {
+          "min": 3.54,
+          "max": 236.77,
+          "unit": "kg/ha"
+        },
+        "temperature": {
+          "min": 11.54,
+          "max": 40.5,
+          "unit": "\u00b0C"
+        },
+        "humidity": {
+          "min": 1.76,
+          "max": 100.0,
+          "unit": "%"
+        },
+        "ph": {
+          "min": 4.9,
+          "max": 7.76,
+          "unit": "scale (0-14)"
+        },
+        "rainfall": {
+          "min": 7.39,
+          "max": 315.58,
+          "unit": "mm"
+        }
+      },
+      "feature_vector": [
+        249.7,
+        46.8,
+        180.4,
+        28.0,
+        75.0,
+        5.8,
+        110.0,
+        4
+      ],
+      "crops": [
+        {
+          "name": "Maize",
+          "confidence": 0.105,
+          "profit": "Medium",
+          "yield": "4\u20136 tons/ha",
+          "price": "\u20b915\u201318/kg",
+          "season": "Kharif",
+          "water_need": "Medium"
+        },
+        {
+          "name": "Cotton",
+          "confidence": 0.035,
+          "profit": "High",
+          "yield": "1.5\u20132.5 tons/ha",
+          "price": "\u20b955\u201365/kg",
+          "season": "Kharif",
+          "water_need": "Medium"
+        },
+        {
+          "name": "Jute",
+          "confidence": 0.015,
+          "profit": "Medium",
+          "yield": "2\u20133 tons/ha",
+          "price": "\u20b930\u201350/kg",
+          "season": "Kharif",
+          "water_need": "High"
+        }
+      ]
+    },
+    "include_fruits_true": {
+      "location": "Fallback location (12.97, 77.59)",
+      "soil_type": "Sandy",
+      "soil_type_encoded": 4,
+      "soil_confidence": 0.344,
+      "temperature": 28.0,
+      "humidity": 75.0,
+      "rainfall": 110.0,
+      "ph": 5.8,
+      "ph_is_fallback": true,
+      "ph_source": "Agro-climatic regional fallback (Offline demonstration)",
+      "organic_carbon": 2.5,
+      "soilgrids_nitrogen_raw": null,
+      "soilgrids_nitrogen_gkg": null,
+      "N": 249.7,
+      "P": 46.8,
+      "K": 180.4,
+      "npk_district": "Bengaluru Urban",
+      "npk_reference_place": "Bengaluru",
+      "npk_distance_km": 0.0,
+      "npk_source_type": "published_measured",
+      "npk_source_note": "GKVK Bengaluru 2024",
+      "npk_out_of_training_range": true,
+      "npk_ood_features": [
+        "N"
+      ],
+      "all_ood_features": [
+        "N"
+      ],
+      "ood_warning": "Input features ['N'] exceed the empirical training dataset bounds (Training ranges: N=[5.5-153.8], P=[3.3-177.9], K=[3.5-236.8] kg/ha). The Random Forest model is extrapolating outside its observed training distribution; predictions represent algorithmic extrapolation and should be interpreted with caution.",
+      "training_ranges": {
+        "N": {
+          "min": 5.53,
+          "max": 153.79,
+          "unit": "kg/ha"
+        },
+        "P": {
+          "min": 3.3,
+          "max": 177.91,
+          "unit": "kg/ha"
+        },
+        "K": {
+          "min": 3.54,
+          "max": 236.77,
+          "unit": "kg/ha"
+        },
+        "temperature": {
+          "min": 11.54,
+          "max": 40.5,
+          "unit": "\u00b0C"
+        },
+        "humidity": {
+          "min": 1.76,
+          "max": 100.0,
+          "unit": "%"
+        },
+        "ph": {
+          "min": 4.9,
+          "max": 7.76,
+          "unit": "scale (0-14)"
+        },
+        "rainfall": {
+          "min": 7.39,
+          "max": 315.58,
+          "unit": "mm"
+        }
+      },
+      "feature_vector": [
+        249.7,
+        46.8,
+        180.4,
+        28.0,
+        75.0,
+        5.8,
+        110.0,
+        4
+      ],
+      "crops": [
+        {
+          "name": "Watermelon",
+          "confidence": 0.205,
+          "profit": "High",
+          "yield": "20\u201330 tons/ha",
+          "price": "\u20b98\u201315/kg",
+          "season": "Summer",
+          "water_need": "High"
+        },
+        {
+          "name": "Apple",
+          "confidence": 0.2,
+          "profit": "Very High",
+          "yield": "10\u201315 tons/ha",
+          "price": "\u20b960\u2013150/kg",
+          "season": "Winter",
+          "water_need": "Medium"
+        },
+        {
+          "name": "Banana",
+          "confidence": 0.19,
+          "profit": "High",
+          "yield": "20\u201330 tons/ha",
+          "price": "\u20b915\u201325/kg",
+          "season": "Annual",
+          "water_need": "High"
+        }
+      ]
+    }
+  },
+  "Mysuru": {
+    "include_fruits_false": {
+      "location": "Fallback location (12.30, 76.64)",
+      "soil_type": "Sandy",
+      "soil_type_encoded": 4,
+      "soil_confidence": 0.344,
+      "temperature": 28.0,
+      "humidity": 75.0,
+      "rainfall": 110.0,
+      "ph": 5.8,
+      "ph_is_fallback": true,
+      "ph_source": "Agro-climatic regional fallback (Offline demonstration)",
+      "organic_carbon": 2.5,
+      "soilgrids_nitrogen_raw": null,
+      "soilgrids_nitrogen_gkg": null,
+      "N": 369.7,
+      "P": 9.2,
+      "K": 265.6,
+      "npk_district": "Mysuru",
+      "npk_reference_place": "Mysuru",
+      "npk_distance_km": 0.0,
+      "npk_source_type": "regional_proxy",
+      "npk_source_note": "South Karnataka proxy: Hassan published profile",
+      "npk_out_of_training_range": true,
+      "npk_ood_features": [
+        "N",
+        "K"
+      ],
+      "all_ood_features": [
+        "N",
+        "K"
+      ],
+      "ood_warning": "Input features ['N', 'K'] exceed the empirical training dataset bounds (Training ranges: N=[5.5-153.8], P=[3.3-177.9], K=[3.5-236.8] kg/ha). The Random Forest model is extrapolating outside its observed training distribution; predictions represent algorithmic extrapolation and should be interpreted with caution.",
+      "training_ranges": {
+        "N": {
+          "min": 5.53,
+          "max": 153.79,
+          "unit": "kg/ha"
+        },
+        "P": {
+          "min": 3.3,
+          "max": 177.91,
+          "unit": "kg/ha"
+        },
+        "K": {
+          "min": 3.54,
+          "max": 236.77,
+          "unit": "kg/ha"
+        },
+        "temperature": {
+          "min": 11.54,
+          "max": 40.5,
+          "unit": "\u00b0C"
+        },
+        "humidity": {
+          "min": 1.76,
+          "max": 100.0,
+          "unit": "%"
+        },
+        "ph": {
+          "min": 4.9,
+          "max": 7.76,
+          "unit": "scale (0-14)"
+        },
+        "rainfall": {
+          "min": 7.39,
+          "max": 315.58,
+          "unit": "mm"
+        }
+      },
+      "feature_vector": [
+        369.7,
+        9.2,
+        265.6,
+        28.0,
+        75.0,
+        5.8,
+        110.0,
+        4
+      ],
+      "crops": [
+        {
+          "name": "Wheat",
+          "confidence": 0.02,
+          "profit": "High",
+          "yield": "2.5\u20134 tons/ha",
+          "price": "\u20b918\u201322/kg",
+          "season": "Winter",
+          "water_need": "Medium"
+        },
+        {
+          "name": "Jute",
+          "confidence": 0.02,
+          "profit": "Medium",
+          "yield": "2\u20133 tons/ha",
+          "price": "\u20b930\u201350/kg",
+          "season": "Kharif",
+          "water_need": "High"
+        },
+        {
+          "name": "Chickpea",
+          "confidence": 0.01,
+          "profit": "High",
+          "yield": "1\u20131.5 tons/ha",
+          "price": "\u20b950\u201360/kg",
+          "season": "Rabi",
+          "water_need": "Low"
+        }
+      ]
+    },
+    "include_fruits_true": {
+      "location": "Fallback location (12.30, 76.64)",
+      "soil_type": "Sandy",
+      "soil_type_encoded": 4,
+      "soil_confidence": 0.344,
+      "temperature": 28.0,
+      "humidity": 75.0,
+      "rainfall": 110.0,
+      "ph": 5.8,
+      "ph_is_fallback": true,
+      "ph_source": "Agro-climatic regional fallback (Offline demonstration)",
+      "organic_carbon": 2.5,
+      "soilgrids_nitrogen_raw": null,
+      "soilgrids_nitrogen_gkg": null,
+      "N": 369.7,
+      "P": 9.2,
+      "K": 265.6,
+      "npk_district": "Mysuru",
+      "npk_reference_place": "Mysuru",
+      "npk_distance_km": 0.0,
+      "npk_source_type": "regional_proxy",
+      "npk_source_note": "South Karnataka proxy: Hassan published profile",
+      "npk_out_of_training_range": true,
+      "npk_ood_features": [
+        "N",
+        "K"
+      ],
+      "all_ood_features": [
+        "N",
+        "K"
+      ],
+      "ood_warning": "Input features ['N', 'K'] exceed the empirical training dataset bounds (Training ranges: N=[5.5-153.8], P=[3.3-177.9], K=[3.5-236.8] kg/ha). The Random Forest model is extrapolating outside its observed training distribution; predictions represent algorithmic extrapolation and should be interpreted with caution.",
+      "training_ranges": {
+        "N": {
+          "min": 5.53,
+          "max": 153.79,
+          "unit": "kg/ha"
+        },
+        "P": {
+          "min": 3.3,
+          "max": 177.91,
+          "unit": "kg/ha"
+        },
+        "K": {
+          "min": 3.54,
+          "max": 236.77,
+          "unit": "kg/ha"
+        },
+        "temperature": {
+          "min": 11.54,
+          "max": 40.5,
+          "unit": "\u00b0C"
+        },
+        "humidity": {
+          "min": 1.76,
+          "max": 100.0,
+          "unit": "%"
+        },
+        "ph": {
+          "min": 4.9,
+          "max": 7.76,
+          "unit": "scale (0-14)"
+        },
+        "rainfall": {
+          "min": 7.39,
+          "max": 315.58,
+          "unit": "mm"
+        }
+      },
+      "feature_vector": [
+        369.7,
+        9.2,
+        265.6,
+        28.0,
+        75.0,
+        5.8,
+        110.0,
+        4
+      ],
+      "crops": [
+        {
+          "name": "Watermelon",
+          "confidence": 0.38,
+          "profit": "High",
+          "yield": "20\u201330 tons/ha",
+          "price": "\u20b98\u201315/kg",
+          "season": "Summer",
+          "water_need": "High"
+        },
+        {
+          "name": "Grapes",
+          "confidence": 0.17,
+          "profit": "Very High",
+          "yield": "10\u201315 tons/ha",
+          "price": "\u20b940\u2013100/kg",
+          "season": "Annual",
+          "water_need": "Medium"
+        },
+        {
+          "name": "Apple",
+          "confidence": 0.17,
+          "profit": "Very High",
+          "yield": "10\u201315 tons/ha",
+          "price": "\u20b960\u2013150/kg",
+          "season": "Winter",
+          "water_need": "Medium"
+        }
+      ]
+    }
+  },
+  "Belagavi": {
+    "include_fruits_false": {
+      "location": "Fallback location (15.85, 74.50)",
+      "soil_type": "Sandy",
+      "soil_type_encoded": 4,
+      "soil_confidence": 0.344,
+      "temperature": 28.0,
+      "humidity": 75.0,
+      "rainfall": 110.0,
+      "ph": 5.8,
+      "ph_is_fallback": true,
+      "ph_source": "Agro-climatic regional fallback (Offline demonstration)",
+      "organic_carbon": 2.5,
+      "soilgrids_nitrogen_raw": null,
+      "soilgrids_nitrogen_gkg": null,
+      "N": 202.0,
+      "P": 18.9,
+      "K": 347.0,
+      "npk_district": "Belagavi",
+      "npk_reference_place": "Belagavi",
+      "npk_distance_km": 0.0,
+      "npk_source_type": "published_measured",
+      "npk_source_note": "Dharwad/Karnataka northern agricultural soil profile used as nearest published numeric anchor",
+      "npk_out_of_training_range": true,
+      "npk_ood_features": [
+        "N",
+        "K"
+      ],
+      "all_ood_features": [
+        "N",
+        "K"
+      ],
+      "ood_warning": "Input features ['N', 'K'] exceed the empirical training dataset bounds (Training ranges: N=[5.5-153.8], P=[3.3-177.9], K=[3.5-236.8] kg/ha). The Random Forest model is extrapolating outside its observed training distribution; predictions represent algorithmic extrapolation and should be interpreted with caution.",
+      "training_ranges": {
+        "N": {
+          "min": 5.53,
+          "max": 153.79,
+          "unit": "kg/ha"
+        },
+        "P": {
+          "min": 3.3,
+          "max": 177.91,
+          "unit": "kg/ha"
+        },
+        "K": {
+          "min": 3.54,
+          "max": 236.77,
+          "unit": "kg/ha"
+        },
+        "temperature": {
+          "min": 11.54,
+          "max": 40.5,
+          "unit": "\u00b0C"
+        },
+        "humidity": {
+          "min": 1.76,
+          "max": 100.0,
+          "unit": "%"
+        },
+        "ph": {
+          "min": 4.9,
+          "max": 7.76,
+          "unit": "scale (0-14)"
+        },
+        "rainfall": {
+          "min": 7.39,
+          "max": 315.58,
+          "unit": "mm"
+        }
+      },
+      "feature_vector": [
+        202.0,
+        18.9,
+        347.0,
+        28.0,
+        75.0,
+        5.8,
+        110.0,
+        4
+      ],
+      "crops": [
+        {
+          "name": "Wheat",
+          "confidence": 0.02,
+          "profit": "High",
+          "yield": "2.5\u20134 tons/ha",
+          "price": "\u20b918\u201322/kg",
+          "season": "Winter",
+          "water_need": "Medium"
+        },
+        {
+          "name": "Jute",
+          "confidence": 0.02,
+          "profit": "Medium",
+          "yield": "2\u20133 tons/ha",
+          "price": "\u20b930\u201350/kg",
+          "season": "Kharif",
+          "water_need": "High"
+        },
+        {
+          "name": "Chickpea",
+          "confidence": 0.01,
+          "profit": "High",
+          "yield": "1\u20131.5 tons/ha",
+          "price": "\u20b950\u201360/kg",
+          "season": "Rabi",
+          "water_need": "Low"
+        }
+      ]
+    },
+    "include_fruits_true": {
+      "location": "Fallback location (15.85, 74.50)",
+      "soil_type": "Sandy",
+      "soil_type_encoded": 4,
+      "soil_confidence": 0.344,
+      "temperature": 28.0,
+      "humidity": 75.0,
+      "rainfall": 110.0,
+      "ph": 5.8,
+      "ph_is_fallback": true,
+      "ph_source": "Agro-climatic regional fallback (Offline demonstration)",
+      "organic_carbon": 2.5,
+      "soilgrids_nitrogen_raw": null,
+      "soilgrids_nitrogen_gkg": null,
+      "N": 202.0,
+      "P": 18.9,
+      "K": 347.0,
+      "npk_district": "Belagavi",
+      "npk_reference_place": "Belagavi",
+      "npk_distance_km": 0.0,
+      "npk_source_type": "published_measured",
+      "npk_source_note": "Dharwad/Karnataka northern agricultural soil profile used as nearest published numeric anchor",
+      "npk_out_of_training_range": true,
+      "npk_ood_features": [
+        "N",
+        "K"
+      ],
+      "all_ood_features": [
+        "N",
+        "K"
+      ],
+      "ood_warning": "Input features ['N', 'K'] exceed the empirical training dataset bounds (Training ranges: N=[5.5-153.8], P=[3.3-177.9], K=[3.5-236.8] kg/ha). The Random Forest model is extrapolating outside its observed training distribution; predictions represent algorithmic extrapolation and should be interpreted with caution.",
+      "training_ranges": {
+        "N": {
+          "min": 5.53,
+          "max": 153.79,
+          "unit": "kg/ha"
+        },
+        "P": {
+          "min": 3.3,
+          "max": 177.91,
+          "unit": "kg/ha"
+        },
+        "K": {
+          "min": 3.54,
+          "max": 236.77,
+          "unit": "kg/ha"
+        },
+        "temperature": {
+          "min": 11.54,
+          "max": 40.5,
+          "unit": "\u00b0C"
+        },
+        "humidity": {
+          "min": 1.76,
+          "max": 100.0,
+          "unit": "%"
+        },
+        "ph": {
+          "min": 4.9,
+          "max": 7.76,
+          "unit": "scale (0-14)"
+        },
+        "rainfall": {
+          "min": 7.39,
+          "max": 315.58,
+          "unit": "mm"
+        }
+      },
+      "feature_vector": [
+        202.0,
+        18.9,
+        347.0,
+        28.0,
+        75.0,
+        5.8,
+        110.0,
+        4
+      ],
+      "crops": [
+        {
+          "name": "Watermelon",
+          "confidence": 0.42,
+          "profit": "High",
+          "yield": "20\u201330 tons/ha",
+          "price": "\u20b98\u201315/kg",
+          "season": "Summer",
+          "water_need": "High"
+        },
+        {
+          "name": "Grapes",
+          "confidence": 0.17,
+          "profit": "Very High",
+          "yield": "10\u201315 tons/ha",
+          "price": "\u20b940\u2013100/kg",
+          "season": "Annual",
+          "water_need": "Medium"
+        },
+        {
+          "name": "Apple",
+          "confidence": 0.17,
+          "profit": "Very High",
+          "yield": "10\u201315 tons/ha",
+          "price": "\u20b960\u2013150/kg",
+          "season": "Winter",
+          "water_need": "Medium"
+        }
+      ]
+    }
+  }
+}

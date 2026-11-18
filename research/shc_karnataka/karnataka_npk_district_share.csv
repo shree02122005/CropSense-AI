@@ -1,0 +1,94 @@
+district_name,nutrient_name,High,Low,Medium
+Bagalkote,Nitrogen,0.008,0.64,0.352
+Bagalkote,Phosphorus,0.472,0.067,0.462
+Bagalkote,Potassium,0.425,0.083,0.492
+Ballari,Nitrogen,0.214,0.225,0.561
+Ballari,Phosphorus,0.343,0.17,0.488
+Ballari,Potassium,0.21,0.226,0.564
+Belagavi,Nitrogen,0.0,0.927,0.073
+Belagavi,Phosphorus,0.37,0.34,0.29
+Belagavi,Potassium,0.446,0.229,0.326
+Bengaluru Rural,Nitrogen,0.001,0.938,0.061
+Bengaluru Rural,Phosphorus,0.608,0.071,0.321
+Bengaluru Rural,Potassium,0.257,0.278,0.465
+Bengaluru South,Nitrogen,0.071,0.21,0.719
+Bengaluru South,Phosphorus,0.708,0.066,0.226
+Bengaluru South,Potassium,0.112,0.386,0.502
+Bengaluru Urban,Nitrogen,0.0,0.944,0.056
+Bengaluru Urban,Phosphorus,0.55,0.101,0.349
+Bengaluru Urban,Potassium,0.224,0.264,0.512
+Bidar,Nitrogen,0.0,0.427,0.573
+Bidar,Phosphorus,0.037,0.091,0.872
+Bidar,Potassium,0.986,0.001,0.013
+Chamarajanagar,Nitrogen,0.313,0.17,0.517
+Chamarajanagar,Phosphorus,0.547,0.04,0.412
+Chamarajanagar,Potassium,0.172,0.272,0.556
+Chikkaballapura,Nitrogen,0.0,0.981,0.018
+Chikkaballapura,Phosphorus,0.792,0.008,0.199
+Chikkaballapura,Potassium,0.281,0.01,0.709
+Chikkamagaluru,Nitrogen,0.0,0.856,0.144
+Chikkamagaluru,Phosphorus,0.82,0.069,0.111
+Chikkamagaluru,Potassium,0.441,0.173,0.386
+Chitradurga,Nitrogen,0.001,0.875,0.124
+Chitradurga,Phosphorus,0.836,0.008,0.156
+Chitradurga,Potassium,0.252,0.013,0.735
+Dakshina Kannada,Nitrogen,0.0,0.967,0.032
+Dakshina Kannada,Phosphorus,0.285,0.219,0.496
+Dakshina Kannada,Potassium,0.061,0.585,0.354
+Davanagere,Nitrogen,0.051,0.073,0.876
+Davanagere,Phosphorus,0.787,0.009,0.204
+Davanagere,Potassium,0.738,0.006,0.256
+Dharwad,Nitrogen,0.019,0.032,0.949
+Dharwad,Phosphorus,0.094,0.012,0.894
+Dharwad,Potassium,0.547,0.013,0.44
+Gadag,Nitrogen,0.0,0.017,0.983
+Gadag,Phosphorus,0.079,0.001,0.92
+Gadag,Potassium,0.283,0.001,0.715
+Hassan,Nitrogen,0.209,0.019,0.772
+Hassan,Phosphorus,0.918,0.001,0.081
+Hassan,Potassium,0.299,0.024,0.677
+Haveri,Nitrogen,0.032,0.515,0.454
+Haveri,Phosphorus,0.072,0.034,0.894
+Haveri,Potassium,0.114,0.027,0.859
+Kalaburagi,Nitrogen,0.0,0.783,0.217
+Kalaburagi,Phosphorus,0.966,0.012,0.022
+Kalaburagi,Potassium,0.996,0.001,0.003
+Kodagu,Nitrogen,0.121,0.12,0.76
+Kodagu,Phosphorus,0.538,0.086,0.376
+Kodagu,Potassium,0.398,0.099,0.503
+Kolar,Nitrogen,0.0,0.919,0.081
+Kolar,Phosphorus,0.766,0.041,0.193
+Kolar,Potassium,0.184,0.251,0.564
+Koppal,Nitrogen,0.359,0.371,0.27
+Koppal,Phosphorus,0.898,0.023,0.078
+Koppal,Potassium,0.564,0.102,0.334
+Mandya,Nitrogen,0.0,0.848,0.151
+Mandya,Phosphorus,0.706,0.081,0.213
+Mandya,Potassium,0.375,0.167,0.457
+Mysuru,Nitrogen,0.0,0.996,0.004
+Mysuru,Phosphorus,0.785,0.033,0.182
+Mysuru,Potassium,0.403,0.137,0.46
+Raichur,Nitrogen,0.0,0.999,0.001
+Raichur,Phosphorus,0.034,0.03,0.936
+Raichur,Potassium,0.001,0.051,0.948
+Shivamogga,Nitrogen,0.06,0.722,0.218
+Shivamogga,Phosphorus,0.48,0.245,0.274
+Shivamogga,Potassium,0.473,0.103,0.424
+Tumakuru,Nitrogen,0.001,0.846,0.153
+Tumakuru,Phosphorus,0.665,0.04,0.295
+Tumakuru,Potassium,0.288,0.162,0.55
+Udupi,Nitrogen,0.023,0.58,0.397
+Udupi,Phosphorus,0.58,0.212,0.208
+Udupi,Potassium,0.211,0.324,0.465
+Uttara Kannada,Nitrogen,0.0,0.842,0.158
+Uttara Kannada,Phosphorus,0.508,0.222,0.27
+Uttara Kannada,Potassium,0.252,0.487,0.261
+Vijayanagara,Nitrogen,0.172,0.459,0.369
+Vijayanagara,Phosphorus,0.443,0.191,0.366
+Vijayanagara,Potassium,0.13,0.329,0.541
+Vijayapura,Nitrogen,0.004,0.988,0.008
+Vijayapura,Phosphorus,0.876,0.003,0.121
+Vijayapura,Potassium,0.541,0.042,0.416
+Yadgir,Nitrogen,0.001,0.845,0.153
+Yadgir,Phosphorus,0.594,0.026,0.38
+Yadgir,Potassium,0.845,0.007,0.147

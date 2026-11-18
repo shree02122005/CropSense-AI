@@ -1,0 +1,145 @@
+{
+  "training_dataset": "research/shc_calibration/shc_soilgrids_training.csv",
+  "n_observations": 1100,
+  "n_districts": 600,
+  "n_states": 31,
+  "features": [
+    "phh2o_0-5cm",
+    "phh2o_0-30cm",
+    "soc_0-5cm",
+    "soc_0-30cm",
+    "nitrogen_0-5cm",
+    "nitrogen_0-30cm",
+    "clay_0-5cm",
+    "clay_0-30cm",
+    "sand_0-5cm",
+    "sand_0-30cm",
+    "cec_0-5cm",
+    "cec_0-30cm"
+  ],
+  "model_type": "RandomForestRegressor",
+  "model_parameters": {
+    "n_estimators": 300,
+    "min_samples_leaf": 3,
+    "max_features": "sqrt",
+    "random_state": 42
+  },
+  "validation_method": "GroupKFold(n_splits=5, groups=district_id)",
+  "training_date": "2026-10-06",
+  "results": {
+    "N_kg_ha": {
+      "national": {
+        "r2": 0.3752,
+        "mae": 19.51,
+        "rmse": 26.5,
+        "medae": 14.32,
+        "baseline_r2": -0.001,
+        "baseline_mae": 27.15,
+        "baseline_rmse": 33.54,
+        "baseline_medae": 26.02
+      },
+      "karnataka": {
+        "n_obs": 58,
+        "n_districts": 29,
+        "r2": -0.2566,
+        "mae": 30.17,
+        "rmse": 37.23,
+        "medae": 24.81,
+        "baseline_r2": -0.0403,
+        "baseline_mae": 28.61,
+        "baseline_rmse": 33.88,
+        "baseline_medae": 24.17
+      },
+      "feature_importance": {
+        "phh2o_0-30cm": 0.1571,
+        "phh2o_0-5cm": 0.137,
+        "nitrogen_0-30cm": 0.1185,
+        "nitrogen_0-5cm": 0.0825,
+        "soc_0-5cm": 0.0736,
+        "soc_0-30cm": 0.0713,
+        "cec_0-30cm": 0.071,
+        "sand_0-30cm": 0.0624,
+        "clay_0-30cm": 0.0623,
+        "cec_0-5cm": 0.0591,
+        "sand_0-5cm": 0.0545,
+        "clay_0-5cm": 0.0507
+      }
+    },
+    "P_kg_ha": {
+      "national": {
+        "r2": 0.1548,
+        "mae": 6.76,
+        "rmse": 8.05,
+        "medae": 6.29,
+        "baseline_r2": -0.0033,
+        "baseline_mae": 7.66,
+        "baseline_rmse": 8.77,
+        "baseline_medae": 7.82
+      },
+      "karnataka": {
+        "n_obs": 58,
+        "n_districts": 29,
+        "r2": 0.0709,
+        "mae": 5.85,
+        "rmse": 6.91,
+        "medae": 6.05,
+        "baseline_r2": -0.3638,
+        "baseline_mae": 7.3,
+        "baseline_rmse": 8.38,
+        "baseline_medae": 7.68
+      },
+      "feature_importance": {
+        "nitrogen_0-5cm": 0.0991,
+        "nitrogen_0-30cm": 0.0955,
+        "soc_0-30cm": 0.09,
+        "cec_0-30cm": 0.0899,
+        "soc_0-5cm": 0.0881,
+        "clay_0-5cm": 0.0873,
+        "cec_0-5cm": 0.0847,
+        "sand_0-30cm": 0.0828,
+        "sand_0-5cm": 0.0822,
+        "clay_0-30cm": 0.0771,
+        "phh2o_0-30cm": 0.0736,
+        "phh2o_0-5cm": 0.0497
+      }
+    },
+    "K_kg_ha": {
+      "national": {
+        "r2": 0.2832,
+        "mae": 53.82,
+        "rmse": 67.47,
+        "medae": 45.65,
+        "baseline_r2": -0.0027,
+        "baseline_mae": 67.57,
+        "baseline_rmse": 79.8,
+        "baseline_medae": 64.53
+      },
+      "karnataka": {
+        "n_obs": 58,
+        "n_districts": 29,
+        "r2": 0.1297,
+        "mae": 57.64,
+        "rmse": 69.64,
+        "medae": 44.62,
+        "baseline_r2": -0.042,
+        "baseline_mae": 58.2,
+        "baseline_rmse": 76.19,
+        "baseline_medae": 41.47
+      },
+      "feature_importance": {
+        "cec_0-30cm": 0.1403,
+        "cec_0-5cm": 0.131,
+        "soc_0-5cm": 0.0951,
+        "clay_0-5cm": 0.0857,
+        "phh2o_0-30cm": 0.0802,
+        "clay_0-30cm": 0.0698,
+        "sand_0-30cm": 0.0694,
+        "sand_0-5cm": 0.0687,
+        "nitrogen_0-5cm": 0.0674,
+        "phh2o_0-5cm": 0.066,
+        "nitrogen_0-30cm": 0.0642,
+        "soc_0-30cm": 0.0622
+      }
+    }
+  }
+}

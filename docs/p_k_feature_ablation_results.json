@@ -1,0 +1,209 @@
+{
+  "experiment_timestamp": "2026-11-17T16:05:21.662035",
+  "dataset": "Crop_recommendation_clean.csv",
+  "sample_count": 1150,
+  "train_samples": 920,
+  "test_samples": 230,
+  "results": {
+    "Baseline": {
+      "features": [
+        "N",
+        "P",
+        "K",
+        "temperature",
+        "humidity",
+        "ph",
+        "rainfall",
+        "soil_type_encoded"
+      ],
+      "features_removed": "None",
+      "description": "Full 8-feature production specification",
+      "correct_predictions": 214,
+      "total_test_samples": 230,
+      "accuracy": 0.9304347826086956,
+      "macro_precision": 0.9322134387351779,
+      "macro_recall": 0.9304347826086956,
+      "macro_f1": 0.9299771167048054,
+      "delta_accuracy_pp": 0.0,
+      "delta_precision_pp": 0.0,
+      "delta_recall_pp": 0.0,
+      "delta_f1_pp": 0.0
+    },
+    "Without P": {
+      "features": [
+        "N",
+        "K",
+        "temperature",
+        "humidity",
+        "ph",
+        "rainfall",
+        "soil_type_encoded"
+      ],
+      "features_removed": "P only",
+      "description": "7 features (Phosphorus ablated)",
+      "correct_predictions": 208,
+      "total_test_samples": 230,
+      "accuracy": 0.9043478260869565,
+      "macro_precision": 0.9070769809900245,
+      "macro_recall": 0.9043478260869565,
+      "macro_f1": 0.9020865929063533,
+      "delta_accuracy_pp": -2.61,
+      "delta_precision_pp": -2.51,
+      "delta_recall_pp": -2.61,
+      "delta_f1_pp": -2.79
+    },
+    "Without K": {
+      "features": [
+        "N",
+        "P",
+        "temperature",
+        "humidity",
+        "ph",
+        "rainfall",
+        "soil_type_encoded"
+      ],
+      "features_removed": "K only",
+      "description": "7 features (Potassium ablated)",
+      "correct_predictions": 209,
+      "total_test_samples": 230,
+      "accuracy": 0.908695652173913,
+      "macro_precision": 0.9122985709942234,
+      "macro_recall": 0.908695652173913,
+      "macro_f1": 0.9068444397624403,
+      "delta_accuracy_pp": -2.17,
+      "delta_precision_pp": -1.99,
+      "delta_recall_pp": -2.17,
+      "delta_f1_pp": -2.31
+    },
+    "Without P & K": {
+      "features": [
+        "N",
+        "temperature",
+        "humidity",
+        "ph",
+        "rainfall",
+        "soil_type_encoded"
+      ],
+      "features_removed": "P & K",
+      "description": "6 features (Phosphorus and Potassium ablated)",
+      "correct_predictions": 204,
+      "total_test_samples": 230,
+      "accuracy": 0.8869565217391304,
+      "macro_precision": 0.8919428397689267,
+      "macro_recall": 0.8869565217391304,
+      "macro_f1": 0.8855269827470427,
+      "delta_accuracy_pp": -4.35,
+      "delta_precision_pp": -4.03,
+      "delta_recall_pp": -4.35,
+      "delta_f1_pp": -4.45
+    }
+  },
+  "gini_feature_importances": [
+    {
+      "rank": 1,
+      "feature": "rainfall",
+      "importance": 0.172,
+      "percentage": 17.2
+    },
+    {
+      "rank": 2,
+      "feature": "humidity",
+      "importance": 0.1531,
+      "percentage": 15.31
+    },
+    {
+      "rank": 3,
+      "feature": "N",
+      "importance": 0.1491,
+      "percentage": 14.91
+    },
+    {
+      "rank": 4,
+      "feature": "P",
+      "importance": 0.1465,
+      "percentage": 14.65
+    },
+    {
+      "rank": 5,
+      "feature": "K",
+      "importance": 0.1463,
+      "percentage": 14.63
+    },
+    {
+      "rank": 6,
+      "feature": "ph",
+      "importance": 0.0877,
+      "percentage": 8.77
+    },
+    {
+      "rank": 7,
+      "feature": "temperature",
+      "importance": 0.074,
+      "percentage": 7.4
+    },
+    {
+      "rank": 8,
+      "feature": "soil_type_encoded",
+      "importance": 0.0713,
+      "percentage": 7.13
+    }
+  ],
+  "permutation_importances": [
+    {
+      "rank": 1,
+      "feature": "N",
+      "mean_decrease": 0.3152,
+      "std": 0.0293,
+      "mean_decrease_pp": 31.52
+    },
+    {
+      "rank": 2,
+      "feature": "rainfall",
+      "mean_decrease": 0.2487,
+      "std": 0.0159,
+      "mean_decrease_pp": 24.87
+    },
+    {
+      "rank": 3,
+      "feature": "humidity",
+      "mean_decrease": 0.1457,
+      "std": 0.01,
+      "mean_decrease_pp": 14.57
+    },
+    {
+      "rank": 4,
+      "feature": "P",
+      "mean_decrease": 0.1226,
+      "std": 0.0209,
+      "mean_decrease_pp": 12.26
+    },
+    {
+      "rank": 5,
+      "feature": "K",
+      "mean_decrease": 0.1191,
+      "std": 0.0189,
+      "mean_decrease_pp": 11.91
+    },
+    {
+      "rank": 6,
+      "feature": "soil_type_encoded",
+      "mean_decrease": 0.0526,
+      "std": 0.0149,
+      "mean_decrease_pp": 5.26
+    },
+    {
+      "rank": 7,
+      "feature": "ph",
+      "mean_decrease": 0.0374,
+      "std": 0.0125,
+      "mean_decrease_pp": 3.74
+    },
+    {
+      "rank": 8,
+      "feature": "temperature",
+      "mean_decrease": 0.0235,
+      "std": 0.0109,
+      "mean_decrease_pp": 2.35
+    }
+  ]
+}

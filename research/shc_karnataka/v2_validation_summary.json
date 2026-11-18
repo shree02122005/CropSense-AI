@@ -1,0 +1,62 @@
+{
+  "total_districts": 30,
+  "category_changes": 23,
+  "recommendation_changes": 7,
+  "rec_change_rate": 23.3,
+  "ood_analysis": {
+    "N": {
+      "training": {
+        "min": 5.533645898349612,
+        "max": 153.78554869303085,
+        "mean": 50.90366312028123,
+        "median": 34.61387983775447
+      },
+      "v2_shc": {
+        "min": 137.6,
+        "max": 249.7,
+        "mean": 170.04,
+        "median": 151.14999999999998
+      },
+      "below_min": 0,
+      "above_max": 14,
+      "total_ood": 14,
+      "pct_ood": 46.666666666666664
+    },
+    "P": {
+      "training": {
+        "min": 3.304298969312637,
+        "max": 177.90905138709996,
+        "mean": 51.65220046545562,
+        "median": 48.5159162471433
+      },
+      "v2_shc": {
+        "min": 16.2,
+        "max": 46.8,
+        "mean": 28.96,
+        "median": 28.950000000000003
+      },
+      "below_min": 0,
+      "above_max": 0,
+      "total_ood": 0,
+      "pct_ood": 0.0
+    },
+    "K": {
+      "training": {
+        "min": 3.5388082786256163,
+        "max": 236.76873879228515,
+        "mean": 48.852455713885846,
+        "median": 34.079077060621245
+      },
+      "v2_shc": {
+        "min": 138.5,
+        "max": 398.6,
+        "mean": 231.7566666666667,
+        "median": 225.75
+      },
+      "below_min": 0,
+      "above_max": 11,
+      "total_ood": 11,
+      "pct_ood": 36.666666666666664
+    }
+  }
+}

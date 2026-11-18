@@ -1,0 +1,82 @@
+{
+  "architecture": "MobileNetV2 (ImageNet) + dense head, 2-phase fine-tuning",
+  "classes": [
+    "black",
+    "clay",
+    "loamy",
+    "red",
+    "sandy"
+  ],
+  "n_train": 167,
+  "n_val": 30,
+  "n_test": 50,
+  "head_epochs_run": 26,
+  "finetune_epochs_run": 17,
+  "val_accuracy": 0.9333,
+  "test_accuracy": 0.76,
+  "test_mean_confidence": 0.8437,
+  "per_class": {
+    "black": {
+      "precision": 0.9,
+      "recall": 0.9,
+      "f1": 0.9
+    },
+    "clay": {
+      "precision": 1.0,
+      "recall": 0.6,
+      "f1": 0.75
+    },
+    "loamy": {
+      "precision": 1.0,
+      "recall": 0.6,
+      "f1": 0.75
+    },
+    "red": {
+      "precision": 0.727,
+      "recall": 0.8,
+      "f1": 0.762
+    },
+    "sandy": {
+      "precision": 0.529,
+      "recall": 0.9,
+      "f1": 0.667
+    }
+  },
+  "confusion_matrix": [
+    [
+      9,
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      6,
+      0,
+      0,
+      4
+    ],
+    [
+      1,
+      0,
+      6,
+      2,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      8,
+      2
+    ],
+    [
+      0,
+      0,
+      0,
+      1,
+      9
+    ]
+  ]
+}

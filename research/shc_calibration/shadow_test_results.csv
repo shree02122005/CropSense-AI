@@ -1,0 +1,11 @@
+location,zone,lat,lon,lookup_N,lookup_P,lookup_K,reg_N,reg_P,reg_K,diff_N,diff_P,diff_K,pct_diff_N,pct_diff_P,pct_diff_K,crop_lookup,conf_lookup,crop_reg,conf_reg,crop_changed
+Bengaluru Urban,Eastern Dry Zone,12.9716,77.5946,249.7,46.8,180.4,175.4,30.5,173.7,-74.3,-16.3,-6.7,-29.8,-34.9,-3.7,maize,0.22,grapes,0.195,True
+Mysuru,Southern Dry Zone,12.2958,76.6394,369.7,9.2,265.6,143.0,31.4,246.2,-226.7,22.2,-19.4,-61.3,239.5,-7.3,watermelon,0.255,grapes,0.2,True
+Hassan,Southern Transition Zone,13.0068,76.1004,369.7,9.2,265.6,193.5,35.1,255.0,-176.2,25.8,-10.5,-47.7,279.1,-4.0,watermelon,0.255,grapes,0.2,True
+Kodagu (Madikeri),Hilly / Western Ghats,12.4244,75.7382,369.7,9.2,265.6,197.8,28.0,222.7,-172.0,18.8,-42.8,-46.5,203.2,-16.1,watermelon,0.255,watermelon,0.2,False
+Belagavi,Northern Transition Zone,15.8497,74.4977,202.0,18.9,347.0,149.5,24.6,262.6,-52.5,5.7,-84.4,-26.0,30.3,-24.3,apple,0.19,apple,0.195,False
+Kalaburagi,North Eastern Dry Zone,17.3297,76.8343,250.0,75.0,390.0,152.4,35.9,353.5,-97.6,-39.1,-36.5,-39.0,-52.2,-9.3,apple,0.21,apple,0.21,False
+Raichur,North Eastern Dry Zone,16.2076,77.3463,203.6,30.9,346.4,144.2,23.0,208.7,-59.4,-7.9,-137.7,-29.2,-25.6,-39.8,apple,0.195,apple,0.19,False
+Dharwad,Northern Transition Zone,15.4589,75.0078,202.0,18.9,347.0,186.2,22.0,281.3,-15.8,3.1,-65.7,-7.8,16.2,-18.9,apple,0.19,apple,0.19,False
+Shivamogga,Southern Transition Zone,13.9299,75.5681,369.7,9.2,265.6,164.7,25.3,249.4,-205.0,16.1,-16.1,-55.4,173.6,-6.1,watermelon,0.255,watermelon,0.225,False
+Udupi / Coastal,Coastal Zone,13.3409,74.7421,369.7,9.2,265.6,166.6,27.6,199.0,-203.1,18.4,-66.6,-54.9,198.6,-25.1,apple,0.195,coffee,0.235,True

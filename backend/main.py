@@ -16,6 +16,7 @@ import uvicorn
 
 from backend.predict_api import predict_crop
 from cnn.predict_soil import InvalidSoilImage, SoilProcessingError
+from backend.chat import router as chat_router
 from backend.history import (
     save_prediction, get_history, get_prediction_by_id, 
     delete_prediction, get_soil_types, get_stats
@@ -30,6 +31,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Multilingual farming assistant: POST /chat, POST /chat/tts
+app.include_router(chat_router)
 
 @app.get("/")
 def root():
@@ -87,12 +91,13 @@ async def predict(
     image: UploadFile = File(..., description="Soil image (JPG/PNG)"),
     latitude:  float  = Form(..., description="GPS latitude"),
     longitude: float  = Form(..., description="GPS longitude"),
+    include_fruits: bool = Form(False, description="Include fruit and tree crops in recommendations"),
 ):
     if image.content_type not in ("image/jpeg", "image/png", "image/jpg"):
         return JSONResponse(status_code=400, content={"success": False, "message": "Only JPG/PNG images are accepted."})
     try:
         image_bytes = await image.read()
-        result = await predict_crop(image_bytes, latitude, longitude)
+        result = await predict_crop(image_bytes, latitude, longitude, include_fruits=include_fruits)
         
         # Auto-save to history
         try:

@@ -1,0 +1,82 @@
+{
+  "21.3867|76.3863": {
+    "lat": 21.3867,
+    "lon": 76.3863,
+    "error": "Timeout or Null after retries"
+  },
+  "24.8468|79.5893": {
+    "lat": 24.8468,
+    "lon": 79.5893,
+    "error": "Timeout or Null after retries"
+  },
+  "22.1467|78.8056": {
+    "lat": 22.1467,
+    "lon": 78.8056,
+    "error": "Timeout or Null after retries"
+  },
+  "23.7714|79.5010": {
+    "lat": 23.7714,
+    "lon": 79.501,
+    "error": "Timeout or Null after retries"
+  },
+  "25.8847|78.6121": {
+    "lat": 25.8847,
+    "lon": 78.6121,
+    "error": "Timeout or Null after retries"
+  },
+  "22.7650|76.4561": {
+    "lat": 22.765,
+    "lon": 76.4561,
+    "error": "Timeout or Null after retries"
+  },
+  "22.5508|75.1110": {
+    "lat": 22.5508,
+    "lon": 75.111,
+    "error": "Timeout or Null after retries"
+  },
+  "22.8928|81.0978": {
+    "lat": 22.8928,
+    "lon": 81.0978,
+    "error": "Timeout or Null after retries"
+  },
+  "24.5400|77.1852": {
+    "lat": 24.54,
+    "lon": 77.1852,
+    "error": "Timeout or Null after retries"
+  },
+  "26.0469|78.1180": {
+    "lat": 26.0469,
+    "lon": 78.118,
+    "error": "Timeout or Null after retries"
+  },
+  "22.2216|77.1231": {
+    "lat": 22.2216,
+    "lon": 77.1231,
+    "error": "Timeout or Null after retries"
+  },
+  "22.6987|75.7812": {
+    "lat": 22.6987,
+    "lon": 75.7812,
+    "error": "Timeout or Null after retries"
+  },
+  "23.2096|80.0157": {
+    "lat": 23.2096,
+    "lon": 80.0157,
+    "error": "Timeout or Null after retries"
+  },
+  "22.8409|74.6213": {
+    "lat": 22.8409,
+    "lon": 74.6213,
+    "error": "Timeout or Null after retries"
+  },
+  "23.7738|80.4200": {
+    "lat": 23.7738,
+    "lon": 80.42,
+    "error": "Timeout or Null after retries"
+  },
+  "21.8972|76.6330": {
+    "lat": 21.8972,
+    "lon": 76.633,
+    "error": "Timeout or Null after retries"
+  }
+}

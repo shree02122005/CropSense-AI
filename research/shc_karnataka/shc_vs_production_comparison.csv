@@ -1,0 +1,31 @@
+district,ref_place,lat,lon,v1_N,v1_P,v1_K,v1_N_class,v1_P_class,v1_K_class,v2_N,v2_P,v2_K,v2_N_class,v2_P_class,v2_K_class,diff_N,diff_P,diff_K,category_changed,crop_v1,conf_v1,crop_v2,conf_v2,recommendation_changed,v1_source,v2_source
+Bengaluru Urban,Bengaluru,12.9716,77.5946,249.7,46.8,180.4,Low,Medium,Medium,142.1,26.9,184.1,Low,Medium,Medium,-107.6,-19.9,3.7,False,grapes,0.2,coffee,0.2,True,published_measured,shc_lab_aggregate
+Bengaluru Rural,Devanahalli,13.241,77.711,249.7,46.8,180.4,Low,Medium,Medium,142.8,29.1,199.9,Low,Medium,Medium,-106.9,-17.7,19.5,False,grapes,0.2,grapes,0.215,False,regional_proxy,shc_lab_aggregate
+Ramanagara,Ramanagara,12.721,77.281,249.7,46.8,180.4,Low,Medium,Medium,249.7,46.8,180.4,Low,Medium,Medium,0.0,0.0,0.0,False,grapes,0.2,grapes,0.2,False,regional_proxy,regional_proxy
+Chikkaballapur,Chikkaballapur,13.4355,77.7315,249.7,46.8,180.4,Low,Medium,Medium,139.3,34.8,229.7,Low,Medium,Medium,-110.4,-12.0,49.3,False,grapes,0.2,grapes,0.21,False,regional_proxy,shc_lab_aggregate
+Kolar,Kolar,13.1367,78.1292,249.7,46.8,180.4,Low,Medium,Medium,142.8,32.9,175.1,Low,Medium,Medium,-106.9,-13.9,-5.3,False,grapes,0.2,grapes,0.195,False,regional_proxy,shc_lab_aggregate
+Tumakuru,Tumakuru,13.3392,77.101,249.7,46.8,180.4,Low,Medium,Medium,150.1,31.3,221.8,Low,Medium,Medium,-99.6,-15.5,41.4,False,grapes,0.2,grapes,0.215,False,regional_proxy,shc_lab_aggregate
+Hassan,Hassan,13.0068,76.1004,369.7,9.2,265.6,Medium,Low,Medium,222.4,38.1,218.8,Low,Medium,Medium,-147.3,28.9,-46.8,True,grapes,0.205,grapes,0.215,False,published_measured,shc_lab_aggregate
+Mysuru,Mysuru,12.2958,76.6394,369.7,9.2,265.6,Medium,Low,Medium,137.9,34.6,252.5,Low,Medium,Medium,-231.8,25.4,-13.1,True,grapes,0.205,grapes,0.21,False,regional_proxy,shc_lab_aggregate
+Mandya,Mandya,12.5218,76.8951,369.7,9.2,265.6,Medium,Low,Medium,150.2,33.6,234.4,Low,Medium,Medium,-219.5,24.4,-31.2,True,grapes,0.205,grapes,0.21,False,regional_proxy,shc_lab_aggregate
+Chamarajanagar,Chamarajanagar,11.9261,76.9437,369.7,9.2,265.6,Medium,Low,Medium,220.8,31.1,180.1,Low,Medium,Medium,-148.9,21.9,-85.5,True,grapes,0.205,grapes,0.195,False,regional_proxy,shc_lab_aggregate
+Kodagu,Madikeri,12.4244,75.7382,369.7,9.2,265.6,Medium,Low,Medium,211.8,28.8,250.6,Low,Medium,Medium,-157.9,19.6,-15.0,True,grapes,0.205,coffee,0.205,True,regional_proxy,shc_lab_aggregate
+Chikkamagaluru,Chikkamagaluru,13.3161,75.772,369.7,9.2,265.6,Medium,Low,Medium,149.4,35.5,253.7,Low,Medium,Medium,-220.3,26.2,-11.9,True,grapes,0.205,grapes,0.21,False,regional_proxy,shc_lab_aggregate
+Dakshina Kannada,Mangaluru,12.9141,74.856,369.7,9.2,265.6,Medium,Low,Medium,140.1,22.5,138.5,Low,Low,Low,-229.6,13.2,-127.1,True,grapes,0.205,coffee,0.19,True,regional_proxy,shc_lab_aggregate
+Udupi,Udupi,13.3409,74.7421,369.7,9.2,265.6,Medium,Low,Medium,169.3,27.5,172.9,Low,Medium,Medium,-200.4,18.2,-92.7,True,grapes,0.205,coffee,0.2,True,regional_proxy,shc_lab_aggregate
+Shivamogga,Shivamogga,13.9299,75.5681,369.7,9.2,265.6,Medium,Low,Medium,155.8,25.5,265.6,Low,Medium,Medium,-213.9,16.2,0.0,True,grapes,0.205,grapes,0.205,False,regional_proxy,shc_lab_aggregate
+Uttara Kannada,Karwar,14.795,74.124,369.7,9.2,265.6,Medium,Low,Medium,152.1,24.7,194.0,Low,Medium,Medium,-217.6,15.4,-71.6,True,grapes,0.205,coffee,0.2,True,regional_proxy,shc_lab_aggregate
+Belagavi,Belagavi,15.8497,74.4977,202.0,18.9,347.0,Low,Low,High,143.5,22.3,212.7,Low,Low,Medium,-58.5,3.4,-134.3,True,grapes,0.205,grapes,0.21,False,published_measured,shc_lab_aggregate
+Dharwad,Dharwad,15.4589,75.0078,202.0,18.9,347.0,Low,Low,High,209.0,17.6,268.0,Low,Low,Medium,7.0,-1.3,-79.0,True,grapes,0.205,grapes,0.205,False,published_measured,shc_lab_aggregate
+Gadag,Gadag,15.4167,75.6167,202.0,18.9,347.0,Low,Low,High,208.4,19.0,254.1,Low,Low,Medium,6.4,0.1,-92.9,True,grapes,0.205,grapes,0.205,False,regional_proxy,shc_lab_aggregate
+Haveri,Haveri,14.7951,75.3991,202.0,18.9,347.0,Low,Low,High,191.6,18.5,191.3,Low,Low,Medium,-10.4,-0.4,-155.7,True,grapes,0.205,grapes,0.2,False,regional_proxy,shc_lab_aggregate
+Bagalkot,Bagalkot,16.1691,75.6615,203.6,30.9,346.4,Low,Medium,High,171.5,24.7,235.4,Low,Medium,Medium,-32.1,-6.2,-111.0,True,grapes,0.21,grapes,0.205,False,regional_proxy,shc_lab_aggregate
+Vijayapura,Vijayapura,16.8302,75.71,203.6,30.9,346.4,Low,Medium,High,138.9,37.2,251.2,Low,Medium,Medium,-64.7,6.3,-95.2,True,grapes,0.21,grapes,0.21,False,regional_proxy,shc_lab_aggregate
+Koppal,Koppal,15.35,76.154,203.6,30.9,346.4,Low,Medium,High,227.4,37.5,287.8,Low,Medium,Medium,23.8,6.6,-58.6,True,grapes,0.21,grapes,0.21,False,regional_proxy,shc_lab_aggregate
+Raichur,Raichur,16.212,77.3439,203.6,30.9,346.4,Low,Medium,High,137.6,17.1,150.0,Low,Low,Medium,-66.0,-13.8,-196.4,True,grapes,0.21,grapes,0.18,False,published_measured,shc_lab_aggregate
+Yadgir,Yadgir,16.77,77.137,203.6,30.9,346.4,Low,Medium,High,149.2,32.9,373.5,Low,Medium,High,-54.4,2.0,27.1,False,grapes,0.21,grapes,0.21,False,regional_proxy,shc_lab_aggregate
+Kalaburagi,Kalaburagi,17.3297,76.8343,250.0,75.0,390.0,Low,High,High,150.0,38.9,398.6,Low,Medium,High,-100.0,-36.1,8.6,True,grapes,0.22,grapes,0.21,False,published_measured,shc_lab_aggregate
+Bidar,Bidar,17.9104,77.5199,203.6,30.9,346.4,Low,Medium,High,177.8,16.2,396.5,Low,Low,High,-25.8,-14.7,50.1,True,grapes,0.21,grapes,0.205,False,regional_proxy,shc_lab_aggregate
+Ballari,Ballari,15.1394,76.9214,203.6,30.9,346.4,Low,Medium,High,200.3,23.4,184.8,Low,Medium,Medium,-3.3,-7.5,-161.6,True,grapes,0.21,coffee,0.19,True,regional_proxy,shc_lab_aggregate
+Vijayanagara,Hosapete,15.2695,76.3871,203.6,30.9,346.4,Low,Medium,High,178.0,25.2,160.4,Low,Medium,Medium,-25.6,-5.7,-186.0,True,grapes,0.21,coffee,0.2,True,regional_proxy,shc_lab_aggregate
+Chitradurga,Chitradurga,14.2306,76.398,202.0,18.9,347.0,Low,Low,High,141.4,34.6,236.3,Low,Medium,Medium,-60.6,15.7,-110.7,True,grapes,0.205,grapes,0.21,False,regional_proxy,shc_lab_aggregate

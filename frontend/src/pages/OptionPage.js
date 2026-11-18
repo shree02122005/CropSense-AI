@@ -1,23 +1,25 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Settings, ArrowLeft } from 'lucide-react';
+import { useI18n } from '../i18n/LanguageContext';
 
 export default function OptionPage({ onSelect, onBack }) {
+  const { t } = useI18n();
   const cards = [
-    { icon:<MapPin size={26}/>, title:'Auto Location', desc:'Browser GPS detects your coordinates. Real-time weather + soil data fetched automatically.', tag:'Recommended', tc:'#4ade80' },
-    { icon:<Settings size={26}/>, title:'Manual Input',  desc:'Enter latitude/longitude manually. Great for controlled testing or offline areas.', tag:'Advanced',     tc:'#fbbf24' },
+    { icon:<MapPin size={26}/>, title:t('option.autoTitle'), desc:t('option.autoDesc'), tag:t('option.recommended'), tc:'#4ade80' },
+    { icon:<Settings size={26}/>, title:t('option.manualTitle'),  desc:t('option.manualDesc'), tag:t('option.advanced'),     tc:'#fbbf24' },
   ];
   return (
     <div style={{minHeight:'100vh',background:'radial-gradient(ellipse 70% 50% at 50% 0%,#052e16,#050a05)',display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',padding:'60px 24px'}}>
       <motion.button initial={{opacity:0}} animate={{opacity:1}} onClick={onBack}
         style={{position:'fixed',top:20,left:20,display:'flex',alignItems:'center',gap:6,background:'rgba(255,255,255,0.05)',border:'1px solid rgba(255,255,255,0.1)',borderRadius:8,padding:'7px 14px',cursor:'pointer',color:'#86efac',fontSize:13,fontFamily:'var(--font-b)'}}
       >
-        <ArrowLeft size={13}/> Back
+        <ArrowLeft size={13}/> {t('common.back')}
       </motion.button>
 
       <motion.div initial={{opacity:0,y:-20}} animate={{opacity:1,y:0}} style={{textAlign:'center',marginBottom:52}}>
-        <h2 style={{fontFamily:'var(--font-h)',fontSize:'2.2rem',fontWeight:800,letterSpacing:'-0.02em',marginBottom:10}}>Choose Input Mode</h2>
-        <p style={{color:'#6b7280',fontSize:'1rem'}}>How should we get your location data?</p>
+        <h2 style={{fontFamily:'var(--font-h)',fontSize:'2.2rem',fontWeight:800,letterSpacing:'-0.02em',marginBottom:10}}>{t('option.title')}</h2>
+        <p style={{color:'#6b7280',fontSize:'1rem'}}>{t('option.sub')}</p>
       </motion.div>
 
       <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(270px,1fr))',gap:18,maxWidth:640,width:'100%'}}>
@@ -35,7 +37,7 @@ export default function OptionPage({ onSelect, onBack }) {
             </div>
             <h3 style={{fontFamily:'var(--font-h)',fontWeight:700,fontSize:'1.2rem',marginBottom:8}}>{c.title}</h3>
             <p style={{color:'#6b7280',fontSize:'0.875rem',lineHeight:1.6}}>{c.desc}</p>
-            <div style={{marginTop:20,color:'#4ade80',fontSize:'0.85rem',fontWeight:600}}>Select →</div>
+            <div style={{marginTop:20,color:'#4ade80',fontSize:'0.85rem',fontWeight:600}}>{t('option.select')}</div>
           </motion.div>
         ))}
       </div>
